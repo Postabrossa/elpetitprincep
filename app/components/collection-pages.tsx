@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router";
 import { IconArrowRight, IconHeart, IconX } from "@tabler/icons-react";
 import { collectionSections } from "@/lib/collection-sections";
+import { specialBooks } from "@/lib/special-books";
 
 const homepageSections = [
   { code: "B-325", title: "LA MEVA COL·LECCIÓ", subtitle: "My collection", detail: "Idiomes / Languages", href: "/collection" },
@@ -39,19 +40,6 @@ function PlanetIllustration() {
 function RoseIllustration() {
   return <img src="/collection-assets/home/rose.svg" alt="" className="absolute -top-10 -right-3 h-24 w-16 rotate-[8deg]" />;
 }
-
-const specialBooks = [
-  { title: "El Principito", image: "e9a34ad7b5f5362c_d-Wd.webp", text: "Aquest és el meu primer Petit Príncep. Me'l van regalar quan vaig fer set anys. Va ser el primer cop que el vaig llegir.", english: "This is my first Little Prince. Someone gave it to me when I turned seven. It was the first time I had read it." },
-  { title: "El Pequeño Príncipe", image: "edefebe341c8d7b4_d-Wd.webp", text: "Mecanoscrit amb aquarel·les pintades. Traducció desconeguda. Conté una targeta on li dedica a ‘El poeta’. Hi ha molta dedicació i amor en aquest llibre.", english: "A typescript with original watercolors and a handwritten dedication." },
-  { title: "Pti Prens", image: "855fbf80c0a67e63_d-Wd.webp", text: "Menzy em va regalar el llibre que tenia des de petita de manera desinteressada.", english: "Menzy selflessly gave me the book she had from an early age." },
-  { title: "Маленькі прынц", image: "eab40c347cdfde15_d-Wd.webp", text: "Вераніка em va anar a buscar aquest llibre durant les festes del Nadal Bielorús i per això sempre li estaré agraït.", english: "Veranika found this book during the Belarusian Christmas holidays; I will always be grateful." },
-  { title: "Жима эла", image: "09e824b8ed8e69f7_d-Wd.webp", text: "Malika em va enviar el seu llibre i, per això, sempre estaré en deute amb ella.", english: "Malika sent me her book, and for that I will always be indebted to her." },
-  { title: "El nene principito", image: "cde149d1d13068c5_d-Wd.webp", text: "Aquest llibre l'ha traduït i editat un gran amic i una millor persona.", english: "This book was translated and edited by a great friend and an even better person." },
-  { title: "Piquina Plinchipi", image: "0f78426a486ad14b_d-Wd.webp", text: "Aquest llibre l'ha editat una gran amiga i una persona generosa.", english: "This book was edited by a great friend and a generous person." },
-  { title: "Quyllur llaqtayuq wawamanta", image: "5a30e1953d0b1417_d-Wd.webp", text: "Després d'anys buscant-lo i de diverses ocasions en què se m'havia escapat, finalment he aconseguit aquest llibre fetitx.", english: "After years of searching and several near misses, I finally found this treasured edition." },
-  { title: "Ang Munting Prinsipe", image: "fe4f938eb0d210e9_d-Wd.webp", text: "Una reil·lustració amb animació de quadrícula de barrera, creada per Loren per a la seva tesi universitària.", english: "A reillustrated edition using barrier-grid animation, created by Loren for a university thesis." },
-  { title: "Irechaeri Wap'a", image: "ea72b62f75e806ea_d-Wd.webp", text: "Una edició creada amb esforç, bondat i molta il·lusió, amb il·lustracions inspirades en els paisatges de Michoacán.", english: "An edition made with care and beautifully illustrated with the landscapes of Michoacán." },
-];
 
 const recentCounts: Record<number, number> = { 2020: 75, 2021: 139, 2022: 93, 2023: 86, 2024: 143, 2025: 79, 2026: 78 };
 
@@ -191,7 +179,24 @@ export function RecentPage() {
 }
 
 export function SpecialPage() {
-  return <section className="content-page"><PageHeading kicker="EDICIONS SINGULARS" title="Llibres especials" subtitle="Special books" /><div className="special-book-grid">{specialBooks.map((book) => <article className="special-book" key={book.title}><div className="special-book-cover"><img loading="lazy" src={`/collection-assets/special/${book.image}`} alt={book.title} /></div><div className="special-book-copy"><h2>{book.title}</h2><p>{book.text}</p><em>{book.english}</em></div></article>)}</div></section>;
+  return <>
+    <section className="starry relative isolate overflow-hidden text-white">
+      <StarField />
+      <div aria-hidden="true" className="drift absolute top-1/2 right-[6%] -z-10 hidden h-44 w-44 -translate-y-1/2 opacity-90 md:block lg:h-56 lg:w-56"><img src="/collection-assets/home/fox.svg" alt="" className="sway h-full w-full object-contain" /></div>
+      <div className="[&_a]:text-yellow [&_a]:decoration-yellow/40 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+        <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />Llibres especials / Special books</p>
+        <h1 className="font-display mt-4 max-w-4xl text-5xl leading-[0.98] font-semibold tracking-[-0.02em] sm:text-7xl">Llibres especials</h1>
+        <p className="font-hand text-yellow mt-4 max-w-2xl text-3xl">Special books</p>
+      </div>
+      <svg aria-hidden="true" viewBox="0 0 1440 40" preserveAspectRatio="none" className="text-paper absolute bottom-0 left-0 h-6 w-full sm:h-10"><path d="M0 40 C240 10 480 0 720 14 C960 28 1200 30 1440 8 L1440 40Z" fill="currentColor" /></svg>
+    </section>
+    <section className="px-5 py-14 sm:px-8 lg:px-12 lg:py-20"><div className="mx-auto max-w-[1360px]"><div className="grid gap-12"><div className="grid gap-6 xl:grid-cols-2">
+      {specialBooks.map((book) => <article id={book.title === "El Principito" ? "llibre-0" : undefined} className="border-line grid scroll-mt-28 gap-5 rounded-3xl border bg-white/85 p-5 shadow-[0_6px_20px_rgba(27,42,74,0.06)] sm:grid-cols-[11rem_1fr] sm:p-6" key={book.title}>
+        <div className="grid gap-3"><div className="border-line rounded-lg border bg-white p-1.5 shadow-sm"><Link to={`/collection?q=${encodeURIComponent(book.language)}`}><img alt={book.title} loading="lazy" width="600" height="820" className="h-auto w-full rounded-md" src={`/collection-assets/special/${book.image}`} /></Link></div></div>
+        <div className="min-w-0"><h2 className="font-display text-ink mb-2 text-2xl leading-tight font-semibold break-words">{book.title}</h2><p className="text-ink py-1.5 text-sm leading-6 font-semibold">{book.text}</p><p className="text-ink py-1.5 text-sm leading-6 font-semibold">{book.english}</p></div>
+      </article>)}
+    </div><div className="grid gap-4"><div aria-hidden="true" className="text-gold flex justify-center"><StarIcon className="h-4 w-4" /></div><div className="mx-auto max-w-3xl text-center"><p className="text-ink mt-3 text-base leading-7"><a href="https://drive.google.com/file/d/12-MofWXNQralPSXQA6iS2qYwQ0zND5cx/view" target="_blank" rel="noreferrer" className="text-blue decoration-blue/30 hover:decoration-blue font-semibold underline underline-offset-4">Aquí podeu veure'l en moviment ➠</a></p><p className="text-ink mt-3 text-base leading-7"><a href="https://drive.google.com/file/d/12-MofWXNQralPSXQA6iS2qYwQ0zND5cx/view" target="_blank" rel="noreferrer" className="text-blue decoration-blue/30 hover:decoration-blue font-semibold underline underline-offset-4">Here you can see it in motion ➠</a></p></div></div></div></div></section>
+  </>;
 }
 
 export function WishlistPage() {
