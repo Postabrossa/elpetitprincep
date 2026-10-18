@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router";
 import { IconArrowRight, IconHeart, IconX } from "@tabler/icons-react";
-import { languageCatalog } from "@/lib/language-catalog";
+import { collectionSections } from "@/lib/collection-sections";
 
 const homepageSections = [
   { code: "B-325", title: "LA MEVA COL·LECCIÓ", subtitle: "My collection", detail: "Idiomes / Languages", href: "/collection" },
@@ -39,16 +39,6 @@ function PlanetIllustration() {
 function RoseIllustration() {
   return <img src="/collection-assets/home/rose.svg" alt="" className="absolute -top-10 -right-3 h-24 w-16 rotate-[8deg]" />;
 }
-
-const categories = [
-  { ca: "Idiomes", en: "Languages", count: 667, note: "Abkhaz, Afrikaans, Aimara, Alemany…" },
-  { ca: "Idiomes artificials", en: "Constructed languages", count: 21, note: "Esperanto, Interlingua, Toki Pona…" },
-  { ca: "Transcripcions", en: "Transcripts", count: 22, note: "Alfabets i sistemes d’escriptura" },
-  { ca: "Adaptacions", en: "Adaptations", count: 8, note: "Teatre, còmics i versions lliures" },
-  { ca: "Llibres en Braille", en: "Braille books", count: 9, note: "Edicions accessibles en diversos idiomes" },
-  { ca: "Lectura fàcil", en: "Easy read", count: 9, note: "Versions adaptades per facilitar la lectura" },
-  { ca: "Altres", en: "Others", count: 8, note: "Edicions especials i materials relacionats" },
-];
 
 const specialBooks = [
   { title: "El Principito", image: "e9a34ad7b5f5362c_d-Wd.webp", text: "Aquest és el meu primer Petit Príncep. Me'l van regalar quan vaig fer set anys. Va ser el primer cop que el vaig llegir.", english: "This is my first Little Prince. Someone gave it to me when I turned seven. It was the first time I had read it." },
@@ -137,14 +127,41 @@ export function HomePage() {
 export function CollectionPage() {
   const [params] = useSearchParams();
   const query = (params.get("q") ?? "").trim().toLocaleLowerCase("ca");
-  const filteredLanguages = query ? languageCatalog.filter((language) => language.name.toLocaleLowerCase("ca").includes(query)) : languageCatalog;
-  return <section className="content-page">
-    <PageHeading kicker="EL PETIT PRÍNCEP · THE LITTLE PRINCE" title="La meva col·lecció" subtitle="My collection" />
-    <div className="collection-intro"><p>Una història que ha viatjat arreu del món i ha trobat una veu en centenars de llengües.</p><span><strong>1.779</strong> llibres reunits en diferents idiomes.</span></div>
-    <div className="collection-category-grid">{categories.map((item) => <article className="collection-category" key={item.en}><span className="category-count">{item.count}</span><h2>{item.ca}</h2><p>{item.en}</p><span className="category-note">{item.note}</span></article>)}</div>
-    <div className="language-section"><div className="language-heading"><div><span className="page-kicker">667 LLENGÜES</span><h2>Idiomes</h2></div><span>{filteredLanguages.length} resultats</span></div><div className="language-list">{filteredLanguages.map((language) => <div className="language-item" key={language.name}><span>{language.name}</span><span>{language.count}</span></div>)}{query && filteredLanguages.length === 0 && <p className="empty-search">No hem trobat cap idioma amb «{query}».</p>}</div></div>
-    <Link className="text-link" to="/recents/2026">Veure les últimes edicions <IconArrowRight size={16} /></Link>
-  </section>;
+  const filteredCount = collectionSections.catala.reduce((total, section) => total + section.items.filter((item) => item.name.toLocaleLowerCase("ca").includes(query)).length, 0) + collectionSections.english.reduce((total, section) => total + section.items.filter((item) => item.name.toLocaleLowerCase("ca").includes(query)).length, 0);
+  return <>
+    <section className="starry relative isolate overflow-hidden text-white">
+      <StarField />
+      <div aria-hidden="true" className="drift absolute top-1/2 right-[6%] -z-10 hidden h-44 w-44 -translate-y-1/2 opacity-90 md:block lg:h-56 lg:w-56"><img src="/collection-assets/home/fox.svg" alt="" className="sway h-full w-full object-contain" /></div>
+      <div className="[&_a]:text-yellow [&_a]:decoration-yellow/40 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+        <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />El Petit Príncep / The Little Prince</p>
+        <h1 className="font-display mt-4 max-w-4xl text-5xl leading-[0.98] font-semibold tracking-[-0.02em] sm:text-7xl">La meva col·lecció</h1>
+        <p className="font-hand text-yellow mt-4 max-w-2xl text-3xl">My collection</p>
+        <p className="mt-6 text-lg text-white/90">1779 Llibres / Books - Actualitzat / Updated: 8/10/2026</p>
+        <div className="mt-3 grid gap-1 text-sm text-white/75"><p>688 Idiomes (reals i artificials)</p><p>688 Languages (real &amp; constructed)</p><p>22 transcripcions, 8 adaptacions i més...</p><p>22 Transcripts, 8 adaptations and more...</p></div>
+        <div className="mt-8 flex flex-wrap gap-3 [&_a]:no-underline"><a className="bg-yellow !text-night rounded-full px-5 py-2.5 text-sm font-bold" href="#catala">Idiomes (en català)</a><a className="rounded-full border border-white/40 px-5 py-2.5 text-sm font-bold !text-white" href="#english">Languages (in English)</a></div>
+      </div>
+      <svg aria-hidden="true" viewBox="0 0 1440 40" preserveAspectRatio="none" className="text-paper absolute bottom-0 left-0 h-6 w-full sm:h-10"><path d="M0 40 C240 15 480 0 720 12 C960 24 1200 25 1440 5 L1440 40Z" fill="currentColor" /></svg>
+    </section>
+    <section id="catala" className="scroll-mt-24 px-5 py-14 sm:px-8 lg:px-12 lg:py-20">
+      <div className="mx-auto max-w-[1360px]">{collectionSections.catala.map((section) => {
+        const items = query ? section.items.filter((item) => item.name.toLocaleLowerCase("ca").includes(query)) : section.items;
+        if (!items.length) return null;
+        return <div className="mt-12 first:mt-0" key={section.title}>
+          <h3 className="font-display text-ink flex items-center gap-3 text-3xl font-semibold"><StarIcon className="text-gold h-4 w-4" />{section.title}<span className="text-ink-soft font-sans text-sm font-normal">({query ? items.length : section.count})</span></h3><ul className="mt-5 gap-x-8 sm:columns-2 lg:columns-3 xl:columns-4">{items.map((item) => <li className="break-inside-avoid" key={item.name}><Link className="hover:bg-paper-deep hover:text-blue flex items-start gap-3 rounded-lg px-2 py-1.5 text-sm leading-5 transition-colors" to={`/collection?q=${encodeURIComponent(item.name)}`}><span>{item.name}</span><span className="bg-sky text-blue ml-auto shrink-0 rounded-full px-2 py-0.5 text-[11px] font-bold">{item.count}</span></Link></li>)}</ul>
+        </div>;
+      })}</div>
+    </section>
+    <section id="english" className="bg-paper-deep/60 border-line scroll-mt-24 border-t px-5 py-14 sm:px-8 lg:px-12 lg:py-20">
+      <div className="mx-auto max-w-[1360px]">{collectionSections.english.map((section) => {
+        const items = query ? section.items.filter((item) => item.name.toLocaleLowerCase("ca").includes(query)) : section.items;
+        if (!items.length) return null;
+        return <div className="mt-12 first:mt-0" key={section.title}>
+          <h3 className="font-display text-ink flex items-center gap-3 text-3xl font-semibold"><StarIcon className="text-gold h-4 w-4" />{section.title}<span className="text-ink-soft font-sans text-sm font-normal">({query ? items.length : section.count})</span></h3><ul className="mt-5 gap-x-8 sm:columns-2 lg:columns-3 xl:columns-4">{items.map((item) => <li className="break-inside-avoid" key={item.name}><Link className="hover:bg-paper-deep hover:text-blue flex items-start gap-3 rounded-lg px-2 py-1.5 text-sm leading-5 transition-colors" to={`/collection?q=${encodeURIComponent(item.name)}`}><span>{item.name}</span><span className="bg-sky text-blue ml-auto shrink-0 rounded-full px-2 py-0.5 text-[11px] font-bold">{item.count}</span></Link></li>)}</ul>
+        </div>;
+      })}</div>
+    </section>
+    {query && filteredCount === 0 && <p className="mx-auto max-w-[1360px] px-5 py-10 text-sm text-ink-soft sm:px-8 lg:px-12">No s’han trobat edicions amb «{params.get("q")}».</p>}
+  </>;
 }
 
 export function RecentPage() {
