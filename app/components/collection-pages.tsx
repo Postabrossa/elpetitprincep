@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router";
-import { IconArrowRight, IconHeart, IconX } from "@tabler/icons-react";
+import { IconArrowRight, IconX } from "@tabler/icons-react";
 import { collectionSections } from "@/lib/collection-sections";
 import { specialBooks } from "@/lib/special-books";
 
@@ -202,7 +202,20 @@ export function SpecialPage() {
 export function WishlistPage() {
   const images = ["6fc602cf6f63927c_ny_3.webp", "22391261d9d832e7_ny_3.webp"];
   const [preview, setPreview] = useState<number | null>(null);
-  return <section className="content-page"><PageHeading kicker="EDICIONS PER TROBAR" title="Llibres buscats" subtitle="Wishlist" /><div className="wishlist-intro"><IconHeart size={19} /><p>Algunes edicions que encara busco.<em> Editions I’m still looking for.</em></p></div><div className="wishlist-grid">{images.map((image, i) => <button className="edition-tile" type="button" key={image} onClick={() => setPreview(i)} aria-label={`Amplia la coberta ${i + 1}`}><img src={`/collection-assets/wishlist/${image}`} alt="Edició buscada del Petit Príncep" /></button>)}</div>{preview !== null && <BookPreview image={`/collection-assets/wishlist/${images[preview]}`} title="Edició buscada del Petit Príncep" onClose={() => setPreview(null)} />}</section>;
+  return <>
+    <section className="starry relative isolate overflow-hidden text-white">
+      <StarField />
+      <div aria-hidden="true" className="drift absolute top-1/2 right-[6%] -z-10 hidden h-44 w-44 -translate-y-1/2 opacity-90 md:block lg:h-56 lg:w-56"><img src="/collection-assets/home/fox.svg" alt="" className="sway h-full w-full object-contain" /></div>
+      <div className="[&_a]:text-yellow [&_a]:decoration-yellow/40 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+        <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />Llibres buscats / Wishlist</p>
+        <h1 className="font-display mt-4 max-w-4xl text-5xl leading-[0.98] font-semibold tracking-[-0.02em] sm:text-7xl">Llibres buscats</h1>
+        <p className="font-hand text-yellow mt-4 max-w-2xl text-3xl">Wishlist</p>
+      </div>
+      <svg aria-hidden="true" viewBox="0 0 1440 40" preserveAspectRatio="none" className="text-paper absolute bottom-0 left-0 h-6 w-full sm:h-10"><path d="M0 40 C240 10 480 0 720 14 C960 28 1200 30 1440 8 L1440 40Z" fill="currentColor" /></svg>
+    </section>
+    <section className="px-5 py-14 sm:px-8 lg:px-12 lg:py-20"><div className="mx-auto max-w-[1360px]"><div className="grid gap-12"><div className="grid gap-4"><div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">{images.map((image, index) => <button className="border-line rounded-xl border bg-white p-2 text-left shadow-[0_6px_18px_rgba(27,42,74,0.08)] transition duration-300 hover:-translate-y-1 hover:rotate-[-0.6deg]" type="button" key={image} onClick={() => setPreview(index)} aria-label={`Amplia la coberta ${index + 1}`}><img alt="El Petit Príncep" loading="lazy" width="600" height="820" className="h-auto w-full rounded-md" src={`/collection-assets/wishlist/${image}`} /></button>)}</div></div></div></div></section>
+    {preview !== null && <BookPreview image={`/collection-assets/wishlist/${images[preview]}`} title="Edició buscada del Petit Príncep" onClose={() => setPreview(null)} />}
+  </>;
 }
 
 export function DoublesPage() {
