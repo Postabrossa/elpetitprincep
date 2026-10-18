@@ -1,7 +1,24 @@
-@import "@fontsource-variable/inter";
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&display=swap");
 
 @import "tailwindcss";
 @import "@agent-native/toolkit/styles.css";
+
+@theme {
+  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-hand: "Caveat", cursive;
+  --color-white: #fffdf7;
+  --color-paper: #fbf5e8;
+  --color-paper-deep: #f3e9d2;
+  --color-ink: #1b2a4a;
+  --color-ink-soft: #55607a;
+  --color-blue: #2c4a86;
+  --color-night: #0b1533;
+  --color-sky: #dbe6f3;
+  --color-yellow: #f2c14e;
+  --color-gold: #d9a43a;
+  --color-line: #e2d6bb;
+}
 
 @source "./**/*.{ts,tsx}";
 
@@ -234,7 +251,7 @@
 @layer base {
   body {
     @apply bg-background text-foreground;
-    font-family: "Inter Variable", "Inter", sans-serif;
+    font-family: "Nunito", sans-serif;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 }
@@ -252,6 +269,49 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--muted-foreground) / 0.34);
+}
+
+.starry {
+  background-color: var(--color-night);
+  background-image:
+    radial-gradient(1.5px 1.5px at 20px 30px, #fff8e0, #0000),
+    radial-gradient(1px 1px at 90px 120px, #fffc, #0000),
+    radial-gradient(1.5px 1.5px at 160px 60px, #f2c14e, #0000),
+    radial-gradient(1px 1px at 230px 170px, #fffa, #0000),
+    radial-gradient(2px 2px at 300px 90px, #fff3c4, #0000),
+    radial-gradient(1px 1px at 360px 20px, #fff9, #0000),
+    radial-gradient(1px 1px at 50px 200px, #fffb, #0000),
+    radial-gradient(1.5px 1.5px at 130px 250px, #f2c14ecc, #0000),
+    radial-gradient(at 70% 0, #2c4a8666 0, #0000 60%),
+    linear-gradient(#0b1533, #12204a 70%, #1c2f62);
+  background-size:
+    380px 280px, 380px 280px, 380px 280px, 380px 280px, 380px 280px,
+    380px 280px, 380px 280px, 380px 280px, 100% 100%, 100% 100%;
+}
+
+@keyframes twinkle {
+  0%, to { opacity: .35; transform: scale(.85); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+.twinkle { animation: twinkle 3.6s ease-in-out infinite; }
+
+@keyframes drift {
+  0%, to { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-10px) rotate(1.5deg); }
+}
+
+.drift { animation: drift 9s ease-in-out infinite; }
+
+@keyframes sway {
+  0%, to { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+.sway { transform-origin: 50% 100%; animation: sway 6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .drift, .sway, .twinkle { animation: none; }
 }
 
 .prince-site { min-height: 100%; background: #fffdf7; color: #1b2a4a; font-family: "Inter Variable", Inter, sans-serif; }

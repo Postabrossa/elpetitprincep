@@ -1,16 +1,44 @@
 import { useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router";
-import { IconArrowRight, IconBook2, IconHeart, IconMail, IconSparkles, IconX } from "@tabler/icons-react";
+import { IconArrowRight, IconHeart, IconX } from "@tabler/icons-react";
 import { languageCatalog } from "@/lib/language-catalog";
 
-const sections = [
-  { title: "LA MEVA COL·LECCIÓ", subtitle: "My collection", href: "/collection", image: "/collection-assets/recents/2026/01.webp", icon: IconBook2 },
-  { title: "LLIBRES RECENTS", subtitle: "My latest books", href: "/recents/2026", image: "/collection-assets/recents/2026/02.webp", icon: IconSparkles },
-  { title: "DOBLES", subtitle: "My doubles", href: "/doubles", image: "/collection-assets/doubles/c516b429eccb44cd_r98l.webp", icon: IconBook2 },
-  { title: "LLIBRES BUSCATS", subtitle: "Wishlist", href: "/wishlist", image: "/collection-assets/wishlist/6fc602cf6f63927c_ny_3.webp", icon: IconHeart },
-  { title: "LLIBRES ESPECIALS", subtitle: "Special books", href: "/special", image: "/collection-assets/special/e9a34ad7b5f5362c_d-Wd.webp", icon: IconSparkles },
-  { title: "CONTACTE", subtitle: "Contact", href: "/contact", image: "/collection-assets/recents/2026/03.webp", icon: IconMail },
+const homepageSections = [
+  { code: "B-325", title: "LA MEVA COL·LECCIÓ", subtitle: "My collection", detail: "Idiomes / Languages", href: "/collection" },
+  { code: "B-326", title: "LLIBRES RECENTS", subtitle: "My latest books", detail: "Recents / Latest", href: "/recents/2026" },
+  { code: "B-327", title: "DOBLES", subtitle: "My doubles", detail: "Dobles per intercanviar / Doubles for exchange", href: "/doubles" },
+  { code: "B-328", title: "LLIBRES BUSCATS", subtitle: "Wishlist", detail: "Buriat /Buryat · Turcman Ciríl·lic /Tukmen Cyrillic", href: "/wishlist" },
+  { code: "B-329", title: "CONTACTE", subtitle: "Contact", detail: "Josep (Barcelona, Spain)", href: "/contact" },
+  { code: "B-330", title: "LLIBRES ESPECIALS", subtitle: "Special books", detail: "El Principito", href: "/special" },
 ];
+
+function StarIcon({ className = "" }: { className?: string }) {
+  return <svg className={className} viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 1.5l2.6 7.1 7.4.3-5.8 4.6 2 7.2L12 16.6l-6.2 4.1 2-7.2L2 8.9l7.4-.3z" /></svg>;
+}
+
+const starPositions = [
+  { top: "12%", left: "8%", size: 10, delay: "0s" }, { top: "22%", left: "42%", size: 7, delay: "1.2s" },
+  { top: "8%", left: "68%", size: 12, delay: "0.6s" }, { top: "35%", left: "88%", size: 8, delay: "2s" },
+  { top: "64%", left: "6%", size: 7, delay: "1.6s" }, { top: "78%", left: "36%", size: 9, delay: "0.3s" },
+  { top: "55%", left: "58%", size: 6, delay: "2.4s" }, { top: "84%", left: "80%", size: 11, delay: "1s" },
+  { top: "44%", left: "24%", size: 5, delay: "2.8s" },
+];
+
+export function StarField({ footer = false }: { footer?: boolean }) {
+  return <div aria-hidden="true" className={`pointer-events-none absolute inset-0 -z-10 ${footer ? "opacity-70" : ""}`}>{starPositions.map((star) => <svg key={`${star.top}-${star.left}`} viewBox="0 0 24 24" aria-hidden="true" className="twinkle text-yellow absolute" style={{ top: star.top, left: star.left, width: star.size, height: star.size, animationDelay: star.delay }} fill="currentColor"><path d="M12 1.5l2.6 7.1 7.4.3-5.8 4.6 2 7.2L12 16.6l-6.2 4.1 2-7.2L2 8.9l7.4-.3z" /></svg>)}</div>;
+}
+
+export function FoxIllustration() {
+  return <img src="/collection-assets/home/fox.svg" alt="" className="sway h-28 w-auto" />;
+}
+
+function PlanetIllustration() {
+  return <img src="/collection-assets/home/planet.svg" alt="" className="absolute -right-6 -bottom-8 h-28 w-28 opacity-25 transition duration-500 group-hover:rotate-12 group-hover:opacity-60" />;
+}
+
+function RoseIllustration() {
+  return <img src="/collection-assets/home/rose.svg" alt="" className="absolute -top-10 -right-3 h-24 w-16 rotate-[8deg]" />;
+}
 
 const categories = [
   { ca: "Idiomes", en: "Languages", count: 667, note: "Abkhaz, Afrikaans, Aimara, Alemany…" },
@@ -50,13 +78,59 @@ function BookPreview({ image, title, onClose }: { image: string; title: string; 
 }
 
 export function HomePage() {
+  const recentCovers = Array.from({ length: 12 }, (_, index) => `/collection-assets/home/editions/${String(index + 2).padStart(2, "0")}.webp`);
   return <>
-    <section className="home-hero">
-      <div className="home-hero-text"><span className="home-eyebrow"><span>✦</span> COL·LECCIÓ DE LLIBRES</span><h1>El Petit Príncep</h1><p className="home-translation">The Little Prince</p><span className="gold-rule" /><p className="home-description">Col·lecció en diferents idiomes<br /><em>Collection in different languages</em></p><Link className="hero-link" to="/collection">Explora la col·lecció <IconArrowRight size={16} /></Link></div>
-      <div className="home-hero-art"><img src="/collection-assets/recents/2026/01.webp" alt="El Petit Príncep al seu planeta" /><span className="hero-art-caption">Josep · Barcelona</span></div>
+    <section className="starry relative isolate overflow-hidden text-white">
+      <StarField />
+      <div className="mx-auto grid min-h-[calc(100vh-72px)] max-w-[1360px] items-center gap-14 px-5 pt-16 pb-28 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:px-12 lg:pt-20 lg:pb-32">
+        <div className="max-w-3xl">
+          <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />Col·lecció de llibres</p>
+          <h1 className="font-display mt-6 max-w-3xl text-6xl leading-[0.92] font-semibold tracking-[-0.02em] sm:text-8xl lg:text-[7.4rem]">El Petit Príncep</h1>
+          <p className="font-hand text-yellow mt-4 text-4xl sm:text-5xl">The Little Prince</p>
+          <p className="mt-8 max-w-md text-lg leading-8 text-white/85">Col·lecció en diferents idiomes<span className="font-display mt-1 block text-xl text-white/65 italic">Collection in different languages</span></p>
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <Link className="bg-yellow text-night inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-bold shadow-[0_0_30px_rgba(242,193,78,0.35)] transition hover:bg-white" to="/collection"><StarIcon className="h-4 w-4" />La meva col·lecció</Link>
+            <a className="hover:text-yellow hover:border-yellow inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3.5 text-sm font-bold text-white transition" href="#archive">Explora / Explore<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg></a>
+          </div>
+        </div>
+        <div className="relative mx-auto w-full max-w-[32rem] lg:ml-auto">
+          <div className="bg-yellow/20 absolute -inset-10 rounded-full blur-3xl" />
+          <div className="drift ring-yellow/40 relative aspect-square overflow-hidden rounded-full shadow-[0_30px_80px_rgba(0,0,0,0.45)] ring-4"><img alt="El Petit Príncep al seu planeta" className="absolute inset-0 h-full w-full object-cover" src="/collection-assets/home/hero-prince.jpg" /></div>
+          <div className="border-line absolute -bottom-6 -left-2 w-28 rotate-[-6deg] rounded-lg border-4 border-white bg-white shadow-2xl sm:w-36"><img alt="El Principito, el meu primer Petit Príncep" className="h-auto w-full rounded" loading="lazy" src="/collection-assets/home/editions/01.webp" /></div>
+          <p className="font-hand text-yellow absolute -right-2 -bottom-8 rotate-[-4deg] text-2xl">Josep · Barcelona</p>
+        </div>
+      </div>
+      <svg aria-hidden="true" viewBox="0 0 1440 60" preserveAspectRatio="none" className="text-paper absolute bottom-0 left-0 h-10 w-full sm:h-16"><path d="M0 60 C240 20 480 0 720 18 C960 36 1200 40 1440 10 L1440 60Z" fill="currentColor" /></svg>
     </section>
-    <section className="home-stat-strip" aria-label="Resum de la col·lecció"><div><strong>1.779</strong><span>Llibres <em>Books</em></span></div><div><strong>688</strong><span>Idiomes <em>Languages</em></span></div><div><strong>22</strong><span>Transcripcions <em>Transcripts</em></span></div><div><strong>8</strong><span>Adaptacions <em>Adaptations</em></span></div></section>
-    <section className="home-sections"><div className="section-intro"><span className="page-kicker">DESCOBREIX · EXPLORE</span><h2>Un univers de petits prínceps</h2><p>Cada llibre explica la mateixa història amb una veu pròpia.</p></div><div className="home-card-grid">{sections.map((section) => {const Icon = section.icon; return <Link className="home-card" to={section.href} key={section.title}><span className="home-card-image"><img src={section.image} alt="" /></span><span className="home-card-caption"><span><strong>{section.title}</strong><em>{section.subtitle}</em></span><Icon size={17} stroke={1.6} /></span></Link>;})}</div></section>
+    <section id="archive" className="px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+      <div className="mx-auto max-w-[1360px]">
+        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+          <div>
+            <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />El Petit Príncep / The Little Prince</p>
+            <h2 className="font-display mt-5 max-w-xl text-4xl leading-tight font-semibold sm:text-6xl">Col·lecció en diferents idiomes</h2>
+            <p className="font-hand text-blue mt-4 text-3xl">Collection in different languages</p>
+            <div className="border-line relative mt-10 rounded-3xl border bg-white/70 p-7 shadow-[0_10px_30px_rgba(27,42,74,0.07)]">
+              <RoseIllustration />
+              <dl className="grid gap-5"><div><dt className="font-display text-blue text-5xl font-semibold">1779</dt><dd className="text-ink-soft text-sm">Llibres / Books</dd></div><div><dt className="font-display text-blue text-5xl font-semibold">688</dt><dd className="text-ink-soft text-sm">Idiomes (reals i artificials)</dd></div><div className="border-line border-t pt-4 text-sm">22 transcripcions, 8 adaptacions i més...</div></dl>
+            </div>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2">
+            {homepageSections.map((section) => <Link className="group border-line relative overflow-hidden rounded-3xl border bg-white/80 p-7 shadow-[0_6px_20px_rgba(27,42,74,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(27,42,74,0.14)]" key={section.code} to={section.href}>
+              <PlanetIllustration />
+              <div className="flex items-start justify-between gap-4"><span className="bg-night text-yellow inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-bold tracking-[0.12em]"><StarIcon className="h-2.5 w-2.5" />{section.code}</span><svg className="text-blue transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></div>
+              <h3 className="text-ink mt-8 text-sm font-extrabold tracking-[0.12em] uppercase">{section.title}</h3><p className="font-hand text-blue mt-1 text-2xl">{section.subtitle}</p><p className="text-ink-soft relative mt-5 text-xs leading-5">{section.detail}</p>
+            </Link>)}
+          </div>
+        </div>
+        <div className="mt-20 flex items-center justify-center gap-3 text-gold"><span className="bg-line h-px w-16" /><StarIcon className="h-3 w-3" /><StarIcon className="h-4 w-4" /><StarIcon className="h-3 w-3" /><span className="bg-line h-px w-16" /></div>
+      </div>
+    </section>
+    <section className="px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+      <div className="mx-auto max-w-[1360px]">
+        <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"><div><p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />Recents / Latest</p><h2 className="font-display mt-4 text-4xl font-semibold sm:text-6xl">Llibres recents</h2></div><Link className="group text-blue decoration-blue/30 hover:decoration-blue inline-flex items-center gap-2 text-sm font-bold underline underline-offset-4" to="/recents/2026">Darreres incorporacions / My latest books<IconArrowRight size={16} /></Link></div>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">{recentCovers.map((image) => <Link className="group border-line block overflow-hidden rounded-xl border bg-white p-2 shadow-[0_6px_18px_rgba(27,42,74,0.08)] transition duration-300 hover:-translate-y-1 hover:rotate-[-0.6deg] hover:shadow-[0_14px_30px_rgba(27,42,74,0.16)]" key={image} to="/recents/2026"><img alt="El Petit Príncep" loading="lazy" width="640" height="860" className="h-full min-h-48 w-full rounded-lg object-cover" src={image} /></Link>)}</div>
+      </div>
+    </section>
   </>;
 }
 
