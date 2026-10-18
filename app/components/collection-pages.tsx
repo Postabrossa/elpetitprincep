@@ -167,17 +167,27 @@ export function CollectionPage() {
 export function RecentPage() {
   const { year: yearParam } = useParams();
   const year = Number(yearParam);
-  const validYear = year >= 2020 && year <= 2026;
+  const validYear = year in recentCounts;
   const [preview, setPreview] = useState<number | null>(null);
   const imageUrl = (index: number) => `/collection-assets/recents/${year}/${String(index + 1).padStart(2, "0")}.webp`;
-  return <section className="content-page recent-page">
-    <PageHeading kicker="LLIBRES RECENTS · MY LATEST BOOKS" title="Llibres recents" subtitle="New editions added to the collection" />
-    <div className="year-tabs" aria-label="Tria l'any">{[2026, 2025, 2024, 2023, 2022, 2021, 2020].map((item) => <Link className={item === year ? "year-tab year-tab-active" : "year-tab"} key={item} to={`/recents/${item}`}>{item}</Link>)}</div>
-    <div className="year-title"><span>✦</span><h2>{validYear ? year : "Any no disponible"}</h2><span>✦</span></div>
-    {validYear ? <div className="edition-grid">{Array.from({ length: recentCounts[year] }, (_, i) => <button className="edition-tile" key={i} type="button" onClick={() => setPreview(i)} aria-label={`Amplia la coberta ${i + 1}, ${year}`}><img loading="lazy" src={imageUrl(i)} alt={`Edició del Petit Príncep, ${year}`} /></button>)}</div> : <p className="section-empty">No hi ha una pàgina disponible per a aquest any.</p>}
-    <div className="recent-quote"><span>✦</span><p>«Anant tot recte, no es pot anar gaire lluny.»<em>Straight ahead of him, nobody can go very far.</em></p></div>
+  return <>
+    <section className="starry relative isolate overflow-hidden text-white">
+      <StarField />
+      <div aria-hidden="true" className="drift absolute top-1/2 right-[6%] -z-10 hidden h-44 w-44 -translate-y-1/2 opacity-90 md:block lg:h-56 lg:w-56"><img src="/collection-assets/home/fox.svg" alt="" className="sway h-full w-full object-contain" /></div>
+      <div className="[&_a]:text-yellow [&_a]:decoration-yellow/40 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+        <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />Recents / Latest</p>
+        <h1 className="font-display mt-4 max-w-4xl text-5xl leading-[0.98] font-semibold tracking-[-0.02em] sm:text-7xl">{year === 2026 ? "Llibres recents" : validYear ? `Llibres del ${year}` : "Any no disponible"}</h1>
+        <p className="font-hand text-yellow mt-4 max-w-2xl text-3xl">Latest books</p>
+        <div className="mt-8 flex flex-wrap gap-2 [&_a]:no-underline">{[2026, 2025, 2024, 2023, 2022, 2021, 2020].map((item) => <Link className={`rounded-full px-4 py-2 text-sm font-bold ${item === year ? "bg-yellow !text-night" : "border border-white/30 !text-white"}`} key={item} to={`/recents/${item}`}>{item}</Link>)}</div>
+      </div>
+      <svg aria-hidden="true" viewBox="0 0 1440 40" preserveAspectRatio="none" className="text-paper absolute bottom-0 left-0 h-6 w-full sm:h-10"><path d="M0 40 C240 10 480 0 720 14 C960 28 1200 30 1440 8 L1440 40Z" fill="currentColor" /></svg>
+    </section>
+    <section className="px-5 py-14 sm:px-8 lg:px-12 lg:py-20"><div className="mx-auto max-w-[1360px]"><div className="grid gap-12">
+      {year === 2026 && <div className="grid gap-4"><div aria-hidden="true" className="text-gold flex justify-center"><StarIcon className="h-4 w-4" /></div><div className="mx-auto max-w-3xl text-center"><h2 className="font-display text-ink mt-6 text-3xl font-semibold first:mt-0"><span>2026</span></h2></div></div>}
+      {validYear ? <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">{Array.from({ length: recentCounts[year] }, (_, index) => <button className="border-line rounded-xl border bg-white p-2 text-left shadow-[0_6px_18px_rgba(27,42,74,0.08)] transition duration-300 hover:-translate-y-1 hover:rotate-[-0.6deg]" key={index} type="button" onClick={() => setPreview(index)} aria-label={`Amplia la coberta ${index + 1}, ${year}`}><img alt="El Petit Príncep" loading="lazy" width="600" height="820" className="h-auto w-full rounded-md" src={imageUrl(index)} /></button>)}</div> : <p className="section-empty">No hi ha una pàgina disponible per a aquest any.</p>}
+    </div></div></section>
     {preview !== null && <BookPreview image={imageUrl(preview)} title={`Edició del Petit Príncep · ${year}`} onClose={() => setPreview(null)} />}
-  </section>;
+  </>;
 }
 
 export function SpecialPage() {
