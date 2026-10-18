@@ -40,12 +40,12 @@ part of that build, not leave them as an empty template.
 
 - Product mode: `experience`
 - Audience and cadence: Collectors browsing a multilingual literary collection at a relaxed pace.
-- Visual world (name + the feeling it creates): A quiet, bookish cabinet of curiosities with a hint of stargazing.
-- Palette family + neutral undertone: Muted plum, parchment, and warm stone neutrals with a soft golden accent.
-- Type treatment: Elegant literary serif headlines paired with compact, letter-spaced sans-serif labels and bilingual italic translations.
-- Composition: Spacious editorial hero followed by a tidy grid of collectible edition covers and a restrained footer.
-- Shape language: Simple rectangles, fine rules, and subtle orbital circles; keep controls understated.
-- Anti-references (defaults this app must not drift toward): Generic gray SaaS dashboards, bright primary colors, heavy rounded cards, dense navigation chrome, and stock-photo hero banners.
+- Visual world (name + the feeling it creates): A stargazer's catalogue of treasured editions, warm and literary rather than commercial.
+- Palette family + neutral undertone: Midnight navy, parchment, and soft paper neutrals with a clear golden accent.
+- Type treatment: Literary serif headings paired with crisp sans-serif navigation and bilingual italic translations.
+- Composition: Dark shared navigation above spacious paper-toned sections, real book covers, compact edition grids, and a restrained footer.
+- Shape language: Gently rounded image frames, thin gold rules, constellation details, and minimal controls.
+- Anti-references (defaults this app must not drift toward): Generic gray SaaS dashboards, bright primary colors, oversized rounded cards, dense navigation chrome, and unrelated stock-photo banners.
 
 ## Agent-Native is structural, not visual
 

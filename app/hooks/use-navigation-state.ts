@@ -23,13 +23,28 @@ export function useNavigationState() {
 
 function viewForPath(pathname: string): string {
   if (pathname === "/") return "home";
-  return "home";
+  if (pathname.startsWith("/recents/")) return "recents";
+  return pathname.split("/").filter(Boolean)[0] ?? "home";
 }
 
 function pathForView(view?: string): string {
   switch (view) {
     case "home":
       return "/";
+    case "collection":
+      return "/collection";
+    case "recents":
+      return "/recents/2026";
+    case "special":
+      return "/special";
+    case "wishlist":
+      return "/wishlist";
+    case "doubles":
+      return "/doubles";
+    case "collectors":
+      return "/collectors";
+    case "contact":
+      return "/contact";
     default:
       return "/";
   }

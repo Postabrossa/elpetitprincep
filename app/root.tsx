@@ -32,7 +32,7 @@ const THEME_INIT_SCRIPT = getThemeInitScript();
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="ca" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta
