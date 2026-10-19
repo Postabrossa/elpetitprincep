@@ -3,6 +3,7 @@ import { Link, useParams, useSearchParams } from "react-router";
 import { IconArrowRight, IconX } from "@tabler/icons-react";
 import { collectionSections } from "@/lib/collection-sections";
 import { specialBooks } from "@/lib/special-books";
+import { doubles } from "@/lib/doubles";
 
 const homepageSections = [
   { code: "B-325", title: "LA MEVA COL·LECCIÓ", subtitle: "My collection", detail: "Idiomes / Languages", href: "/collection" },
@@ -42,10 +43,6 @@ function RoseIllustration() {
 }
 
 const recentCounts: Record<number, number> = { 2020: 75, 2021: 139, 2022: 93, 2023: 86, 2024: 143, 2025: 79, 2026: 78 };
-
-const doubles = [
-  ["Català / Catalan (1967)", "c516b429eccb44cd_r98l.webp"], ["Anglès / English (1975)", "5412fd84ebeb591b_r98l.webp"], ["Espanyol / Spanish (1985)", "05963d37785ddc1a_r98l.webp"], ["Romanès / Romanian (1990)", "2fad31d36058ee1e_r98l.webp"], ["Xinès / Chinese (1992?)", "4bd1ec1c896b3436_r98l.webp"], ["Romanès / Romanian (1992)", "033099e0ae121892_r98l.webp"], ["Birmà / Burmese (2004)", "0129e473bf5aecec_r98l.webp"], ["Islandès / Icelandic (2010?)", "88640001cffb7ac9_r98l.webp"], ["Albanès Tosc / Albanian Tosk (2010)", "78dbdbd11d0fe43d_r98l.webp"], ["Català balear / Balearic Catalan (2022)", "f75d6e2f40801516_r98l.webp"], ["Gaèlic irlandès / Irish Gaelic (2015)", "d446033d57fa1ae0_r98l.webp"], ["Romanès / Romanian (2015)", "d89e2abe3fd6f6e6_r98l.webp"], ["Romanès / Romanian (2015)", "b7f1906167650b2f_r98l.webp"], ["Romanès / Romanian (2015)", "dae03ad838aabd98_r98l.webp"], ["Maltès / Maltese (2016)", "23e14915e4d7193c_r98l.webp"], ["Txuvaix / Chuvash (2017)", "0142fe4b136b84fe_r98l.webp"], ["Friburg / Fribourgeois (2017)", "ee220037b4ad158c_r98l.webp"], ["Bielorús / Belarusian (2017)", "b36a0bb2c057b6ef_r98l.webp"], ["Kumyk (2018)", "38fd46b0e1294574_r98l.webp"], ["Maputxe / Mapuche (2018)", "ee359a5190d7e97c_r98l.webp"], ["Toki Pona (Sitelen Pona) (2020)", "afcf2f775209c385_r98l.webp"], ["Intereslau / Interslavic (2021)", "30967dc64026bb57_r98l.webp"], ["Àzeri àrab / Azeri Arabic (2007)", "1e46aaec72fd6956_r98l.webp"], ["Hongarès rúnic / Runic Hungarian (2018)", "c98955854f56ee8a_r98l.webp"], ["Xinès Hakka / Hakka Chinese (2000)", "5edd27b329c3eb11_r98l.webp"],
-];
 
 function PageHeading({ kicker, title, subtitle }: { kicker: string; title: string; subtitle: string }) {
   return <div className="page-heading"><span className="page-kicker">{kicker}</span><h1>{title}</h1><p>{subtitle}</p></div>;
@@ -219,7 +216,25 @@ export function WishlistPage() {
 }
 
 export function DoublesPage() {
-  return <section className="content-page"><PageHeading kicker="PER INTERCANVIAR" title="Dobles" subtitle="Doubles" /><div className="doubles-intro"><p>Si teniu el buriat, el turcman ciríl·lic o alguna primera edició interessant... parleu amb mi, potser tinc altres llibres repetits que us podrien interessar.</p><em>If you have the Buryat, Cyrillic Turkmen or an interesting first edition, get in touch; I may have other doubles to trade.</em><Link to="/contact">Parlem-ne <IconArrowRight size={15} /></Link></div><div className="doubles-grid">{doubles.map(([title, image]) => <article className="double-card" key={image}><img loading="lazy" src={`/collection-assets/doubles/${image}`} alt={title} /><p>{title}</p></article>)}</div></section>;
+  const renderCovers = (covers: readonly { title: string; image: string; query: string }[]) => <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">{covers.map((cover) => <div className="border-line rounded-xl border bg-white p-2 shadow-[0_6px_18px_rgba(27,42,74,0.08)] transition duration-300 hover:-translate-y-1 hover:rotate-[-0.6deg]" key={cover.image}><Link to={`/collection?q=${encodeURIComponent(cover.query)}`}><img alt={cover.title} loading="lazy" width="600" height="820" className="h-auto w-full rounded-md" src={`/collection-assets/doubles/${cover.image}`} /></Link><p className="text-ink-soft mt-2 px-1 pb-1 text-center text-sm leading-snug">{cover.title}</p></div>)}</div>;
+  return <>
+    <section className="starry relative isolate overflow-hidden text-white">
+      <StarField />
+      <div aria-hidden="true" className="drift absolute top-1/2 right-[6%] -z-10 hidden h-44 w-44 -translate-y-1/2 opacity-90 md:block lg:h-56 lg:w-56"><img src="/collection-assets/home/fox.svg" alt="" className="sway h-full w-full object-contain" /></div>
+      <div className="[&_a]:text-yellow [&_a]:decoration-yellow/40 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+        <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />Dobles / Doubles</p>
+        <h1 className="font-display mt-4 max-w-4xl text-5xl leading-[0.98] font-semibold tracking-[-0.02em] sm:text-7xl">Dobles per intercanviar</h1>
+        <p className="font-hand text-yellow mt-4 max-w-2xl text-3xl">Doubles for exchange</p>
+      </div>
+      <svg aria-hidden="true" viewBox="0 0 1440 40" preserveAspectRatio="none" className="text-paper absolute bottom-0 left-0 h-6 w-full sm:h-10"><path d="M0 40 C240 10 480 0 720 14 C960 28 1200 30 1440 8 L1440 40Z" fill="currentColor" /></svg>
+    </section>
+    <section className="px-5 py-14 sm:px-8 lg:px-12 lg:py-20"><div className="mx-auto max-w-[1360px]"><div className="grid gap-12">
+      <div className="grid gap-4"><div aria-hidden="true" className="text-gold flex justify-center"><StarIcon className="h-4 w-4" /></div><div className="mx-auto max-w-3xl text-center"><h2 className="font-display text-ink mt-6 text-3xl font-semibold first:mt-0">Si teniu el Buriat, el turcman ciríl·lic o alguna primera edició interessant... parleu amb mi, potser tinc altres llibres repetits que us podrien interessar.</h2><h2 className="font-display text-ink mt-6 text-3xl font-semibold first:mt-0">If you have the Buryat, the Cyrillic Turkmen or some interesting first edition ... talk to me, maybe i have other doubles that might interest you.</h2></div></div>
+      <div className="grid gap-4">{renderCovers(doubles.regular)}</div>
+      <div className="grid gap-4"><div aria-hidden="true" className="text-gold flex justify-center"><StarIcon className="h-4 w-4" /></div><div className="mx-auto max-w-3xl text-center"><h2 className="font-display text-ink mt-6 text-3xl font-semibold first:mt-0">Llibres per a intercanvis especials / Special Exchange Books :</h2></div></div>
+      <div className="grid gap-4">{renderCovers(doubles.special)}</div>
+    </div></div></section>
+  </>;
 }
 
 export function ContactPage() {
