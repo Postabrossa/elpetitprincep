@@ -35,14 +35,11 @@ export function FoxIllustration() {
 }
 
 function SectionHeroIllustration({ className = "" }: { className?: string }) {
-  return <div aria-hidden="true" className={`pointer-events-none ${className}`}>
-    <img src="/collection-assets/home/planet.svg" alt="" className="drift absolute inset-0 h-full w-full object-contain" />
-    <img src="/collection-assets/home/rose.svg" alt="" className="sway absolute top-0 right-[14%] h-[68%] w-[48%] object-contain" />
-  </div>;
+  return <img aria-hidden="true" src="/collection-assets/home/planet-cutout.png" alt="" className={`pointer-events-none object-contain ${className}`} />;
 }
 
 function PlanetIllustration() {
-  return <img src="/collection-assets/home/planet.svg" alt="" className="absolute -right-6 -bottom-8 h-28 w-28 opacity-25 transition duration-500 group-hover:rotate-12 group-hover:opacity-60" />;
+  return <img src="/collection-assets/home/planet-cutout.png" alt="" className="absolute -right-6 -bottom-8 h-28 w-auto opacity-25 saturate-50 transition duration-300 group-hover:rotate-6 group-hover:opacity-100 group-hover:saturate-100" />;
 }
 
 function RoseIllustration() {
@@ -51,8 +48,17 @@ function RoseIllustration() {
 
 const recentCounts: Record<number, number> = { 2020: 75, 2021: 139, 2022: 93, 2023: 86, 2024: 143, 2025: 79, 2026: 78 };
 
-function PageHeading({ kicker, title, subtitle }: { kicker: string; title: string; subtitle: string }) {
-  return <div className="page-heading relative"><SectionHeroIllustration className="absolute top-1/2 right-0 z-0 h-16 w-16 -translate-y-1/2 opacity-50 sm:h-28 sm:w-28 md:opacity-90 lg:right-[8%] lg:h-36 lg:w-36" /><div className="relative z-10"><span className="page-kicker">{kicker}</span><h1>{title}</h1><p>{subtitle}</p></div></div>;
+function SectionHero({ kicker, title, subtitle }: { kicker: string; title: string; subtitle: string }) {
+  return <section className="starry relative isolate overflow-hidden text-white">
+    <StarField />
+    <SectionHeroIllustration className="absolute top-1/2 right-2 z-0 h-20 w-auto -translate-y-1/2 sm:right-[6%] sm:h-32 md:h-44 lg:h-56" />
+    <div className="[&_a]:text-yellow [&_a]:decoration-yellow/40 relative z-10 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+      <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />{kicker}</p>
+      <h1 className="font-display mt-4 max-w-4xl text-5xl leading-[0.98] font-semibold tracking-[-0.02em] sm:text-7xl">{title}</h1>
+      <p className="font-hand text-yellow mt-4 max-w-2xl text-3xl">{subtitle}</p>
+    </div>
+    <svg aria-hidden="true" viewBox="0 0 1440 40" preserveAspectRatio="none" className="text-paper absolute bottom-0 left-0 h-6 w-full sm:h-10"><path d="M0 40 C240 10 480 0 720 14 C960 28 1200 30 1440 8 L1440 40Z" fill="currentColor" /></svg>
+  </section>;
 }
 
 function BookPreview({ image, title, onClose }: { image: string; title: string; onClose: () => void }) {
@@ -123,8 +129,8 @@ export function CollectionPage() {
   return <>
     <section className="starry relative isolate overflow-hidden text-white">
       <StarField />
-      <div aria-hidden="true" className="drift absolute top-1/2 right-[6%] -z-10 hidden h-44 w-44 -translate-y-1/2 opacity-90 md:block lg:h-56 lg:w-56"><img src="/collection-assets/home/fox.svg" alt="" className="sway h-full w-full object-contain" /></div>
-      <div className="[&_a]:text-yellow [&_a]:decoration-yellow/40 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+      <SectionHeroIllustration className="absolute top-1/2 right-2 z-0 h-20 w-auto -translate-y-1/2 sm:right-[6%] sm:h-32 md:h-44 lg:h-56" />
+      <div className="[&_a]:text-yellow [&_a]:decoration-yellow/40 relative z-10 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
         <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />El Petit Príncep / The Little Prince</p>
         <h1 className="font-display mt-4 max-w-4xl text-5xl leading-[0.98] font-semibold tracking-[-0.02em] sm:text-7xl">La meva col·lecció</h1>
         <p className="font-hand text-yellow mt-4 max-w-2xl text-3xl">My collection</p>
@@ -165,7 +171,7 @@ export function RecentPage() {
   return <>
     <section className="starry relative isolate overflow-hidden text-white">
       <StarField />
-      <SectionHeroIllustration className="absolute top-1/2 right-2 z-0 h-20 w-20 -translate-y-1/2 opacity-35 sm:right-[6%] sm:h-32 sm:w-32 sm:opacity-60 md:h-44 md:w-44 md:opacity-95 lg:h-56 lg:w-56" />
+      <SectionHeroIllustration className="absolute top-1/2 right-2 z-0 h-20 w-auto -translate-y-1/2 sm:right-[6%] sm:h-32 md:h-44 lg:h-56" />
       <div className="[&_a]:text-yellow [&_a]:decoration-yellow/40 relative z-10 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
         <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />Recents / Latest</p>
         <h1 className="font-display mt-4 max-w-4xl text-5xl leading-[0.98] font-semibold tracking-[-0.02em] sm:text-7xl">{year === 2026 ? "Llibres recents" : validYear ? `Llibres del ${year}` : "Any no disponible"}</h1>
@@ -186,7 +192,7 @@ export function SpecialPage() {
   return <>
     <section className="starry relative isolate overflow-hidden text-white">
       <StarField />
-      <SectionHeroIllustration className="absolute top-1/2 right-2 z-0 h-20 w-20 -translate-y-1/2 opacity-35 sm:right-[6%] sm:h-32 sm:w-32 sm:opacity-60 md:h-44 md:w-44 md:opacity-95 lg:h-56 lg:w-56" />
+      <SectionHeroIllustration className="absolute top-1/2 right-2 z-0 h-20 w-auto -translate-y-1/2 sm:right-[6%] sm:h-32 md:h-44 lg:h-56" />
       <div className="[&_a]:text-yellow [&_a]:decoration-yellow/40 relative z-10 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
         <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />Llibres especials / Special books</p>
         <h1 className="font-display mt-4 max-w-4xl text-5xl leading-[0.98] font-semibold tracking-[-0.02em] sm:text-7xl">Llibres especials</h1>
@@ -209,7 +215,7 @@ export function WishlistPage() {
   return <>
     <section className="starry relative isolate overflow-hidden text-white">
       <StarField />
-      <SectionHeroIllustration className="absolute top-1/2 right-2 z-0 h-20 w-20 -translate-y-1/2 opacity-35 sm:right-[6%] sm:h-32 sm:w-32 sm:opacity-60 md:h-44 md:w-44 md:opacity-95 lg:h-56 lg:w-56" />
+      <SectionHeroIllustration className="absolute top-1/2 right-2 z-0 h-20 w-auto -translate-y-1/2 sm:right-[6%] sm:h-32 md:h-44 lg:h-56" />
       <div className="[&_a]:text-yellow [&_a]:decoration-yellow/40 relative z-10 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
         <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />Llibres buscats / Wishlist</p>
         <h1 className="font-display mt-4 max-w-4xl text-5xl leading-[0.98] font-semibold tracking-[-0.02em] sm:text-7xl">Llibres buscats</h1>
@@ -227,7 +233,7 @@ export function DoublesPage() {
   return <>
     <section className="starry relative isolate overflow-hidden text-white">
       <StarField />
-      <SectionHeroIllustration className="absolute top-1/2 right-2 z-0 h-20 w-20 -translate-y-1/2 opacity-35 sm:right-[6%] sm:h-32 sm:w-32 sm:opacity-60 md:h-44 md:w-44 md:opacity-95 lg:h-56 lg:w-56" />
+      <SectionHeroIllustration className="absolute top-1/2 right-2 z-0 h-20 w-auto -translate-y-1/2 sm:right-[6%] sm:h-32 md:h-44 lg:h-56" />
       <div className="[&_a]:text-yellow [&_a]:decoration-yellow/40 relative z-10 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
         <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />Dobles / Doubles</p>
         <h1 className="font-display mt-4 max-w-4xl text-5xl leading-[0.98] font-semibold tracking-[-0.02em] sm:text-7xl">Dobles per intercanviar</h1>
@@ -244,10 +250,79 @@ export function DoublesPage() {
   </>;
 }
 
+const nearbyCollectors = [
+  { name: "Anna Rodríguez", href: "https://www.instagram.com/b612collection/" },
+  { name: "Jordi Villalba", href: "https://www.instagram.com/jordivillalba/" },
+  { name: "Mertxe Ibáñez", href: "http://mislibrosdeelprincipito.blogspot.com/" },
+  { name: "Julian Blanco", href: "http://www.elprincipito.es/" },
+  { name: "Jordi Riera", href: "https://sites.google.com/view/beacesplenes" },
+  { name: "Nuri", href: "https://www.petitsprinceps.cat/benvinguts" },
+  { name: "Jaume", href: "https://www.auquicu.com/" },
+] as const;
+
+const internationalCollectors = [
+  { name: "Rosa Maxit", location: "Argentina / Argentina", href: "https://www.facebook.com/pg/El-Principito-colecci%C3%B3n-de-libros-del-Centro-Saboyano-de-San-Jos%C3%A9-235991173235901/photos/?ref=page_internal" },
+  { name: "Gerhard R. Volz", location: "Àustria / Austria", href: "http://www.petit-prince.at/" },
+  { name: "Patrick Baert", location: "Brussel·les / Brussels", href: "https://www.leslanguesdupetitprince.net/" },
+  { name: "Marina Kotarac", location: "Eslovènia / Slovenia", href: "https://marinakotarac.github.io/" },
+  { name: "Patrick Tourreau", location: "França / France", href: "http://www.patoche.org/lepetitprince/" },
+  { name: "Dominique Durozier", location: "França / France", href: "http://lepetitprince.eu.com/collection_du_Petit_Prince/Bienvenue.html" },
+  { name: "Kuncoro Wastuwibowo", location: "Indonèsia / Indonesia", href: "https://pangerankecil.com/" },
+  { name: "Anna K. Chiti", location: "Itàlia / Italy", href: "https://annaslittleprincecollection.com/" },
+  { name: "Antonio Fragomeni", location: "Itàlia /Italy", href: "http://principito.fragomeni.it/collezione/collezione.php?lang=es" },
+  { name: "Estefanía Sierra", location: "Mèxic / Mexico", href: "http://sierrazanella.wixsite.com/principito" },
+  { name: "Andries Brouwer", location: "Països Baixos / Netherlands", href: "http://homepages.cwi.nl/~aeb/prive/tlp/tlp.html" },
+  { name: "Ferenc Csorba", location: "Països Baixos / Netherlands", href: "https://csorba-ferenc.com/" },
+  { name: "Krzysiek Maciejewski", location: "Polònia / Poland", href: "https://malyksiaze.net/en" },
+  { name: "Mehmet Sobaci", location: "Turquia / Turkey", href: "http://www.mehmetsobaci.com/1-english-list/" },
+  { name: "Oytun Eriş", location: "Turquia / Turkey", href: "https://oytuneris.wixsite.com/littleprince?fbclid=IwAR2Q6fVq5euPR4AFgPZwIfF2sxcUbWAjebGlUKuqKcTnhnNOhZNg1cVa6uQ" },
+  { name: "Yildiray Lise", location: "Turquia / Turkey", href: "https://yildiraylise.wordpress.com/kucukprens/" },
+] as const;
+
 export function ContactPage() {
-  return <section className="content-page contact-page"><PageHeading kicker="ESCRIU-ME · GET IN TOUCH" title="Contacte" subtitle="Contact" /><div className="contact-panel"><span className="contact-star">✦</span><h2>Compartim històries</h2><p>Vols parlar d’una edició, proposar un intercanvi o compartir una història del Petit Príncep?</p><a href="mailto:idiomes.del.petit.princep@gmail.com">idiomes.del.petit.princep@gmail.com <IconArrowRight size={16} /></a><a href="mailto:littleprincecollection@gmail.com">littleprincecollection@gmail.com <IconArrowRight size={16} /></a></div></section>;
+  return <>
+    <SectionHero kicker="Contacte / Contact" title="Contacte" subtitle="Contact" />
+    <section className="px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
+      <div className="mx-auto grid max-w-[1120px] items-center gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+        <div className="relative mx-auto w-full max-w-[420px]"><img alt="El Petit Príncep / The Little Prince" loading="lazy" width="375" height="322" className="h-auto w-full mix-blend-multiply" src="/collection-assets/contact/contact-prince.png" /></div>
+        <div>
+          <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />EL PETIT PRÍNCEP / THE LITTLE PRINCE</p>
+          <div className="mt-7 grid gap-6 text-base leading-8">
+            <p>El Petit Príncep (en francès, Le Petit Prince) és l’obra més coneguda d’Antoine de Saint-Exupéry. Publicat el 1943 a Nova York, és un conte poètic i filosòfic sota l’aparença d’un conte per a nens. Degut al seu èxit, l’obra ha esdevingut un dels llibres més traduïts al món.</p>
+            <p>Jo col·lecciono aquestes traduccions…</p>
+            <p className="text-ink-soft italic">The Little Prince (in French, Le Petit Prince) is the best-known work of Antoine de Saint-Exupéry. Published in 1943 in New York, it is a poetic and philosophical tale in the guise of a children's tale. Due to its success, the book has become one of the most translated books in the world.</p>
+            <p className="text-ink-soft italic">I collect these translations ...</p>
+          </div>
+          <div className="border-line mt-10 border-t pt-6">
+            <p className="text-ink-soft text-sm">Si tens alguna suggerència pots escriure a / If you have any suggestions you can write to:</p>
+            <div className="mt-4 grid gap-2 text-sm font-semibold">
+              <a className="text-blue decoration-blue/30 hover:decoration-blue underline underline-offset-4" href="mailto:idiomes.del.petit.princep@gmail.com">idiomes.del.petit.princep@gmail.com</a>
+              <a className="text-blue decoration-blue/30 hover:decoration-blue underline underline-offset-4" href="mailto:littleprincecollection@gmail.com">littleprincecollection@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </>;
 }
 
 export function CollectorsPage() {
-  return <section className="content-page"><PageHeading kicker="UNA HISTÒRIA COMPARTIDA" title="Altres col·leccionistes" subtitle="Other collectors" /><div className="section-empty collectors-empty"><span>✦</span><p>Aquesta secció encara no té contingut.</p><Link to="/contact">Posa’t en contacte <IconArrowRight size={16} /></Link></div></section>;
+  return <>
+    <SectionHero kicker="Altres col·leccionistes / Other collectors" title="Altres Col·leccionistes" subtitle="Other Collectors" />
+    <section className="px-5 py-14 sm:px-8 lg:px-12 lg:py-20">
+      <div className="mx-auto max-w-[1360px]"><div className="grid gap-12">
+        <div className="grid gap-4">
+          <div aria-hidden="true" className="text-gold flex justify-center"><StarIcon className="h-4 w-4" /></div>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-ink mt-3 text-base leading-7">COL·LECCIONISTES PROPERS / CLOSE COLLECTORS:</p>
+            {nearbyCollectors.map((collector) => <p className="text-ink mt-3 text-base leading-7" key={collector.name}><a className="text-blue decoration-blue/30 hover:decoration-blue font-semibold underline underline-offset-4" href={collector.href} target="_blank" rel="noreferrer">{collector.name}</a></p>)}
+            <p className="text-ink mt-3 text-base leading-7">COL·LECCIONISTES D&apos;ALTRES PAÏSOS / COLLECTORS FROM OTHER COUNTRIES:</p>
+            {internationalCollectors.map((collector) => <p className="text-ink mt-3 text-base leading-7" key={collector.name}><a className="text-blue decoration-blue/30 hover:decoration-blue font-semibold underline underline-offset-4" href={collector.href} target="_blank" rel="noreferrer">{collector.name}</a> ({collector.location})</p>)}
+            <p className="text-ink mt-3 text-base leading-7">LA COL·LECCIÓ MÉS GRAN / THE LARGEST COLLECTION:</p>
+            <p className="text-ink mt-3 text-base leading-7"><a className="text-blue decoration-blue/30 hover:decoration-blue font-semibold underline underline-offset-4" href="http://www.petit-prince-collection.com/lang/collection.php?lang=es" target="_blank" rel="noreferrer">Jean Marc Probst</a> (Suïssa / Switzerland)</p>
+          </div>
+        </div>
+      </div></div>
+    </section>
+  </>;
 }
