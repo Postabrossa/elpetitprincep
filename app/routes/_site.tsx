@@ -55,7 +55,7 @@ export default function SiteLayout() {
       <main><Outlet /></main>
       <footer className="starry relative isolate overflow-hidden text-white">
         <StarField footer />
-        <div className="mx-auto max-w-[1360px] px-5 pt-4 pb-10 sm:px-8 lg:px-12">
+        <div className="mx-auto max-w-[1360px] px-5 pt-6 pb-10 sm:px-8 lg:px-12">
           <div className="flex flex-col items-center text-center">
             <FoxIllustration />
             <p className="font-hand text-yellow mt-6 max-w-3xl text-3xl leading-tight sm:text-4xl">« Em pregunto si les estrelles estan enceses perquè cadascú pugui trobar un dia la seva. »</p>

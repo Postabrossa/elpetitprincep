@@ -31,7 +31,7 @@ export function StarField({ footer = false }: { footer?: boolean }) {
 }
 
 export function FoxIllustration() {
-  return <img src="/collection-assets/home/fox-cutout.png" alt="" className="sway h-24 w-auto" />;
+  return <img src="/collection-assets/home/fox-cutout.png" alt="" className="sway h-28 w-auto" />;
 }
 
 function SectionHeroIllustration({ className = "" }: { className?: string }) {
