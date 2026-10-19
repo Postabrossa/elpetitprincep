@@ -34,6 +34,13 @@ export function FoxIllustration() {
   return <img src="/collection-assets/home/fox.svg" alt="" className="sway h-28 w-auto" />;
 }
 
+function SectionHeroIllustration({ className = "" }: { className?: string }) {
+  return <div aria-hidden="true" className={`pointer-events-none ${className}`}>
+    <img src="/collection-assets/home/planet.svg" alt="" className="drift absolute inset-0 h-full w-full object-contain" />
+    <img src="/collection-assets/home/rose.svg" alt="" className="sway absolute top-0 right-[14%] h-[68%] w-[48%] object-contain" />
+  </div>;
+}
+
 function PlanetIllustration() {
   return <img src="/collection-assets/home/planet.svg" alt="" className="absolute -right-6 -bottom-8 h-28 w-28 opacity-25 transition duration-500 group-hover:rotate-12 group-hover:opacity-60" />;
 }
@@ -45,7 +52,7 @@ function RoseIllustration() {
 const recentCounts: Record<number, number> = { 2020: 75, 2021: 139, 2022: 93, 2023: 86, 2024: 143, 2025: 79, 2026: 78 };
 
 function PageHeading({ kicker, title, subtitle }: { kicker: string; title: string; subtitle: string }) {
-  return <div className="page-heading"><span className="page-kicker">{kicker}</span><h1>{title}</h1><p>{subtitle}</p></div>;
+  return <div className="page-heading relative"><SectionHeroIllustration className="absolute top-1/2 right-0 z-0 h-16 w-16 -translate-y-1/2 opacity-50 sm:h-28 sm:w-28 md:opacity-90 lg:right-[8%] lg:h-36 lg:w-36" /><div className="relative z-10"><span className="page-kicker">{kicker}</span><h1>{title}</h1><p>{subtitle}</p></div></div>;
 }
 
 function BookPreview({ image, title, onClose }: { image: string; title: string; onClose: () => void }) {
@@ -116,8 +123,8 @@ export function CollectionPage() {
   return <>
     <section className="starry relative isolate overflow-hidden text-white">
       <StarField />
-      <div aria-hidden="true" className="drift absolute top-1/2 right-[6%] -z-10 hidden h-44 w-44 -translate-y-1/2 opacity-90 md:block lg:h-56 lg:w-56"><img src="/collection-assets/home/fox.svg" alt="" className="sway h-full w-full object-contain" /></div>
-      <div className="[&_a]:text-yellow [&_a]:decoration-yellow/40 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+      <SectionHeroIllustration className="absolute top-1/2 right-2 z-0 h-20 w-20 -translate-y-1/2 opacity-35 sm:right-[6%] sm:h-32 sm:w-32 sm:opacity-60 md:h-44 md:w-44 md:opacity-95 lg:h-56 lg:w-56" />
+      <div className="[&_a]:text-yellow [&_a]:decoration-yellow/40 relative z-10 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
         <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />El Petit Príncep / The Little Prince</p>
         <h1 className="font-display mt-4 max-w-4xl text-5xl leading-[0.98] font-semibold tracking-[-0.02em] sm:text-7xl">La meva col·lecció</h1>
         <p className="font-hand text-yellow mt-4 max-w-2xl text-3xl">My collection</p>
@@ -158,8 +165,8 @@ export function RecentPage() {
   return <>
     <section className="starry relative isolate overflow-hidden text-white">
       <StarField />
-      <div aria-hidden="true" className="drift absolute top-1/2 right-[6%] -z-10 hidden h-44 w-44 -translate-y-1/2 opacity-90 md:block lg:h-56 lg:w-56"><img src="/collection-assets/home/fox.svg" alt="" className="sway h-full w-full object-contain" /></div>
-      <div className="[&_a]:text-yellow [&_a]:decoration-yellow/40 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+      <SectionHeroIllustration className="absolute top-1/2 right-2 z-0 h-20 w-20 -translate-y-1/2 opacity-35 sm:right-[6%] sm:h-32 sm:w-32 sm:opacity-60 md:h-44 md:w-44 md:opacity-95 lg:h-56 lg:w-56" />
+      <div className="[&_a]:text-yellow [&_a]:decoration-yellow/40 relative z-10 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
         <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />Recents / Latest</p>
         <h1 className="font-display mt-4 max-w-4xl text-5xl leading-[0.98] font-semibold tracking-[-0.02em] sm:text-7xl">{year === 2026 ? "Llibres recents" : validYear ? `Llibres del ${year}` : "Any no disponible"}</h1>
         <p className="font-hand text-yellow mt-4 max-w-2xl text-3xl">Latest books</p>
@@ -179,8 +186,8 @@ export function SpecialPage() {
   return <>
     <section className="starry relative isolate overflow-hidden text-white">
       <StarField />
-      <div aria-hidden="true" className="drift absolute top-1/2 right-[6%] -z-10 hidden h-44 w-44 -translate-y-1/2 opacity-90 md:block lg:h-56 lg:w-56"><img src="/collection-assets/home/fox.svg" alt="" className="sway h-full w-full object-contain" /></div>
-      <div className="[&_a]:text-yellow [&_a]:decoration-yellow/40 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+      <SectionHeroIllustration className="absolute top-1/2 right-2 z-0 h-20 w-20 -translate-y-1/2 opacity-35 sm:right-[6%] sm:h-32 sm:w-32 sm:opacity-60 md:h-44 md:w-44 md:opacity-95 lg:h-56 lg:w-56" />
+      <div className="[&_a]:text-yellow [&_a]:decoration-yellow/40 relative z-10 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
         <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />Llibres especials / Special books</p>
         <h1 className="font-display mt-4 max-w-4xl text-5xl leading-[0.98] font-semibold tracking-[-0.02em] sm:text-7xl">Llibres especials</h1>
         <p className="font-hand text-yellow mt-4 max-w-2xl text-3xl">Special books</p>
@@ -202,8 +209,8 @@ export function WishlistPage() {
   return <>
     <section className="starry relative isolate overflow-hidden text-white">
       <StarField />
-      <div aria-hidden="true" className="drift absolute top-1/2 right-[6%] -z-10 hidden h-44 w-44 -translate-y-1/2 opacity-90 md:block lg:h-56 lg:w-56"><img src="/collection-assets/home/fox.svg" alt="" className="sway h-full w-full object-contain" /></div>
-      <div className="[&_a]:text-yellow [&_a]:decoration-yellow/40 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+      <SectionHeroIllustration className="absolute top-1/2 right-2 z-0 h-20 w-20 -translate-y-1/2 opacity-35 sm:right-[6%] sm:h-32 sm:w-32 sm:opacity-60 md:h-44 md:w-44 md:opacity-95 lg:h-56 lg:w-56" />
+      <div className="[&_a]:text-yellow [&_a]:decoration-yellow/40 relative z-10 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
         <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />Llibres buscats / Wishlist</p>
         <h1 className="font-display mt-4 max-w-4xl text-5xl leading-[0.98] font-semibold tracking-[-0.02em] sm:text-7xl">Llibres buscats</h1>
         <p className="font-hand text-yellow mt-4 max-w-2xl text-3xl">Wishlist</p>
@@ -220,8 +227,8 @@ export function DoublesPage() {
   return <>
     <section className="starry relative isolate overflow-hidden text-white">
       <StarField />
-      <div aria-hidden="true" className="drift absolute top-1/2 right-[6%] -z-10 hidden h-44 w-44 -translate-y-1/2 opacity-90 md:block lg:h-56 lg:w-56"><img src="/collection-assets/home/fox.svg" alt="" className="sway h-full w-full object-contain" /></div>
-      <div className="[&_a]:text-yellow [&_a]:decoration-yellow/40 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+      <SectionHeroIllustration className="absolute top-1/2 right-2 z-0 h-20 w-20 -translate-y-1/2 opacity-35 sm:right-[6%] sm:h-32 sm:w-32 sm:opacity-60 md:h-44 md:w-44 md:opacity-95 lg:h-56 lg:w-56" />
+      <div className="[&_a]:text-yellow [&_a]:decoration-yellow/40 relative z-10 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
         <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />Dobles / Doubles</p>
         <h1 className="font-display mt-4 max-w-4xl text-5xl leading-[0.98] font-semibold tracking-[-0.02em] sm:text-7xl">Dobles per intercanviar</h1>
         <p className="font-hand text-yellow mt-4 max-w-2xl text-3xl">Doubles for exchange</p>
