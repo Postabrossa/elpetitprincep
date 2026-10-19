@@ -46,7 +46,7 @@ function PlanetIllustration() {
 }
 
 function RoseIllustration() {
-  return <img src="/collection-assets/home/rose.svg" alt="" className="absolute -top-10 -right-3 h-24 w-16 rotate-[8deg]" />;
+  return <img src="/collection-assets/home/rose-cutout.png" alt="" className="absolute -top-10 -right-3 h-32 w-auto rotate-[8deg]" />;
 }
 
 const recentCounts: Record<number, number> = { 2020: 75, 2021: 139, 2022: 93, 2023: 86, 2024: 143, 2025: 79, 2026: 78 };
