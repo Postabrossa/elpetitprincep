@@ -31,7 +31,7 @@ export function StarField({ footer = false }: { footer?: boolean }) {
 }
 
 export function FoxIllustration() {
-  return <img src="/collection-assets/home/fox.svg" alt="" className="sway h-28 w-auto" />;
+  return <img src="/collection-assets/home/fox-cutout.png" alt="" className="sway h-24 w-auto" />;
 }
 
 function SectionHeroIllustration({ className = "" }: { className?: string }) {
@@ -39,7 +39,7 @@ function SectionHeroIllustration({ className = "" }: { className?: string }) {
 }
 
 function PlanetIllustration() {
-  return <img src="/collection-assets/home/planet-card-cutout.png" alt="" className="absolute -right-6 -bottom-8 h-28 w-auto opacity-25 saturate-50 transition duration-300 group-hover:rotate-6 group-hover:opacity-100 group-hover:saturate-100" />;
+  return <img src="/collection-assets/home/planet-cutout.png" alt="" className="absolute -right-6 -bottom-8 h-28 w-auto opacity-25 saturate-50 transition duration-300 group-hover:rotate-6 group-hover:opacity-100 group-hover:saturate-100" />;
 }
 
 function RoseIllustration() {
