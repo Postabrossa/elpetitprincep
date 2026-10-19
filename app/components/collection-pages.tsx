@@ -71,7 +71,7 @@ export function HomePage() {
     <section className="starry relative isolate overflow-hidden text-white">
       <StarField />
       <div className="mx-auto grid min-h-[calc(100vh-72px)] max-w-[1360px] items-center gap-14 px-5 pt-16 pb-28 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:px-12 lg:pt-20 lg:pb-32">
-        <div className="max-w-3xl">
+        <div className="relative z-10 max-w-3xl">
           <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />Col·lecció de llibres</p>
           <h1 className="font-display mt-6 max-w-3xl text-6xl leading-[0.92] font-semibold tracking-[-0.02em] sm:text-8xl lg:text-[7.4rem]">El Petit Príncep</h1>
           <p className="font-hand text-yellow mt-4 text-4xl sm:text-5xl">The Little Prince</p>
@@ -81,7 +81,7 @@ export function HomePage() {
             <a className="hover:text-yellow hover:border-yellow inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3.5 text-sm font-bold text-white transition" href="#archive">Explora / Explore<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg></a>
           </div>
         </div>
-        <div className="relative mx-auto w-full max-w-[32rem] lg:ml-auto">
+        <div className="relative z-0 mx-auto w-full max-w-[32rem] lg:ml-auto">
           <div className="bg-yellow/20 absolute -inset-10 rounded-full blur-3xl" />
           <div className="drift ring-yellow/40 relative aspect-square overflow-hidden rounded-full shadow-[0_30px_80px_rgba(0,0,0,0.45)] ring-4"><img alt="El Petit Príncep al seu planeta" className="absolute inset-0 h-full w-full object-cover" src="https://cdn.builder.io/api/v1/image/assets%2F645fb30e9e9b40a7a07ff1db19df68d4%2F45a6ea1bc5c54cf584139cc7b3cea7ee?format=webp&width=800&height=1200" /></div>
           <div className="border-line absolute -bottom-6 -left-2 w-28 rotate-[-6deg] rounded-lg border-4 border-white bg-white shadow-2xl sm:w-36"><img alt="El Principito, el meu primer Petit Príncep" className="h-auto w-full rounded" loading="lazy" src="/collection-assets/home/editions/01.webp" /></div>
