@@ -83,7 +83,7 @@ export function HomePage() {
         </div>
         <div className="relative mx-auto w-full max-w-[32rem] lg:ml-auto">
           <div className="bg-yellow/20 absolute -inset-10 rounded-full blur-3xl" />
-          <div className="drift ring-yellow/40 relative aspect-square overflow-hidden rounded-full shadow-[0_30px_80px_rgba(0,0,0,0.45)] ring-4"><img alt="El Petit Príncep al seu planeta" className="absolute inset-0 h-full w-full object-cover" src="https://cdn.builder.io/api/v1/image/assets%2F645fb30e9e9b40a7a07ff1db19df68d4%2F04e77509c1f8451ab3840c743569c6f4?format=webp&width=800&height=1200" /></div>
+          <div className="drift ring-yellow/40 relative aspect-square overflow-hidden rounded-full shadow-[0_30px_80px_rgba(0,0,0,0.45)] ring-4"><img alt="El Petit Príncep al seu planeta" className="absolute inset-0 h-full w-full object-cover" src="https://cdn.builder.io/api/v1/image/assets%2F645fb30e9e9b40a7a07ff1db19df68d4%2F45a6ea1bc5c54cf584139cc7b3cea7ee?format=webp&width=800&height=1200" /></div>
           <div className="border-line absolute -bottom-6 -left-2 w-28 rotate-[-6deg] rounded-lg border-4 border-white bg-white shadow-2xl sm:w-36"><img alt="El Principito, el meu primer Petit Príncep" className="h-auto w-full rounded" loading="lazy" src="/collection-assets/home/editions/01.webp" /></div>
           <p className="font-hand text-yellow absolute -right-2 -bottom-8 rotate-[-4deg] text-2xl">Josep · Barcelona</p>
         </div>
