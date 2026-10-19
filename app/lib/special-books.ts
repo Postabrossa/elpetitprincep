@@ -56,17 +56,17 @@ export const specialBooks = [
     "english": "I have spent many years searching for this book. Every time it had run away. So much so, that I ended up calling it 'the damn book'. I finally got my fetish book."
   },
   {
-    "title": "Ang Munting Prinsipe",
-    "image": "fe4f938eb0d210e9_d-Wd.webp",
-    "language": "Tagal (Filipí)",
-    "text": "Reil·lustrant 'Ang Munting Prinsipe' fent servir  KINEGRAM  (animació de quadrícula de barrera) va ser creat per Loren per la seva Tesis universitària i que molt amablement m'ha enviat. Estic enamorat d'aquest llibre i les seves il·lustracions en moviment. EDICIÓ FORA DE COMERÇ.",
-    "english": "Re-illustrating ‘Ang Munting Prinsipe’ using  KINEGRAM  (barrier-grid animation) was the Loren college Thesis case study and kindly sent to me. I am falling in love with this book and its moving illustrations. NOT FOR SALE."
-  },
-  {
     "title": "Irechaeri Wap'a",
     "image": "ea72b62f75e806ea_d-Wd.webp",
     "language": "Purépecha",
     "text": "Aquest llibre s'ha creat amb esforç, bondat i molta il·lusió: la seva traducció, la seva llengua, la seva missió, la seva distribució i les seves il·lustracions (d'Ariel Pañeda, a qui li estic molt agraït) que ha sabut combinar magistralment l'essència del Petit Príncep amb les robes i els paisatges típics de Michoacán.",
     "english": "This book has been created with effort, kindness, and great enthusiasm: its translation, its language, its mission, its distribution, and its illustrations (by Ariel Pañeda, to whom I am very grateful), which have masterfully combined the essence of The Little Prince with the traditional clothing and landscapes of Michoacán."
+  },
+  {
+    "title": "Ang Munting Prinsipe",
+    "image": "fe4f938eb0d210e9_d-Wd.webp",
+    "language": "Tagal (Filipí)",
+    "text": "Reil·lustrant 'Ang Munting Prinsipe' fent servir  KINEGRAM  (animació de quadrícula de barrera) va ser creat per Loren per la seva Tesis universitària i que molt amablement m'ha enviat. Estic enamorat d'aquest llibre i les seves il·lustracions en moviment. EDICIÓ FORA DE COMERÇ.",
+    "english": "Re-illustrating ‘Ang Munting Prinsipe’ using  KINEGRAM  (barrier-grid animation) was the Loren college Thesis case study and kindly sent to me. I am falling in love with this book and its moving illustrations. NOT FOR SALE."
   }
 ] as const;

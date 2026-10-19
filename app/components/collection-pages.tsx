@@ -39,7 +39,7 @@ function SectionHeroIllustration({ className = "" }: { className?: string }) {
 }
 
 function PlanetIllustration() {
-  return <img src="/collection-assets/home/planet-card-cutout.png" alt="" className="absolute -right-6 -bottom-8 h-28 w-auto opacity-25 saturate-50 transition duration-300 group-hover:rotate-6 group-hover:opacity-100 group-hover:saturate-100" />;
+  return <img src="/collection-assets/home/planet-card-cutout.png" alt="" className="absolute -right-6 -bottom-8 z-0 h-28 w-auto opacity-25 saturate-50 transition duration-300 group-hover:rotate-6 group-hover:opacity-100 group-hover:saturate-100" />;
 }
 
 function RoseIllustration() {
@@ -105,8 +105,10 @@ export function HomePage() {
           <div className="grid gap-5 sm:grid-cols-2">
             {homepageSections.map((section) => <Link className="group border-line relative overflow-hidden rounded-3xl border bg-white/80 p-7 shadow-[0_6px_20px_rgba(27,42,74,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(27,42,74,0.14)]" key={section.code} to={section.href}>
               <PlanetIllustration />
-              <div className="flex items-start justify-between gap-4"><span className="bg-night text-yellow inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-bold tracking-[0.12em]"><StarIcon className="h-2.5 w-2.5" />{section.code}</span><svg className="text-blue transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></div>
-              <h3 className="text-ink mt-8 text-sm font-extrabold tracking-[0.12em] uppercase">{section.title}</h3><p className="font-hand text-blue mt-1 text-2xl">{section.subtitle}</p><p className="text-ink-soft relative mt-5 text-xs leading-5">{section.detail}</p>
+              <div className="relative z-10">
+                <div className="flex items-start justify-between gap-4"><span className="bg-night text-yellow inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-bold tracking-[0.12em]"><StarIcon className="h-2.5 w-2.5" />{section.code}</span><svg className="text-blue transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></div>
+                <h3 className="text-ink mt-8 text-sm font-extrabold tracking-[0.12em] uppercase">{section.title}</h3><p className="font-hand text-blue mt-1 text-2xl">{section.subtitle}</p><p className="text-ink-soft relative mt-5 text-xs leading-5">{section.detail}</p>
+              </div>
             </Link>)}
           </div>
         </div>
