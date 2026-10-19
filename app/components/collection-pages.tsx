@@ -103,7 +103,7 @@ export function HomePage() {
             </div>
           </div>
           <div className="grid gap-5 sm:grid-cols-2">
-            {homepageSections.map((section) => <Link className="group border-line relative overflow-hidden rounded-3xl border bg-white/80 p-7 shadow-[0_6px_20px_rgba(27,42,74,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(27,42,74,0.14)]" key={section.code} to={section.href}>
+            {homepageSections.map((section) => <Link className="group border-line relative overflow-hidden rounded-3xl border bg-white/80 p-7 shadow-[0_6px_20px_rgba(27,42,74,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(27,42,74,0.14)]" key={section.code} reloadDocument={section.href.startsWith("/recents/")} to={section.href}>
               <PlanetIllustration />
               <div className="relative z-10">
                 <div className="flex items-start justify-between gap-4"><span className="bg-night text-yellow inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-bold tracking-[0.12em]"><StarIcon className="h-2.5 w-2.5" />{section.code}</span><svg className="text-blue transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></div>
@@ -117,8 +117,8 @@ export function HomePage() {
     </section>
     <section className="px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
       <div className="mx-auto max-w-[1360px]">
-        <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"><div><p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />Recents / Latest</p><h2 className="font-display mt-4 text-4xl font-semibold sm:text-6xl">Llibres recents</h2></div><Link className="group text-blue decoration-blue/30 hover:decoration-blue inline-flex items-center gap-2 text-sm font-bold underline underline-offset-4" to="/recents/2026">Darreres incorporacions / My latest books<IconArrowRight size={16} /></Link></div>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">{recentCovers.map((image) => <Link className="group border-line block overflow-hidden rounded-xl border bg-white p-2 shadow-[0_6px_18px_rgba(27,42,74,0.08)] transition duration-300 hover:-translate-y-1 hover:rotate-[-0.6deg] hover:shadow-[0_14px_30px_rgba(27,42,74,0.16)]" key={image} to="/recents/2026"><img alt="El Petit Príncep" loading="lazy" width="640" height="860" className="h-full min-h-48 w-full rounded-lg object-cover" src={image} /></Link>)}</div>
+        <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"><div><p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />Recents / Latest</p><h2 className="font-display mt-4 text-4xl font-semibold sm:text-6xl">Llibres recents</h2></div><Link className="group text-blue decoration-blue/30 hover:decoration-blue inline-flex items-center gap-2 text-sm font-bold underline underline-offset-4" reloadDocument to="/recents/2026">Darreres incorporacions / My latest books<IconArrowRight size={16} /></Link></div>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">{recentCovers.map((image) => <Link className="group border-line block overflow-hidden rounded-xl border bg-white p-2 shadow-[0_6px_18px_rgba(27,42,74,0.08)] transition duration-300 hover:-translate-y-1 hover:rotate-[-0.6deg] hover:shadow-[0_14px_30px_rgba(27,42,74,0.16)]" key={image} reloadDocument to="/recents/2026"><img alt="El Petit Príncep" loading="lazy" width="640" height="860" className="h-full min-h-48 w-full rounded-lg object-cover" src={image} /></Link>)}</div>
       </div>
     </section>
   </>;
@@ -178,7 +178,7 @@ export function RecentPage() {
         <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />Recents / Latest</p>
         <h1 className="font-display mt-4 max-w-4xl text-5xl leading-[0.98] font-semibold tracking-[-0.02em] sm:text-7xl">{year === 2026 ? "Llibres recents" : validYear ? `Llibres del ${year}` : "Any no disponible"}</h1>
         <p className="font-hand text-yellow mt-4 max-w-2xl text-3xl">Latest books</p>
-        <div className="mt-8 flex flex-wrap gap-2 [&_a]:no-underline">{[2026, 2025, 2024, 2023, 2022, 2021, 2020].map((item) => <Link className={`rounded-full px-4 py-2 text-sm font-bold ${item === year ? "bg-yellow !text-night" : "border border-white/30 !text-white"}`} key={item} to={`/recents/${item}`}>{item}</Link>)}</div>
+        <div className="mt-8 flex flex-wrap gap-2 [&_a]:no-underline">{[2026, 2025, 2024, 2023, 2022, 2021, 2020].map((item) => <Link className={`rounded-full px-4 py-2 text-sm font-bold ${item === year ? "bg-yellow !text-night" : "border border-white/30 !text-white"}`} key={item} reloadDocument to={`/recents/${item}`}>{item}</Link>)}</div>
       </div>
       <svg aria-hidden="true" viewBox="0 0 1440 40" preserveAspectRatio="none" className="text-paper absolute bottom-0 left-0 h-6 w-full sm:h-10"><path d="M0 40 C240 10 480 0 720 14 C960 28 1200 30 1440 8 L1440 40Z" fill="currentColor" /></svg>
     </section>
