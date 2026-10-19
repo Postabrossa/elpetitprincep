@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router";
 import { IconArrowRight, IconX } from "@tabler/icons-react";
 import { collectionSections } from "@/lib/collection-sections";
+import collectionDetailData from "@/lib/collection-detail-data.json";
+import collectionRouteAliases from "@/lib/collection-route-aliases.json";
 import { specialBooks } from "@/lib/special-books";
 import { doubles } from "@/lib/doubles";
 
@@ -124,6 +126,11 @@ export function HomePage() {
   </>;
 }
 
+function collectionHref(name: string) {
+  const slug = (collectionRouteAliases as Record<string, string>)[name];
+  return slug ? `/collection/${encodeURIComponent(slug)}` : `/collection?q=${encodeURIComponent(name)}`;
+}
+
 export function CollectionPage() {
   const [params] = useSearchParams();
   const query = (params.get("q") ?? "").trim().toLocaleLowerCase("ca");
@@ -147,7 +154,7 @@ export function CollectionPage() {
         const items = query ? section.items.filter((item) => item.name.toLocaleLowerCase("ca").includes(query)) : section.items;
         if (!items.length) return null;
         return <div className="mt-12 first:mt-0" key={section.title}>
-          <h3 className="font-display text-ink flex items-center gap-3 text-3xl font-semibold"><StarIcon className="text-gold h-4 w-4" />{section.title}<span className="text-ink-soft font-sans text-sm font-normal">({query ? items.length : section.count})</span></h3><ul className="mt-5 gap-x-8 sm:columns-2 lg:columns-3 xl:columns-4">{items.map((item) => <li className="break-inside-avoid" key={item.name}><Link className="hover:bg-paper-deep hover:text-blue flex items-start gap-3 rounded-lg px-2 py-1.5 text-sm leading-5 transition-colors" to={`/collection?q=${encodeURIComponent(item.name)}`}><span>{item.name}</span><span className="bg-sky text-blue ml-auto shrink-0 rounded-full px-2 py-0.5 text-[11px] font-bold">{item.count}</span></Link></li>)}</ul>
+          <h3 className="font-display text-ink flex items-center gap-3 text-3xl font-semibold"><StarIcon className="text-gold h-4 w-4" />{section.title}<span className="text-ink-soft font-sans text-sm font-normal">({query ? items.length : section.count})</span></h3><ul className="mt-5 gap-x-8 sm:columns-2 lg:columns-3 xl:columns-4">{items.map((item) => <li className="break-inside-avoid" key={item.name}><Link className="hover:bg-paper-deep hover:text-blue flex items-start gap-3 rounded-lg px-2 py-1.5 text-sm leading-5 transition-colors" to={collectionHref(item.name)}><span>{item.name}</span><span className="bg-sky text-blue ml-auto shrink-0 rounded-full px-2 py-0.5 text-[11px] font-bold">{item.count}</span></Link></li>)}</ul>
         </div>;
       })}</div>
     </section>
@@ -156,11 +163,68 @@ export function CollectionPage() {
         const items = query ? section.items.filter((item) => item.name.toLocaleLowerCase("ca").includes(query)) : section.items;
         if (!items.length) return null;
         return <div className="mt-12 first:mt-0" key={section.title}>
-          <h3 className="font-display text-ink flex items-center gap-3 text-3xl font-semibold"><StarIcon className="text-gold h-4 w-4" />{section.title}<span className="text-ink-soft font-sans text-sm font-normal">({query ? items.length : section.count})</span></h3><ul className="mt-5 gap-x-8 sm:columns-2 lg:columns-3 xl:columns-4">{items.map((item) => <li className="break-inside-avoid" key={item.name}><Link className="hover:bg-paper-deep hover:text-blue flex items-start gap-3 rounded-lg px-2 py-1.5 text-sm leading-5 transition-colors" to={`/collection?q=${encodeURIComponent(item.name)}`}><span>{item.name}</span><span className="bg-sky text-blue ml-auto shrink-0 rounded-full px-2 py-0.5 text-[11px] font-bold">{item.count}</span></Link></li>)}</ul>
+          <h3 className="font-display text-ink flex items-center gap-3 text-3xl font-semibold"><StarIcon className="text-gold h-4 w-4" />{section.title}<span className="text-ink-soft font-sans text-sm font-normal">({query ? items.length : section.count})</span></h3><ul className="mt-5 gap-x-8 sm:columns-2 lg:columns-3 xl:columns-4">{items.map((item) => <li className="break-inside-avoid" key={item.name}><Link className="hover:bg-paper-deep hover:text-blue flex items-start gap-3 rounded-lg px-2 py-1.5 text-sm leading-5 transition-colors" to={collectionHref(item.name)}><span>{item.name}</span><span className="bg-sky text-blue ml-auto shrink-0 rounded-full px-2 py-0.5 text-[11px] font-bold">{item.count}</span></Link></li>)}</ul>
         </div>;
       })}</div>
     </section>
     {query && filteredCount === 0 && <p className="mx-auto max-w-[1360px] px-5 py-10 text-sm text-ink-soft sm:px-8 lg:px-12">No s’han trobat edicions amb «{params.get("q")}».</p>}
+  </>;
+}
+
+type CollectionDetail = (typeof collectionDetailData.pages)[number];
+type CollectionBook = CollectionDetail["books"][number];
+
+function CollectionBookCard({ book }: { book: CollectionBook }) {
+  return <article className="border-line overflow-hidden rounded-2xl border bg-white shadow-[0_6px_20px_rgba(27,42,74,0.08)]">
+    <img alt={book.title || book.imageAlt || "Llibre del Petit Príncep"} loading="lazy" className="aspect-[3/4] w-full bg-white object-contain p-3" src={book.image} />
+    <div className="p-4">
+      <h3 className="font-display text-ink text-lg font-semibold">{book.title}</h3>
+      <dl className="text-ink-soft mt-3 grid gap-1.5 text-xs leading-5">{Object.entries(book.metadata).map(([label, value]) => <div className="grid grid-cols-[auto_1fr] gap-x-2" key={label}><dt className="font-semibold">{label}:</dt><dd>{value}</dd></div>)}</dl>
+    </div>
+  </article>;
+}
+
+export function CollectionDetailPage() {
+  const { slug = "" } = useParams();
+  const page = collectionDetailData.pages.find((entry) => entry.slug === slug) as CollectionDetail | undefined;
+  if (!page) return <section className="px-5 py-24 text-center"><h1 className="font-display text-3xl font-semibold">No s’ha trobat aquesta col·lecció</h1><Link className="text-blue mt-5 inline-block font-semibold underline" to="/collection">Torna a la col·lecció</Link></section>;
+  const englishTitle = page.labels.find((label) => label.toLocaleLowerCase() !== page.title.toLocaleLowerCase());
+  const groupedBooks = page.type === "c"
+    ? page.books.reduce<Record<string, CollectionBook[]>>((groups, book) => {
+        const group = book.metadata["País / Country"] || "Altres països / Other countries";
+        (groups[group] ??= []).push(book);
+        return groups;
+      }, {})
+    : page.type === "b"
+      ? page.books.reduce<Record<string, CollectionBook[]>>((groups, book) => {
+          const group = book.scriptGroup || book.section || "Escriptura / Script";
+          (groups[group] ??= []).push(book);
+          return groups;
+        }, {})
+      : { "": page.books };
+  return <>
+    <section className="starry relative isolate overflow-hidden text-white">
+      <StarField />
+      <SectionHeroIllustration className="absolute top-1/2 right-2 z-0 h-20 w-auto -translate-y-1/2 sm:right-[6%] sm:h-32 md:h-44 lg:h-56" />
+      <div className="relative z-10 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+        <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />La meva col·lecció / My collection</p>
+        <h1 className="font-display mt-4 max-w-4xl text-5xl leading-[0.98] font-semibold tracking-[-0.02em] sm:text-7xl">{page.title}</h1>
+        {englishTitle && <p className="font-hand text-yellow mt-4 max-w-2xl text-3xl">{englishTitle}</p>}
+        <p className="mt-6 text-lg text-white/85">{page.books.length} llibres / books</p>
+        <Link className="mt-7 inline-flex items-center gap-2 rounded-full border border-white/40 px-5 py-2.5 text-sm font-bold text-white transition hover:border-yellow hover:text-yellow" to="/collection"><IconArrowRight className="h-4 w-4 rotate-180" />Torna a la col·lecció / Back to collection</Link>
+      </div>
+      <svg aria-hidden="true" viewBox="0 0 1440 40" preserveAspectRatio="none" className="text-paper absolute bottom-0 left-0 h-6 w-full sm:h-10"><path d="M0 40 C240 10 480 0 720 14 C960 28 1200 30 1440 8 L1440 40Z" fill="currentColor" /></svg>
+    </section>
+    <section className="px-5 py-14 sm:px-8 lg:px-12 lg:py-20">
+      <div className="mx-auto max-w-[1360px]">
+        {page.type === "b" && <p className="text-ink-soft mb-8 text-sm">Llibres agrupats per cal·ligrafia o escriptura / Books grouped by script</p>}
+        {page.type === "c" && <p className="text-ink-soft mb-8 text-sm">Llibres agrupats per país / Books grouped by country</p>}
+        {Object.entries(groupedBooks).map(([group, books]) => <div className="mt-12 first:mt-0" key={group || "books"}>
+          {group && <h2 className="font-display text-ink mb-6 flex items-center gap-3 text-2xl font-semibold sm:text-3xl"><StarIcon className="text-gold h-4 w-4" />{group}</h2>}
+          <div className={`grid gap-5 sm:grid-cols-2 ${page.type === "a" ? "mx-auto max-w-sm" : "lg:grid-cols-3 xl:grid-cols-4"}`}>{books.map((book, index) => <CollectionBookCard book={book} key={`${book.image}-${index}`} />)}</div>
+        </div>)}
+      </div>
+    </section>
   </>;
 }
 

@@ -730,7 +730,7 @@ export const collectionSections = {
         },
         {
           "name": "Crioll Hawaià",
-          "count": 1
+          "count": 2
         },
         {
           "name": "Crioll Jamaicà",
@@ -1154,7 +1154,7 @@ export const collectionSections = {
         },
         {
           "name": "Ingúix",
-          "count": 2
+          "count": 1
         },
         {
           "name": "Ioruba",
@@ -2082,7 +2082,7 @@ export const collectionSections = {
         },
         {
           "name": "Persa Darí",
-          "count": 4
+          "count": 3
         },
         {
           "name": "Persa Farsi",
@@ -2688,7 +2688,7 @@ export const collectionSections = {
         },
         {
           "name": "Ido",
-          "count": 3
+          "count": 4
         },
         {
           "name": "Intereslau",
@@ -2708,7 +2708,7 @@ export const collectionSections = {
         },
         {
           "name": "Kotava",
-          "count": 1
+          "count": 2
         },
         {
           "name": "Kumanic",
@@ -2716,7 +2716,7 @@ export const collectionSections = {
         },
         {
           "name": "Lingua Franca Nova",
-          "count": 2
+          "count": 3
         },
         {
           "name": "Lingwua de planeta",
@@ -3014,7 +3014,7 @@ export const collectionSections = {
         },
         {
           "name": "Relacionats amb EPP",
-          "count": 38
+          "count": 37
         }
       ]
     }
@@ -3650,7 +3650,7 @@ export const collectionSections = {
         },
         {
           "name": "Florentine",
-          "count": 2
+          "count": 3
         },
         {
           "name": "Frainc-Comtou",
@@ -4078,7 +4078,7 @@ export const collectionSections = {
         },
         {
           "name": "Ingush",
-          "count": 2
+          "count": 1
         },
         {
           "name": "Istriot",
@@ -4838,7 +4838,7 @@ export const collectionSections = {
         },
         {
           "name": "Norman",
-          "count": 2
+          "count": 1
         },
         {
           "name": "Norwegian (Norsk)",
@@ -5066,7 +5066,7 @@ export const collectionSections = {
         },
         {
           "name": "Persian - Dari",
-          "count": 4
+          "count": 3
         },
         {
           "name": "Persian - Farsi",
@@ -5708,7 +5708,7 @@ export const collectionSections = {
         },
         {
           "name": "Ido",
-          "count": 3
+          "count": 4
         },
         {
           "name": "Interlingua",
@@ -5728,7 +5728,7 @@ export const collectionSections = {
         },
         {
           "name": "Kotava",
-          "count": 1
+          "count": 2
         },
         {
           "name": "Kumanish",
@@ -5736,7 +5736,7 @@ export const collectionSections = {
         },
         {
           "name": "Lingua Franca Nova",
-          "count": 2
+          "count": 3
         },
         {
           "name": "Lingwua de planeta",
@@ -6034,7 +6034,7 @@ export const collectionSections = {
         },
         {
           "name": "Related to LPP",
-          "count": 38
+          "count": 37
         }
       ]
     }
