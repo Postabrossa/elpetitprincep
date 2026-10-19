@@ -303,15 +303,15 @@
 
 .drift { animation: drift 9s ease-in-out infinite; }
 
-@keyframes sway {
-  0%, to { transform: rotate(-1deg); }
-  50% { transform: rotate(1deg); }
+@keyframes footer-fox-sway {
+  0%, to { transform: rotate(-2.5deg); }
+  50% { transform: rotate(2.5deg); }
 }
 
-.sway { transform-origin: 50% 100%; animation: sway 8s ease-in-out infinite; }
+.fox-sway { transform-origin: 50% 90%; animation: footer-fox-sway 6s ease-in-out infinite; }
 
 @media (prefers-reduced-motion: reduce) {
-  .drift, .sway, .twinkle { animation: none; }
+  .drift, .fox-sway, .twinkle { animation: none; }
 }
 
 .prince-site { min-height: 100%; background: #fffdf7; color: #1b2a4a; font-family: "Inter Variable", Inter, sans-serif; }
