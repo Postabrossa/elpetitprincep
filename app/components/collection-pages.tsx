@@ -175,12 +175,13 @@ type CollectionDetail = (typeof collectionDetailData.pages)[number];
 type CollectionBook = CollectionDetail["books"][number];
 
 function CollectionBookCard({ book }: { book: CollectionBook }) {
-  return <article className="border-line grid min-h-44 grid-cols-[6rem_minmax(0,1fr)] gap-3 overflow-hidden rounded-2xl border bg-white/80 p-3 shadow-[0_6px_20px_rgba(27,42,74,0.08)] sm:grid-cols-[7rem_minmax(0,1fr)] sm:gap-4 sm:p-4">
-    <img alt={book.title || book.imageAlt || "Llibre del Petit Príncep"} loading="lazy" className="h-36 w-full rounded-lg border border-line bg-white object-contain p-1 sm:h-40" src={book.image} />
+  return <article className="border-line grid min-h-48 grid-cols-[6rem_minmax(0,1fr)] gap-3 overflow-hidden rounded-2xl border bg-white/80 p-3 shadow-[0_6px_20px_rgba(27,42,74,0.08)] sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-5 sm:p-4">
+    <img alt={book.title || book.imageAlt || "Llibre del Petit Príncep"} loading="lazy" className="h-36 w-full rounded-lg border border-line bg-white object-contain p-1 sm:h-44" src={book.image} />
     <div className="min-w-0">
-      <h3 className="font-display text-ink text-lg leading-tight font-semibold">{book.title}</h3>
-      <dl className="text-ink-soft mt-2 grid text-[11px] leading-4 sm:text-xs">{Object.entries(book.metadata).map(([label, value]) => <div className="grid grid-cols-[minmax(5.5rem,0.8fr)_minmax(0,1.2fr)] gap-x-2 border-b border-dotted border-line py-1" key={label}><dt className="font-semibold">{label}</dt><dd className="min-w-0 break-words">{value}</dd></div>)}</dl>
-      {book.editionDetails?.map((detail, index) => <p className="border-b border-dotted border-line py-1 text-[11px] leading-4 text-ink-soft sm:text-xs" key={`${detail}-${index}`}>{detail}</p>)}
+      <h3 className="font-display text-ink text-xl leading-tight font-semibold sm:text-2xl">{book.title}</h3>
+      {book.transcription && <p className="text-ink-soft mt-1 text-sm leading-5 italic sm:text-base">{book.transcription}</p>}
+      <dl className="text-ink-soft mt-2 grid text-xs leading-5 sm:text-sm">{Object.entries(book.metadata).map(([label, value]) => <div className="grid grid-cols-[minmax(6rem,0.8fr)_minmax(0,1.2fr)] gap-x-2 border-b border-dotted border-line py-1.5" key={label}><dt className="font-semibold">{label}</dt><dd className="min-w-0 break-words">{value}</dd></div>)}</dl>
+      {book.editionDetails?.map((detail, index) => <p className="border-b border-dotted border-line py-1.5 text-xs leading-5 text-ink-soft sm:text-sm" key={`${detail}-${index}`}>{detail}</p>)}
     </div>
   </article>;
 }
