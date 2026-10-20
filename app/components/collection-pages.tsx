@@ -179,7 +179,7 @@ function CollectionBookCard({ book }: { book: CollectionBook }) {
     <img alt={book.title || book.imageAlt || "Llibre del Petit Príncep"} loading="lazy" className="h-36 w-full rounded-lg border border-line bg-white object-contain p-1 sm:h-44" src={book.image} />
     <div className="min-w-0">
       <h3 className="font-display text-ink text-xl leading-tight font-semibold sm:text-2xl">{book.title}</h3>
-      {book.transcription && <p className="text-ink-soft mt-1 text-sm leading-5 italic sm:text-base">{book.transcription}</p>}
+      {book.transcription && <p className="text-ink-soft mt-1 text-base leading-6 italic sm:text-lg sm:leading-7">{book.transcription}</p>}
       <dl className="text-ink-soft mt-2 grid text-xs leading-5 sm:text-sm">{Object.entries(book.metadata).map(([label, value]) => <div className="grid grid-cols-[minmax(6rem,0.8fr)_minmax(0,1.2fr)] gap-x-2 border-b border-dotted border-line py-1.5" key={label}><dt className="font-semibold">{label}</dt><dd className="min-w-0 break-words">{value}</dd></div>)}</dl>
       {book.editionDetails?.map((detail, index) => <p className="border-b border-dotted border-line py-1.5 text-xs leading-5 text-ink-soft sm:text-sm" key={`${detail}-${index}`}>{detail}</p>)}
     </div>
