@@ -1,5 +1,5 @@
-import { CollectionPage } from "@/components/collection-pages";
+import { Outlet } from "react-router";
 
 export default function CollectionRoute() {
-  return <CollectionPage />;
+  return <Outlet />;
 }

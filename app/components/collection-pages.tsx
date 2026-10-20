@@ -188,7 +188,6 @@ export function CollectionDetailPage() {
   const { slug = "" } = useParams();
   const page = collectionDetailData.pages.find((entry) => entry.slug === slug) as CollectionDetail | undefined;
   if (!page) return <section className="px-5 py-24 text-center"><h1 className="font-display text-3xl font-semibold">No s’ha trobat aquesta col·lecció</h1><Link className="text-blue mt-5 inline-block font-semibold underline" to="/collection">Torna a la col·lecció</Link></section>;
-  const englishTitle = page.labels.find((label) => label.toLocaleLowerCase() !== page.title.toLocaleLowerCase());
   const groupedBooks = page.type === "c"
     ? page.books.reduce<Record<string, CollectionBook[]>>((groups, book) => {
         const group = book.metadata["País / Country"] || "Altres països / Other countries";
@@ -208,8 +207,8 @@ export function CollectionDetailPage() {
       <SectionHeroIllustration className="absolute top-1/2 right-2 z-0 h-20 w-auto -translate-y-1/2 sm:right-[6%] sm:h-32 md:h-44 lg:h-56" />
       <div className="relative z-10 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
         <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />La meva col·lecció / My collection</p>
-        <h1 className="font-display mt-4 max-w-4xl text-5xl leading-[0.98] font-semibold tracking-[-0.02em] sm:text-7xl">{page.title}</h1>
-        {englishTitle && <p className="font-hand text-yellow mt-4 max-w-2xl text-3xl">{englishTitle}</p>}
+        <h1 className="font-display mt-4 max-w-4xl text-5xl leading-[0.98] font-semibold tracking-[-0.02em] sm:text-7xl">{page.catalanTitle}</h1>
+        {page.englishTitle && <p className="font-hand text-yellow mt-4 max-w-2xl text-3xl">{page.englishTitle}</p>}
         <p className="mt-6 text-lg text-white/85">{page.books.length} llibres / books</p>
         <Link className="mt-7 inline-flex items-center gap-2 rounded-full border border-white/40 px-5 py-2.5 text-sm font-bold text-white transition hover:border-yellow hover:text-yellow" to="/collection"><IconArrowRight className="h-4 w-4 rotate-180" />Torna a la col·lecció / Back to collection</Link>
       </div>
