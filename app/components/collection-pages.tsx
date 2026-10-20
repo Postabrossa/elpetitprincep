@@ -195,9 +195,30 @@ export function CollectionDetailPage() {
   const { slug = "" } = useParams();
   const page = collectionDetailData.pages.find((entry) => entry.slug === slug) as CollectionDetail | undefined;
   if (!page) return <section className="px-5 py-24 text-center"><h1 className="font-display text-3xl font-semibold">No s’ha trobat aquesta col·lecció</h1><Link className="text-blue mt-5 inline-block font-semibold underline" to="/collection">Torna a la col·lecció</Link></section>;
+  const countryLabel = (country: string) => {
+    const label = country.split("/")[0].trim();
+    const spanishLabels: Record<string, string> = {
+      "Alemanya": "Alemania",
+      "Bolívia": "Bolivia",
+      "Colòmbia": "Colombia",
+      "Equador": "Ecuador",
+      "Espanya": "España",
+      "Espanya (?)": "España",
+      "Hondures": "Honduras",
+      "Mèxic": "México",
+      "Paraguai": "Paraguay",
+      "Panamà": "Panamá",
+      "Uruguai": "Uruguay",
+      "Veneçuela": "Venezuela",
+      "Xile": "Chile",
+      "---": "Otros países",
+    };
+    return spanishLabels[label] ?? label;
+  };
   const groupedBooks = page.type === "c"
     ? page.books.reduce<Record<string, CollectionBook[]>>((groups, book) => {
-        const group = book.metadata["País / Country"] || "Altres països / Other countries";
+        const country = book.metadata["País / Country"] || "Altres països / Other countries";
+        const group = countryLabel(country);
         (groups[group] ??= []).push(book);
         return groups;
       }, {})
@@ -208,6 +229,15 @@ export function CollectionDetailPage() {
           return groups;
         }, {})
       : { "": page.books };
+  const countryOrder = ["Argentina", "Costa Rica", "El Salvador", "Honduras", "Panamá", "Uruguay", "Bolivia", "Cuba", "España", "México", "Perú", "Venezuela", "Colombia", "Ecuador", "Guatemala", "Nicaragua", "República Dominicana", "Chile", "Paraguay", "Alemania", "Otros países"];
+  const bookGroups = Object.entries(groupedBooks);
+  if (page.type === "c") {
+    bookGroups.sort(([a], [b]) => {
+      const aIndex = countryOrder.indexOf(a);
+      const bIndex = countryOrder.indexOf(b);
+      return (aIndex < 0 ? countryOrder.length : aIndex) - (bIndex < 0 ? countryOrder.length : bIndex) || a.localeCompare(b, "ca");
+    });
+  }
   return <>
     <section className="starry relative isolate overflow-hidden text-white">
       <StarField />
@@ -224,10 +254,15 @@ export function CollectionDetailPage() {
     <section className="px-5 py-14 sm:px-8 lg:px-12 lg:py-20">
       <div className="mx-auto max-w-[1360px]">
         {page.type === "b" && <p className="text-ink-soft mb-8 text-sm">Llibres agrupats per cal·ligrafia o escriptura / Books grouped by script</p>}
-        {page.type === "c" && <p className="text-ink-soft mb-8 text-sm">Llibres agrupats per país / Books grouped by country</p>}
-        {Object.entries(groupedBooks).map(([group, books]) => <div className="mt-12 first:mt-0" key={group || "books"}>
+        {page.type === "c" && <nav aria-label="Índex de països / Countries index" className="border-line mb-12 rounded-2xl border bg-white/70 px-5 py-7 sm:px-8">
+          <h2 className="font-display text-ink text-center text-2xl font-normal tracking-[0.1em] sm:text-3xl">EL PRINCIPITO / EL PEQUEÑO PRÍNCIPE</h2>
+          <ul className="mt-6 grid grid-cols-2 gap-x-5 gap-y-3 sm:grid-cols-3 lg:grid-cols-6">
+            {bookGroups.map(([country], index) => <li key={country}><a className="text-ink hover:text-blue text-sm font-semibold transition-colors" href={`#country-${index}`}>{country === "República Dominicana" ? "R. Dominicana" : country}</a></li>)}
+          </ul>
+        </nav>}
+        {bookGroups.map(([group, books], index) => <div className="mt-12 scroll-mt-28 first:mt-0" id={page.type === "c" ? `country-${index}` : undefined} key={group || "books"}>
           {group && <h2 className="font-display text-ink mb-6 flex items-center gap-3 text-2xl font-semibold sm:text-3xl"><StarIcon className="text-gold h-4 w-4" />{group}</h2>}
-          <div className="grid gap-4 lg:grid-cols-2">{books.map((book, index) => <CollectionBookCard book={book} key={`${book.image}-${index}`} />)}</div>
+          <div className="grid gap-4 lg:grid-cols-2">{books.map((book, bookIndex) => <CollectionBookCard book={book} key={`${book.image}-${bookIndex}`} />)}</div>
         </div>)}
       </div>
     </section>
