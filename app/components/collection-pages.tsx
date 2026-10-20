@@ -175,11 +175,12 @@ type CollectionDetail = (typeof collectionDetailData.pages)[number];
 type CollectionBook = CollectionDetail["books"][number];
 
 function CollectionBookCard({ book }: { book: CollectionBook }) {
-  return <article className="border-line overflow-hidden rounded-2xl border bg-white shadow-[0_6px_20px_rgba(27,42,74,0.08)]">
-    <img alt={book.title || book.imageAlt || "Llibre del Petit Príncep"} loading="lazy" className="aspect-[3/4] w-full bg-white object-contain p-3" src={book.image} />
-    <div className="p-4">
-      <h3 className="font-display text-ink text-lg font-semibold">{book.title}</h3>
-      <dl className="text-ink-soft mt-3 grid gap-1.5 text-xs leading-5">{Object.entries(book.metadata).map(([label, value]) => <div className="grid grid-cols-[auto_1fr] gap-x-2" key={label}><dt className="font-semibold">{label}:</dt><dd>{value}</dd></div>)}</dl>
+  return <article className="border-line grid min-h-44 grid-cols-[6rem_minmax(0,1fr)] gap-3 overflow-hidden rounded-2xl border bg-white/80 p-3 shadow-[0_6px_20px_rgba(27,42,74,0.08)] sm:grid-cols-[7rem_minmax(0,1fr)] sm:gap-4 sm:p-4">
+    <img alt={book.title || book.imageAlt || "Llibre del Petit Príncep"} loading="lazy" className="h-36 w-full rounded-lg border border-line bg-white object-contain p-1 sm:h-40" src={book.image} />
+    <div className="min-w-0">
+      <h3 className="font-display text-ink text-lg leading-tight font-semibold">{book.title}</h3>
+      <dl className="text-ink-soft mt-2 grid text-[11px] leading-4 sm:text-xs">{Object.entries(book.metadata).map(([label, value]) => <div className="grid grid-cols-[minmax(5.5rem,0.8fr)_minmax(0,1.2fr)] gap-x-2 border-b border-dotted border-line py-1" key={label}><dt className="font-semibold">{label}</dt><dd className="min-w-0 break-words">{value}</dd></div>)}</dl>
+      {book.editionDetails?.map((detail, index) => <p className="border-b border-dotted border-line py-1 text-[11px] leading-4 text-ink-soft sm:text-xs" key={`${detail}-${index}`}>{detail}</p>)}
     </div>
   </article>;
 }
@@ -220,10 +221,22 @@ export function CollectionDetailPage() {
         {page.type === "c" && <p className="text-ink-soft mb-8 text-sm">Llibres agrupats per país / Books grouped by country</p>}
         {Object.entries(groupedBooks).map(([group, books]) => <div className="mt-12 first:mt-0" key={group || "books"}>
           {group && <h2 className="font-display text-ink mb-6 flex items-center gap-3 text-2xl font-semibold sm:text-3xl"><StarIcon className="text-gold h-4 w-4" />{group}</h2>}
-          <div className={`grid gap-5 sm:grid-cols-2 ${page.type === "a" ? "mx-auto max-w-sm" : "lg:grid-cols-3 xl:grid-cols-4"}`}>{books.map((book, index) => <CollectionBookCard book={book} key={`${book.image}-${index}`} />)}</div>
+          <div className="grid gap-4 lg:grid-cols-2">{books.map((book, index) => <CollectionBookCard book={book} key={`${book.image}-${index}`} />)}</div>
         </div>)}
       </div>
     </section>
+    {(page.descriptionCa || page.descriptionEn || page.moreInfoCa || page.moreInfoEn) && <section className="bg-paper px-5 py-12 text-center sm:px-8 sm:py-16 lg:px-12">
+      <div className="mx-auto max-w-3xl">
+        <div aria-hidden="true" className="text-gold mb-7 flex justify-center"><StarIcon className="h-4 w-4" /></div>
+        {page.descriptionCa && <p className="text-ink text-base leading-7 sm:text-lg">{page.descriptionCa}</p>}
+        {page.descriptionEn && <p className="text-ink mt-3 text-base leading-7 sm:text-lg">{page.descriptionEn}</p>}
+        {(page.moreInfoCa || page.moreInfoEn) && <p className="mt-5 flex flex-wrap justify-center gap-x-2 text-sm leading-6">
+          {page.moreInfoCa && <a className="text-blue decoration-blue/30 hover:decoration-blue underline underline-offset-4" href={page.moreInfoCa} target="_blank" rel="noreferrer">Més informació</a>}
+          {page.moreInfoCa && page.moreInfoEn && <span className="text-ink-soft">/</span>}
+          {page.moreInfoEn && <a className="text-blue decoration-blue/30 hover:decoration-blue underline underline-offset-4" href={page.moreInfoEn} target="_blank" rel="noreferrer">More information</a>}
+        </p>}
+      </div>
+    </section>}
   </>;
 }
 
