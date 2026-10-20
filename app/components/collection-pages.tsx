@@ -175,8 +175,8 @@ type CollectionDetail = (typeof collectionDetailData.pages)[number];
 type CollectionBook = CollectionDetail["books"][number];
 
 function CollectionBookCard({ book }: { book: CollectionBook }) {
-  return <article className="border-line grid min-h-48 grid-cols-[6rem_minmax(0,1fr)] gap-3 overflow-hidden rounded-2xl border bg-white/80 p-3 shadow-[0_6px_20px_rgba(27,42,74,0.08)] sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-5 sm:p-4">
-    <img alt={book.title || book.imageAlt || "Llibre del Petit Príncep"} loading="lazy" className="h-36 w-full rounded-lg border border-line bg-white object-contain p-1 sm:h-44" src={book.image} />
+  return <article className="border-line grid min-h-52 grid-cols-[7.5rem_minmax(0,1fr)] gap-3 overflow-hidden rounded-2xl border bg-white/80 p-3 shadow-[0_6px_20px_rgba(27,42,74,0.08)] sm:grid-cols-[9rem_minmax(0,1fr)] sm:gap-5 sm:p-4">
+    <img alt={book.title || book.imageAlt || "Llibre del Petit Príncep"} loading="lazy" className="h-40 w-full rounded-lg border border-line bg-white object-contain p-1 sm:h-48" src={book.image} />
     <div className="min-w-0">
       <h3 className="font-display text-ink text-xl leading-tight font-semibold sm:text-2xl">{book.title}</h3>
       {book.transcription && <p className="text-ink-soft mt-1 text-base leading-6 italic sm:text-lg sm:leading-7">{book.transcription}</p>}
@@ -229,8 +229,8 @@ export function CollectionDetailPage() {
     {(page.descriptionCa || page.descriptionEn || page.moreInfoCa || page.moreInfoEn) && <section className="bg-paper px-5 py-12 text-center sm:px-8 sm:py-16 lg:px-12">
       <div className="mx-auto max-w-3xl">
         <div aria-hidden="true" className="text-gold mb-7 flex justify-center"><StarIcon className="h-4 w-4" /></div>
-        {page.descriptionCa && <p className="text-ink text-base leading-7 sm:text-lg">{page.descriptionCa}</p>}
-        {page.descriptionEn && <p className="text-ink mt-3 text-base leading-7 sm:text-lg">{page.descriptionEn}</p>}
+        {page.descriptionCa && <p className="text-ink text-sm leading-6 sm:text-base sm:leading-7">{page.descriptionCa}</p>}
+        {page.descriptionEn && <p className="text-ink mt-3 text-sm leading-6 sm:text-base sm:leading-7">{page.descriptionEn}</p>}
         {(page.moreInfoCa || page.moreInfoEn) && <p className="mt-5 flex flex-wrap justify-center gap-x-2 text-sm leading-6">
           {page.moreInfoCa && <a className="text-blue decoration-blue/30 hover:decoration-blue underline underline-offset-4" href={page.moreInfoCa} target="_blank" rel="noreferrer">Més informació</a>}
           {page.moreInfoCa && page.moreInfoEn && <span className="text-ink-soft">/</span>}
