@@ -175,12 +175,12 @@ type CollectionDetail = (typeof collectionDetailData.pages)[number];
 type CollectionBook = CollectionDetail["books"][number];
 
 function CollectionBookCard({ book }: { book: CollectionBook }) {
-  return <article className="border-line grid min-h-52 grid-cols-[7.5rem_minmax(0,1fr)] gap-3 overflow-hidden rounded-2xl border bg-white/80 p-3 shadow-[0_6px_20px_rgba(27,42,74,0.08)] sm:grid-cols-[9rem_minmax(0,1fr)] sm:gap-5 sm:p-4">
-    <img alt={book.title || book.imageAlt || "Llibre del Petit Príncep"} loading="lazy" className="h-40 w-full rounded-lg border border-line bg-white object-contain p-1 sm:h-48" src={book.image} />
+  return <article className="border-line grid min-h-72 grid-cols-[8rem_minmax(0,1fr)] gap-3 overflow-hidden rounded-2xl border bg-white/80 p-3 shadow-[0_6px_20px_rgba(27,42,74,0.08)] sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-5 sm:p-4">
+    <img alt={book.title || book.imageAlt || "Llibre del Petit Príncep"} loading="lazy" className="h-60 w-full rounded-lg border border-line bg-white object-contain p-1 sm:h-64" src={book.image} />
     <div className="min-w-0">
       <h3 className="font-display text-ink text-xl leading-tight font-semibold sm:text-2xl">{book.title}</h3>
-      {book.transcription && <p className="text-ink-soft mt-1 text-base leading-6 italic sm:text-lg sm:leading-7">{book.transcription}</p>}
-      <dl className="text-ink-soft mt-2 grid text-xs leading-5 sm:text-sm">{Object.entries(book.metadata).map(([label, value]) => <div className="grid grid-cols-[minmax(6rem,0.8fr)_minmax(0,1.2fr)] gap-x-2 border-b border-dotted border-line py-1.5" key={label}><dt className="font-semibold">{label}</dt><dd className="min-w-0 break-words">{value}</dd></div>)}</dl>
+      {book.transcription && <p className="text-ink mt-1 text-base leading-6 font-semibold sm:text-lg sm:leading-7">{book.transcription}</p>}
+      <dl className="text-ink mt-2 grid text-xs leading-5 sm:text-sm">{Object.entries(book.metadata).map(([label, value]) => <div className="grid grid-cols-[minmax(6rem,0.8fr)_minmax(0,1.2fr)] gap-x-2 border-b border-dotted border-line py-1.5" key={label}><dt className="text-ink-soft font-semibold">{label}</dt><dd className="min-w-0 break-words">{value}</dd></div>)}</dl>
       {book.editionDetails?.map((detail, index) => <p className="border-b border-dotted border-line py-1.5 text-xs leading-5 text-ink-soft sm:text-sm" key={`${detail}-${index}`}>{detail}</p>)}
     </div>
   </article>;
