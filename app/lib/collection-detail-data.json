@@ -26945,6 +26945,20 @@
           "scriptGroup": "El Principito Mundial",
           "editionDetails": [],
           "transcription": ""
+        },
+        {
+          "image": "/collection-assets/languages/llibres-relacionats/legacy-038.png",
+          "imageAlt": "CD de la banda sonora del musical Antoine",
+          "title": "Antoine",
+          "section": "Related books",
+          "metadata": {
+            "Any / Year": "2021"
+          },
+          "scriptGroup": "Related books",
+          "editionDetails": [
+            "Banda sonora del musical ANTOINE / ANTOINE musical score."
+          ],
+          "transcription": ""
         }
       ],
       "catalanTitle": "Relacionats amb EPP",

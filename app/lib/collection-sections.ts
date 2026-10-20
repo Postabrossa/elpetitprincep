@@ -3014,7 +3014,7 @@ export const collectionSections = {
         },
         {
           "name": "Relacionats amb EPP",
-          "count": 37
+          "count": 38
         }
       ]
     }
@@ -6034,7 +6034,7 @@ export const collectionSections = {
         },
         {
           "name": "Related to LPP",
-          "count": 37
+          "count": 38
         }
       ]
     }
