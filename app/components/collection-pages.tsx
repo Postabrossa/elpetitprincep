@@ -181,7 +181,12 @@ function CollectionBookCard({ book }: { book: CollectionBook }) {
       <h3 className="font-display text-ink text-xl leading-tight font-semibold sm:text-2xl">{book.title}</h3>
       {book.transcription && <p className="text-ink mt-1 text-base leading-6 font-semibold sm:text-lg sm:leading-7">{book.transcription}</p>}
       <dl className="text-ink mt-2 grid text-xs leading-5 sm:text-sm">{Object.entries(book.metadata).map(([label, value]) => <div className="grid grid-cols-[minmax(6rem,0.8fr)_minmax(0,1.2fr)] gap-x-2 border-b border-dotted border-line py-1.5" key={label}><dt className="text-ink-soft font-semibold">{label}</dt><dd className="min-w-0 break-words">{value}</dd></div>)}</dl>
-      {book.editionDetails?.map((detail, index) => <p className="border-b border-dotted border-line py-1.5 text-xs leading-5 text-ink-soft sm:text-sm" key={`${detail}-${index}`}>{detail}</p>)}
+      {book.editionDetails?.map((detail, index) => {
+        const courtesyLabel = "Gentileza de / Courtesy of:";
+        return <p className="border-b border-dotted border-line py-1.5 text-xs leading-5 text-ink-soft sm:text-sm" key={`${detail}-${index}`}>
+          {detail.startsWith(courtesyLabel) ? <><span>{courtesyLabel}</span>{" "}<span className="text-ink font-medium">{detail.slice(courtesyLabel.length).trim()}</span></> : detail}
+        </p>;
+      })}
     </div>
   </article>;
 }
