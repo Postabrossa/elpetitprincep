@@ -211,7 +211,7 @@ export function CollectionDetailPage() {
       "Uruguai": "Uruguay",
       "Veneçuela": "Venezuela",
       "Xile": "Chile",
-      "---": "Otros países",
+      "---": "Altres països",
     };
     return spanishLabels[label] ?? label;
   };
@@ -229,7 +229,7 @@ export function CollectionDetailPage() {
           return groups;
         }, {})
       : { "": page.books };
-  const countryOrder = ["Argentina", "Costa Rica", "El Salvador", "Honduras", "Panamá", "Uruguay", "Bolivia", "Cuba", "España", "México", "Perú", "Venezuela", "Colombia", "Ecuador", "Guatemala", "Nicaragua", "República Dominicana", "Chile", "Paraguay", "Alemania", "Otros países"];
+  const countryOrder = ["Argentina", "Costa Rica", "El Salvador", "Honduras", "Panamá", "Uruguay", "Bolivia", "Cuba", "España", "México", "Perú", "Venezuela", "Colombia", "Ecuador", "Guatemala", "Nicaragua", "República Dominicana", "Chile", "Paraguay", "Altres països"];
   const bookGroups = Object.entries(groupedBooks);
   if (page.type === "c") {
     bookGroups.sort(([a], [b]) => {
