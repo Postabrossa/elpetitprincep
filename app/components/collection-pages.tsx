@@ -174,10 +174,12 @@ export function CollectionPage() {
 type CollectionDetail = (typeof collectionDetailData.pages)[number];
 type CollectionBook = CollectionDetail["books"][number];
 
-function CollectionBookCard({ book }: { book: CollectionBook }) {
+function CollectionBookCard({ book, onPreview }: { book: CollectionBook; onPreview: () => void }) {
   const mirrored = book.section === "Russian Mirror";
   return <article className="border-line grid min-h-72 grid-cols-[8rem_minmax(0,1fr)] gap-3 overflow-hidden rounded-2xl border bg-white/80 p-3 shadow-[0_6px_20px_rgba(27,42,74,0.08)] sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-5 sm:p-4">
-    <img alt={book.title || book.imageAlt || "Llibre del Petit Príncep"} loading="lazy" className="h-60 w-full rounded-lg border border-line bg-white object-contain p-1 sm:h-64" src={book.image} />
+    <button type="button" className="block w-full cursor-zoom-in text-left" aria-label={`Amplia ${book.title || "la portada"}`} onClick={onPreview}>
+      <img alt={book.title || book.imageAlt || "Llibre del Petit Príncep"} loading="lazy" className="h-60 w-full rounded-lg border border-line bg-white object-contain p-1 sm:h-64" src={book.image} />
+    </button>
     <div className="min-w-0">
       <h3 className={`font-display text-ink text-xl leading-tight font-semibold sm:text-2xl ${mirrored ? "scale-x-[-1] text-right" : ""}`}>{book.title}</h3>
       {book.transcription && <p className="text-ink mt-1 text-base leading-6 font-semibold sm:text-lg sm:leading-7">{book.transcription}</p>}
@@ -194,6 +196,7 @@ function CollectionBookCard({ book }: { book: CollectionBook }) {
 
 export function CollectionDetailPage() {
   const { slug = "" } = useParams();
+  const [previewBook, setPreviewBook] = useState<CollectionBook | null>(null);
   const page = collectionDetailData.pages.find((entry) => entry.slug === slug) as CollectionDetail | undefined;
   if (!page) return <section className="px-5 py-24 text-center"><h1 className="font-display text-3xl font-semibold">No s’ha trobat aquesta col·lecció</h1><Link className="text-blue mt-5 inline-block font-semibold underline" to="/collection">Torna a la col·lecció</Link></section>;
   const countryLabel = (country: string) => {
@@ -264,7 +267,7 @@ export function CollectionDetailPage() {
         </nav>}
         {bookGroups.map(([group, books], index) => <div className="mt-12 scroll-mt-28 first:mt-0" id={page.type === "c" ? `country-${index}` : undefined} key={group || "books"}>
           {group && (page.type === "c" ? <div className="mb-6 grid justify-items-center gap-3 text-center"><StarIcon className="text-gold h-4 w-4" /><h2 className="font-display text-ink text-4xl font-bold sm:text-5xl">{group}</h2></div> : <h2 className="font-display text-ink mb-6 flex items-center gap-3 text-2xl font-semibold sm:text-3xl"><StarIcon className="text-gold h-4 w-4" />{group}</h2>)}
-          <div className="grid gap-4 lg:grid-cols-2">{books.map((book, bookIndex) => <CollectionBookCard book={book} key={`${book.image}-${bookIndex}`} />)}</div>
+          <div className="grid gap-4 lg:grid-cols-2">{books.map((book, bookIndex) => <CollectionBookCard book={book} key={`${book.image}-${bookIndex}`} onPreview={() => setPreviewBook(book)} />)}</div>
         </div>)}
       </div>
     </section>
@@ -280,6 +283,7 @@ export function CollectionDetailPage() {
         </p>}
       </div>
     </section>}
+    {previewBook && <BookPreview image={previewBook.image} title={`${previewBook.title || previewBook.imageAlt || "Llibre"} · ${Object.entries(previewBook.metadata).find(([label]) => label.includes("Year"))?.[1] || "—"}`} onClose={() => setPreviewBook(null)} />}
   </>;
 }
 
