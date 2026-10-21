@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router";
-import { IconArrowRight, IconX } from "@tabler/icons-react";
+import { IconArrowRight, IconSearch, IconX } from "@tabler/icons-react";
 import { collectionSections } from "@/lib/collection-sections";
 import collectionDetailData from "@/lib/collection-detail-data.json";
 import collectionRouteAliases from "@/lib/collection-route-aliases.json";
@@ -174,6 +174,76 @@ export function CollectionPage() {
 
 type CollectionDetail = (typeof collectionDetailData.pages)[number];
 type CollectionBook = CollectionDetail["books"][number];
+type BookSearchResult = { page: CollectionDetail; book: CollectionBook; bookIndex: number };
+
+function SearchMatch({ text, query }: { text: string; query: string }) {
+  const normalize = (value: string) => value.normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").toLocaleLowerCase("ca");
+  const needle = normalize(query.trim());
+  const matchIndex = normalize(text).indexOf(needle);
+  if (!needle || matchIndex < 0) return text;
+  const matchEnd = matchIndex + needle.length;
+  return <>{text.slice(0, matchIndex)}<mark className="rounded-sm bg-yellow/50 px-0.5 text-ink">{text.slice(matchIndex, matchEnd)}</mark>{text.slice(matchEnd)}</>;
+}
+
+export function SearchPage() {
+  const [searchParams] = useSearchParams();
+  const [query, setQuery] = useState(() => searchParams.get("q") ?? "");
+  const results = useMemo<BookSearchResult[]>(() => {
+    const normalize = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("ca");
+    const needle = normalize(query.trim());
+    if (!needle) return [];
+    return collectionDetailData.pages.flatMap((page) => page.books.flatMap((book, bookIndex) => {
+      const searchable = [page.catalanTitle, page.englishTitle, ...page.labels, book.title, book.transcription, book.section, book.scriptGroup, ...Object.entries(book.metadata).flat()]
+        .filter((value): value is string => typeof value === "string")
+        .join(" ");
+      return normalize(searchable).includes(needle) ? [{ page: page as CollectionDetail, book: book as CollectionBook, bookIndex }] : [];
+    }));
+  }, [query]);
+  const shownResults = results.slice(0, 100);
+  const metadataValue = (book: CollectionBook, label: string) => Object.entries(book.metadata).find(([key]) => key === label)?.[1] || "";
+  return <>
+    <section className="starry relative isolate overflow-hidden text-white">
+      <StarField />
+      <SectionHeroIllustration className="absolute top-2 right-4 z-0 h-20 w-auto sm:right-[6%] sm:h-28 md:h-36" />
+      <div className="relative z-10 mx-auto max-w-[1360px] px-5 pt-5 pb-10 sm:px-8 lg:px-12">
+        <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />Cercar / Search</p>
+        <h1 className="font-display mt-3 text-4xl leading-none font-semibold sm:text-5xl">Cercar</h1>
+        <p className="font-hand text-yellow mt-2 text-2xl">Search</p>
+      </div>
+    </section>
+    <section className="bg-paper min-h-[10rem] px-5 py-10 sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-[1120px]">
+        <label className="border-line flex items-center gap-3 rounded-full border bg-white px-4 py-3 shadow-[0_4px_16px_rgba(27,42,74,0.08)] focus-within:border-yellow focus-within:ring-2 focus-within:ring-yellow/30">
+          <IconSearch size={18} className="text-ink-soft shrink-0" />
+          <input autoFocus className="text-ink min-w-0 flex-1 bg-transparent text-sm outline-none placeholder:text-ink-soft/70" type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Idioma, traductor, editorial, any... / Language, translator, publisher, year..." aria-label="Cerca llibres / Search books" />
+        </label>
+        {!query.trim() ? <p className="text-ink-soft mt-5 text-center text-xs leading-5">Escriu una paraula per trobar llibres.<br /><span className="italic">Type a word to find books.</span></p> : <>
+          <p className="text-ink-soft mt-5 text-xs">{results.length} resultats / results{results.length > 100 ? " · es mostren els 100 primers / showing the first 100" : ""}</p>
+          <div className="mt-4 grid gap-3">
+            {shownResults.map(({ page, book, bookIndex }) => {
+              const title = book.title || book.transcription || book.imageAlt || "Llibre del Petit Príncep";
+              const year = Object.entries(book.metadata).find(([label]) => label.includes("Year"))?.[1];
+              const metadata = [
+                year && `Any / Year: ${year}`,
+                metadataValue(book, "Editorial / Publisher") && `Editorial / Publisher: ${metadataValue(book, "Editorial / Publisher")}`,
+                metadataValue(book, "País / Country") && `País / Country: ${metadataValue(book, "País / Country")}`,
+              ].filter(Boolean).join(" · ");
+              return <Link className="border-line grid grid-cols-[3.5rem_minmax(0,1fr)] items-center gap-4 rounded-xl border bg-white/80 p-3 shadow-[0_4px_16px_rgba(27,42,74,0.06)] transition-colors hover:border-yellow hover:bg-white sm:grid-cols-[4rem_minmax(0,1fr)] sm:gap-5 sm:p-4" key={`${page.slug}-${book.image}-${bookIndex}`} to={`/collection/${encodeURIComponent(page.slug)}#book-${bookIndex}`}>
+                <img alt="" loading="lazy" className="h-20 w-14 rounded-md border border-line bg-white object-contain p-0.5 sm:h-24 sm:w-16" src={book.image} />
+                <span className="min-w-0">
+                  <span className="font-hand text-gold block text-xs sm:text-sm">{page.catalanTitle}{page.englishTitle ? ` / ${page.englishTitle}` : ""}</span>
+                  <span className="font-display text-ink mt-1 block text-base leading-tight sm:text-lg"><SearchMatch text={`${title}${book.transcription && book.transcription !== title ? ` | ${book.transcription}` : ""}`} query={query} /></span>
+                  {metadata && <span className="text-ink-soft mt-1 block text-[11px] leading-4 sm:text-xs"><SearchMatch text={metadata} query={query} /></span>}
+                </span>
+              </Link>;
+            })}
+            {results.length === 0 && <p className="text-ink-soft py-8 text-center text-sm">No s’han trobat llibres / No books found.</p>}
+          </div>
+        </>}
+      </div>
+    </section>
+  </>;
+}
 
 function CollectionBookCard({ book, id, onPreview }: { book: CollectionBook; id: string; onPreview: () => void }) {
   const mirrored = book.section === "Russian Mirror";

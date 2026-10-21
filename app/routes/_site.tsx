@@ -55,17 +55,16 @@ export function meta() {
 }
 
 export default function SiteLayout() {
-  const [searchOpen, setSearchOpen] = useState(false);
   const [quote, setQuote] = useState<(typeof quotePairs)[number] | null>(null);
   const location = useLocation();
   useEffect(() => {
     setQuote(quotePairs[Math.floor(Math.random() * quotePairs.length)]);
   }, [location.key]);
-  const searchLink = <button type="button" aria-label="Cercar / Search" title="Cercar / Search" className="inline-flex h-9 w-9 items-center justify-center rounded-full text-white/85 transition-colors hover:bg-white/10 hover:text-yellow" onClick={() => setSearchOpen(!searchOpen)}><IconSearch size={18} /></button>;
+  const searchLink = <Link aria-label="Cercar / Search" title="Cercar / Search" className="inline-flex h-9 w-9 items-center justify-center rounded-full text-white/85 transition-colors hover:bg-white/10 hover:text-yellow" to="/search"><IconSearch size={18} /></Link>;
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-paper font-sans text-ink antialiased">
-      <header className="starry sticky top-0 z-40 border-b border-white/10 text-white shadow-[0_8px_30px_rgba(11,21,51,0.25)]">
+      {location.pathname !== "/search" && <header className="starry sticky top-0 z-40 border-b border-white/10 text-white shadow-[0_8px_30px_rgba(11,21,51,0.25)]">
         <div className="mx-auto flex max-w-[1360px] items-center justify-between gap-6 px-5 py-3.5 sm:px-8 lg:px-12">
           <Link className="group flex shrink-0 items-center gap-3" to="/">
             <span className="ring-yellow/60 relative flex h-11 w-11 items-center justify-center rounded-full bg-white/95 ring-2"><img alt="El Petit Príncep" loading="lazy" width="42" height="42" className="h-9 w-9 object-contain transition-transform group-hover:-rotate-12" src="/collection-assets/home/little-prince-mark_-V0I.png" /></span>
@@ -88,8 +87,7 @@ export default function SiteLayout() {
             </details>
           </div>
         </div>
-        {searchOpen && <form action="/collection" role="search" className="homepage-search-form absolute top-full right-5 z-50 flex w-[min(22rem,calc(100vw-2.5rem))] items-center gap-2 rounded-xl border border-line bg-paper p-2 text-ink shadow-xl"><IconSearch size={16} /><input autoFocus name="q" aria-label="Cercar idioma" placeholder="Cerca un idioma…" className="min-w-0 flex-1 bg-transparent px-2 py-2 text-sm outline-none" /><button className="rounded-lg bg-night px-3 py-2 text-xs font-bold text-paper" type="submit">Cerca</button></form>}
-      </header>
+      </header>}
       <main><Outlet /></main>
       <footer className="starry relative isolate overflow-hidden text-white">
         <StarField footer />
