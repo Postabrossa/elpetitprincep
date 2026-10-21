@@ -179,7 +179,7 @@ function CollectionBookCard({ book }: { book: CollectionBook }) {
   return <article className="border-line grid min-h-72 grid-cols-[8rem_minmax(0,1fr)] gap-3 overflow-hidden rounded-2xl border bg-white/80 p-3 shadow-[0_6px_20px_rgba(27,42,74,0.08)] sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-5 sm:p-4">
     <img alt={book.title || book.imageAlt || "Llibre del Petit Príncep"} loading="lazy" className="h-60 w-full rounded-lg border border-line bg-white object-contain p-1 sm:h-64" src={book.image} />
     <div className="min-w-0">
-      <h3 className={`font-display text-ink text-xl leading-tight font-semibold sm:text-2xl ${mirrored ? "scale-x-[-1]" : ""}`}>{book.title}</h3>
+      <h3 className={`font-display text-ink text-xl leading-tight font-semibold sm:text-2xl ${mirrored ? "scale-x-[-1] text-right" : ""}`}>{book.title}</h3>
       {book.transcription && <p className="text-ink mt-1 text-base leading-6 font-semibold sm:text-lg sm:leading-7">{book.transcription}</p>}
       <dl className="text-ink mt-2 grid text-xs leading-5 sm:text-sm">{Object.entries(book.metadata).map(([label, value]) => <div className="grid grid-cols-[minmax(6rem,0.8fr)_minmax(0,1.2fr)] gap-x-2 border-b border-dotted border-line py-1.5" key={label}><dt className="text-ink-soft font-semibold">{label}</dt><dd className="min-w-0 break-words">{value}</dd></div>)}</dl>
       {book.editionDetails?.map((detail, index) => {
@@ -243,7 +243,7 @@ export function CollectionDetailPage() {
     <section className="starry relative isolate overflow-hidden text-white">
       <StarField />
       <SectionHeroIllustration className="absolute top-1/2 right-2 z-0 h-20 w-auto -translate-y-1/2 sm:right-[6%] sm:h-32 md:h-44 lg:h-56" />
-      <div className="relative z-10 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+      <div className="relative z-10 mx-auto max-w-[1360px] px-5 py-16 text-left sm:px-8 sm:py-20 lg:px-12 lg:py-24">
         <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />La meva col·lecció / My collection</p>
         <h1 className="font-display mt-4 max-w-4xl text-5xl leading-[0.98] font-semibold tracking-[-0.02em] sm:text-7xl">{page.catalanTitle}</h1>
         {page.englishTitle && <p className="font-hand text-yellow mt-4 max-w-2xl text-3xl">{page.englishTitle}</p>}
