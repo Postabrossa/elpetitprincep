@@ -232,7 +232,7 @@ export function SearchPage() {
               return <Link className="border-line grid grid-cols-[4rem_minmax(0,1fr)] items-center gap-4 rounded-xl border bg-white/80 p-4 shadow-[0_4px_16px_rgba(27,42,74,0.06)] transition-colors hover:border-yellow hover:bg-white sm:grid-cols-[5rem_minmax(0,1fr)] sm:gap-5 sm:p-5" key={`${page.slug}-${book.image}-${bookIndex}`} to={`/collection/${encodeURIComponent(page.slug)}#book-${bookIndex}`}>
                 <img alt="" loading="lazy" className="h-24 w-16 rounded-md border border-line bg-white object-contain p-0.5 sm:h-28 sm:w-20" src={book.image} />
                 <span className="min-w-0">
-                  <span className="font-hand text-gold block text-base sm:text-lg">{page.catalanTitle}{page.englishTitle ? ` / ${page.englishTitle}` : ""}</span>
+                  <span className="font-hand text-gold block text-xl sm:text-2xl">{page.catalanTitle}{page.englishTitle ? ` / ${page.englishTitle}` : ""}</span>
                   <span className="font-display text-ink mt-1 block text-lg leading-tight sm:text-xl"><SearchMatch text={`${title}${book.transcription && book.transcription !== title ? ` | ${book.transcription}` : ""}`} query={query} /></span>
                   {metadata && <span className="text-ink-soft mt-1 block text-sm leading-5"><SearchMatch text={metadata} query={query} /></span>}
                 </span>

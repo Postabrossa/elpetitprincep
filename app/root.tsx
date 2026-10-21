@@ -56,11 +56,7 @@ function ScrollManager() {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const behavior: ScrollBehavior = reduceMotion ? "auto" : "smooth";
     const frame = requestAnimationFrame(() => {
-      if (isInitialLocation) {
-        if (location.hash) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView({ behavior, block: "start" });
-        return;
-      }
-      if (navigationType === "POP") {
+      if (!isInitialLocation && navigationType === "POP") {
         const saved = sessionStorage.getItem(`scroll-position:${location.key}`);
         if (saved !== null) {
           window.scrollTo({ top: 0, behavior: "auto" });
@@ -72,8 +68,7 @@ function ScrollManager() {
         document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView({ behavior, block: "start" });
         return;
       }
-      window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "auto" });
-      requestAnimationFrame(() => window.scrollTo({ top: 0, behavior }));
+      window.scrollTo({ top: 0, behavior: isInitialLocation ? "auto" : behavior });
     });
     return () => cancelAnimationFrame(frame);
   }, [location.hash, location.key, navigationType]);
