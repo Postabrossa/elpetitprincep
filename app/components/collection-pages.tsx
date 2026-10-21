@@ -4,6 +4,7 @@ import { IconArrowRight, IconX } from "@tabler/icons-react";
 import { collectionSections } from "@/lib/collection-sections";
 import collectionDetailData from "@/lib/collection-detail-data.json";
 import collectionRouteAliases from "@/lib/collection-route-aliases.json";
+import recentBookLinksData from "@/lib/recent-book-links.json";
 import { specialBooks } from "@/lib/special-books";
 import { doubles } from "@/lib/doubles";
 
@@ -174,9 +175,9 @@ export function CollectionPage() {
 type CollectionDetail = (typeof collectionDetailData.pages)[number];
 type CollectionBook = CollectionDetail["books"][number];
 
-function CollectionBookCard({ book, onPreview }: { book: CollectionBook; onPreview: () => void }) {
+function CollectionBookCard({ book, id, onPreview }: { book: CollectionBook; id: string; onPreview: () => void }) {
   const mirrored = book.section === "Russian Mirror";
-  return <article className="border-line grid min-h-72 grid-cols-[8rem_minmax(0,1fr)] gap-3 overflow-hidden rounded-2xl border bg-white/80 p-3 shadow-[0_6px_20px_rgba(27,42,74,0.08)] sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-5 sm:p-4">
+  return <article id={id} className="scroll-mt-28 border-line grid min-h-72 grid-cols-[8rem_minmax(0,1fr)] gap-3 overflow-hidden rounded-2xl border bg-white/80 p-3 shadow-[0_6px_20px_rgba(27,42,74,0.08)] sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-5 sm:p-4">
     <button type="button" className="block w-full cursor-zoom-in text-left" aria-label={`Amplia ${book.title || "la portada"}`} onClick={onPreview}>
       <img alt={book.title || book.imageAlt || "Llibre del Petit Príncep"} loading="lazy" className="h-60 w-full rounded-lg border border-line bg-white object-contain p-1 sm:h-64" src={book.image} />
     </button>
@@ -267,7 +268,7 @@ export function CollectionDetailPage() {
         </nav>}
         {bookGroups.map(([group, books], index) => <div className="mt-12 scroll-mt-28 first:mt-0" id={page.type === "c" ? `country-${index}` : undefined} key={group || "books"}>
           {group && (page.type === "c" ? <div className="mb-6 grid justify-items-center gap-3 text-center"><StarIcon className="text-gold h-4 w-4" /><h2 className="font-display text-ink text-4xl font-bold sm:text-5xl">{group}</h2></div> : <h2 className="font-display text-ink mb-6 flex items-center gap-3 text-2xl font-semibold sm:text-3xl"><StarIcon className="text-gold h-4 w-4" />{group}</h2>)}
-          <div className="grid gap-4 lg:grid-cols-2">{books.map((book, bookIndex) => <CollectionBookCard book={book} key={`${book.image}-${bookIndex}`} onPreview={() => setPreviewBook(book)} />)}</div>
+          <div className="grid gap-4 lg:grid-cols-2">{books.map((book, bookIndex) => <CollectionBookCard book={book} id={`book-${(page.books as CollectionBook[]).indexOf(book)}`} key={`${book.image}-${bookIndex}`} onPreview={() => setPreviewBook(book)} />)}</div>
         </div>)}
       </div>
     </section>
@@ -291,8 +292,8 @@ export function RecentPage() {
   const { year: yearParam } = useParams();
   const year = Number(yearParam);
   const validYear = year in recentCounts;
-  const [preview, setPreview] = useState<number | null>(null);
   const imageUrl = (index: number) => `/collection-assets/recents/${year}/${String(index + 1).padStart(2, "0")}.webp`;
+  const bookLink = (index: number) => (recentBookLinksData as Record<string, { slug: string; bookIndex: number }>)[`${year}/${String(index + 1).padStart(2, "0")}`];
   return <>
     <section className="starry relative isolate overflow-hidden text-white">
       <StarField />
@@ -307,9 +308,11 @@ export function RecentPage() {
     </section>
     <section className="px-5 py-14 sm:px-8 lg:px-12 lg:py-20"><div className="mx-auto max-w-[1360px]"><div className="grid gap-12">
       {year === 2026 && <div className="grid gap-4"><div aria-hidden="true" className="text-gold flex justify-center"><StarIcon className="h-4 w-4" /></div><div className="mx-auto max-w-3xl text-center"><h2 className="font-display text-ink mt-6 text-3xl font-semibold first:mt-0"><span>2026</span></h2></div></div>}
-      {validYear ? <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">{Array.from({ length: recentCounts[year] }, (_, index) => <button className="border-line rounded-xl border bg-white p-2 text-left shadow-[0_6px_18px_rgba(27,42,74,0.08)] transition duration-300 hover:-translate-y-1 hover:rotate-[-0.6deg]" key={index} type="button" onClick={() => setPreview(index)} aria-label={`Amplia la coberta ${index + 1}, ${year}`}><img alt="El Petit Príncep" loading="lazy" width="600" height="820" className="h-auto w-full rounded-md" src={imageUrl(index)} /></button>)}</div> : <p className="section-empty">No hi ha una pàgina disponible per a aquest any.</p>}
+      {validYear ? <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">{Array.from({ length: recentCounts[year] }, (_, index) => {
+        const destination = bookLink(index);
+        return <Link className="border-line block rounded-xl border bg-white p-2 text-left shadow-[0_6px_18px_rgba(27,42,74,0.08)] transition duration-300 hover:-translate-y-1 hover:rotate-[-0.6deg]" key={index} to={`/collection/${encodeURIComponent(destination.slug)}#book-${destination.bookIndex}`} aria-label={`Ves a la fitxa ${index + 1} de ${year}`}><img alt="El Petit Príncep" loading="lazy" width="600" height="820" className="h-auto w-full rounded-md" src={imageUrl(index)} /></Link>;
+      })}</div> : <p className="section-empty">No hi ha una pàgina disponible per a aquest any.</p>}
     </div></div></section>
-    {preview !== null && <BookPreview image={imageUrl(preview)} title={`Edició del Petit Príncep · ${year}`} onClose={() => setPreview(null)} />}
   </>;
 }
 

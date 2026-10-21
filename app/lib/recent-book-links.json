@@ -1,0 +1,2774 @@
+{
+  "2020/01": {
+    "slug": "alemany",
+    "bookIndex": 24
+  },
+  "2020/02": {
+    "slug": "bosnià",
+    "bookIndex": 0
+  },
+  "2020/03": {
+    "slug": "alguerès",
+    "bookIndex": 1
+  },
+  "2020/04": {
+    "slug": "occità-marquès-de-crosenc-parlar-de-creixent",
+    "bookIndex": 0
+  },
+  "2020/05": {
+    "slug": "baix-alemany-de-mecklenburg-pomerània-occidental",
+    "bookIndex": 0
+  },
+  "2020/06": {
+    "slug": "ojibwa",
+    "bookIndex": 0
+  },
+  "2020/07": {
+    "slug": "mossàrab",
+    "bookIndex": 0
+  },
+  "2020/08": {
+    "slug": "alemany-del-cantó-de-luri",
+    "bookIndex": 0
+  },
+  "2020/09": {
+    "slug": "hantec",
+    "bookIndex": 0
+  },
+  "2020/10": {
+    "slug": "patriżju",
+    "bookIndex": 0
+  },
+  "2020/11": {
+    "slug": "àrab-tunisià",
+    "bookIndex": 2
+  },
+  "2020/12": {
+    "slug": "maia-tzeltal",
+    "bookIndex": 1
+  },
+  "2020/13": {
+    "slug": "batanga",
+    "bookIndex": 0
+  },
+  "2020/14": {
+    "slug": "malai-alfabet-jawi",
+    "bookIndex": 0
+  },
+  "2020/15": {
+    "slug": "malai-alfabet-jawi",
+    "bookIndex": 0
+  },
+  "2020/16": {
+    "slug": "asturià",
+    "bookIndex": 0
+  },
+  "2020/17": {
+    "slug": "espanyol",
+    "bookIndex": 1
+  },
+  "2020/18": {
+    "slug": "francès",
+    "bookIndex": 3
+  },
+  "2020/19": {
+    "slug": "còmics",
+    "bookIndex": 7
+  },
+  "2020/20": {
+    "slug": "còmics",
+    "bookIndex": 0
+  },
+  "2020/21": {
+    "slug": "romanx-grisó",
+    "bookIndex": 1
+  },
+  "2020/22": {
+    "slug": "català",
+    "bookIndex": 22
+  },
+  "2020/23": {
+    "slug": "italià",
+    "bookIndex": 39
+  },
+  "2020/24": {
+    "slug": "francès",
+    "bookIndex": 5
+  },
+  "2020/25": {
+    "slug": "alemany-lectura-fàcil",
+    "bookIndex": 0
+  },
+  "2020/26": {
+    "slug": "danès",
+    "bookIndex": 0
+  },
+  "2020/27": {
+    "slug": "polonès",
+    "bookIndex": 0
+  },
+  "2020/28": {
+    "slug": "bribri",
+    "bookIndex": 0
+  },
+  "2020/29": {
+    "slug": "bribri",
+    "bookIndex": 1
+  },
+  "2020/30": {
+    "slug": "rus",
+    "bookIndex": 34
+  },
+  "2020/31": {
+    "slug": "italià-braille",
+    "bookIndex": 0
+  },
+  "2020/32": {
+    "slug": "koriak",
+    "bookIndex": 0
+  },
+  "2020/33": {
+    "slug": "txuktxi",
+    "bookIndex": 0
+  },
+  "2020/34": {
+    "slug": "taiwanès-hokkien-min-nan",
+    "bookIndex": 0
+  },
+  "2020/35": {
+    "slug": "volapük",
+    "bookIndex": 0
+  },
+  "2020/36": {
+    "slug": "català-valencià",
+    "bookIndex": 1
+  },
+  "2020/37": {
+    "slug": "udihe-udege",
+    "bookIndex": 0
+  },
+  "2020/38": {
+    "slug": "orok-ulita",
+    "bookIndex": 0
+  },
+  "2020/39": {
+    "slug": "japonès",
+    "bookIndex": 7
+  },
+  "2020/40": {
+    "slug": "espanyol-manxec",
+    "bookIndex": 0
+  },
+  "2020/41": {
+    "slug": "llibres-relacionats",
+    "bookIndex": 20
+  },
+  "2020/42": {
+    "slug": "neerlandès-lectura-fàcil",
+    "bookIndex": 0
+  },
+  "2020/43": {
+    "slug": "wymysorys-vilamovicià",
+    "bookIndex": 0
+  },
+  "2020/44": {
+    "slug": "occità-vivaroalpí",
+    "bookIndex": 0
+  },
+  "2020/45": {
+    "slug": "espanyol",
+    "bookIndex": 91
+  },
+  "2020/46": {
+    "slug": "coreà-de-gyeongsang",
+    "bookIndex": 0
+  },
+  "2020/47": {
+    "slug": "espanyol",
+    "bookIndex": 75
+  },
+  "2020/48": {
+    "slug": "feroès",
+    "bookIndex": 0
+  },
+  "2020/49": {
+    "slug": "alemany-braille",
+    "bookIndex": 0
+  },
+  "2020/50": {
+    "slug": "alemany-braille",
+    "bookIndex": 0
+  },
+  "2020/51": {
+    "slug": "català",
+    "bookIndex": 9
+  },
+  "2020/52": {
+    "slug": "català",
+    "bookIndex": 7
+  },
+  "2020/53": {
+    "slug": "alemany-alamànic-de-baden",
+    "bookIndex": 1
+  },
+  "2020/54": {
+    "slug": "rus",
+    "bookIndex": 34
+  },
+  "2020/55": {
+    "slug": "alemany-bavarès",
+    "bookIndex": 2
+  },
+  "2020/56": {
+    "slug": "flamenc-oriental-de-gant",
+    "bookIndex": 0
+  },
+  "2020/57": {
+    "slug": "arbëreshë-ítalo-albanès",
+    "bookIndex": 0
+  },
+  "2020/58": {
+    "slug": "italià-de-massa",
+    "bookIndex": 0
+  },
+  "2020/59": {
+    "slug": "sard-de-busachi",
+    "bookIndex": 0
+  },
+  "2020/60": {
+    "slug": "quítxua-meridional",
+    "bookIndex": 0
+  },
+  "2020/61": {
+    "slug": "sard-limba-sarda",
+    "bookIndex": 1
+  },
+  "2020/62": {
+    "slug": "àzeri",
+    "bookIndex": 13
+  },
+  "2020/63": {
+    "slug": "àzeri",
+    "bookIndex": 14
+  },
+  "2020/64": {
+    "slug": "turc-de-denizli",
+    "bookIndex": 0
+  },
+  "2020/65": {
+    "slug": "tarahumara",
+    "bookIndex": 1
+  },
+  "2020/66": {
+    "slug": "espanyol-argentí",
+    "bookIndex": 0
+  },
+  "2020/67": {
+    "slug": "balinès",
+    "bookIndex": 0
+  },
+  "2020/68": {
+    "slug": "alemany-zuriquès",
+    "bookIndex": 0
+  },
+  "2020/69": {
+    "slug": "guaraní-argentí-de-corrientes",
+    "bookIndex": 0
+  },
+  "2020/70": {
+    "slug": "espanyol-paraguaià",
+    "bookIndex": 0
+  },
+  "2020/71": {
+    "slug": "vènet-de-vicenza",
+    "bookIndex": 0
+  },
+  "2020/72": {
+    "slug": "iacut",
+    "bookIndex": 0
+  },
+  "2020/73": {
+    "slug": "crioll-forro",
+    "bookIndex": 0
+  },
+  "2020/74": {
+    "slug": "tepehuan",
+    "bookIndex": 0
+  },
+  "2020/75": {
+    "slug": "tarahumara",
+    "bookIndex": 0
+  },
+  "2021/01": {
+    "slug": "llibres-relacionats",
+    "bookIndex": 37
+  },
+  "2021/02": {
+    "slug": "espanyol",
+    "bookIndex": 62
+  },
+  "2021/03": {
+    "slug": "gallec-braille",
+    "bookIndex": 0
+  },
+  "2021/04": {
+    "slug": "moravià-de-moràvia-valàquia",
+    "bookIndex": 0
+  },
+  "2021/05": {
+    "slug": "gallès",
+    "bookIndex": 2
+  },
+  "2021/06": {
+    "slug": "espanyol",
+    "bookIndex": 111
+  },
+  "2021/07": {
+    "slug": "carrusel",
+    "bookIndex": 2
+  },
+  "2021/08": {
+    "slug": "llibres-relacionats",
+    "bookIndex": 26
+  },
+  "2021/09": {
+    "slug": "occità-borbonès-de-chastèlmontanha-parlar-de-creixent",
+    "bookIndex": 0
+  },
+  "2021/10": {
+    "slug": "gòtic",
+    "bookIndex": 0
+  },
+  "2021/100": {
+    "slug": "nàhuatl",
+    "bookIndex": 0
+  },
+  "2021/101": {
+    "slug": "grec-pòntic",
+    "bookIndex": 0
+  },
+  "2021/102": {
+    "slug": "grec-pòntic",
+    "bookIndex": 1
+  },
+  "2021/103": {
+    "slug": "kazakh",
+    "bookIndex": 1
+  },
+  "2021/104": {
+    "slug": "finès-dialecte-savoni",
+    "bookIndex": 0
+  },
+  "2021/105": {
+    "slug": "llibres-relacionats",
+    "bookIndex": 24
+  },
+  "2021/106": {
+    "slug": "esperanto-reforma-de-1894",
+    "bookIndex": 0
+  },
+  "2021/107": {
+    "slug": "espanyol",
+    "bookIndex": 45
+  },
+  "2021/108": {
+    "slug": "text-esborrat",
+    "bookIndex": 1
+  },
+  "2021/109": {
+    "slug": "singalès",
+    "bookIndex": 0
+  },
+  "2021/11": {
+    "slug": "alemany-de-budapest",
+    "bookIndex": 0
+  },
+  "2021/110": {
+    "slug": "francès",
+    "bookIndex": 1
+  },
+  "2021/111": {
+    "slug": "albanès-tosc",
+    "bookIndex": 9
+  },
+  "2021/112": {
+    "slug": "còmics",
+    "bookIndex": 1
+  },
+  "2021/113": {
+    "slug": "serbi",
+    "bookIndex": 2
+  },
+  "2021/114": {
+    "slug": "indonesi",
+    "bookIndex": 6
+  },
+  "2021/115": {
+    "slug": "armeni",
+    "bookIndex": 6
+  },
+  "2021/116": {
+    "slug": "espanyol",
+    "bookIndex": 25
+  },
+  "2021/117": {
+    "slug": "polonès",
+    "bookIndex": 12
+  },
+  "2021/118": {
+    "slug": "extremeny",
+    "bookIndex": 2
+  },
+  "2021/119": {
+    "slug": "espanyol",
+    "bookIndex": 115
+  },
+  "2021/12": {
+    "slug": "romanx-alt-engiadinès-puter",
+    "bookIndex": 0
+  },
+  "2021/120": {
+    "slug": "indonesi",
+    "bookIndex": 2
+  },
+  "2021/121": {
+    "slug": "esperanto",
+    "bookIndex": 1
+  },
+  "2021/122": {
+    "slug": "danès",
+    "bookIndex": 1
+  },
+  "2021/123": {
+    "slug": "espanyol",
+    "bookIndex": 101
+  },
+  "2021/124": {
+    "slug": "uzbek",
+    "bookIndex": 3
+  },
+  "2021/125": {
+    "slug": "aimara-bolivià-septentrional",
+    "bookIndex": 0
+  },
+  "2021/126": {
+    "slug": "llibres-relacionats",
+    "bookIndex": 2
+  },
+  "2021/127": {
+    "slug": "espanyol",
+    "bookIndex": 60
+  },
+  "2021/128": {
+    "slug": "coreà",
+    "bookIndex": 1
+  },
+  "2021/129": {
+    "slug": "kurd-gorani-kelhuri",
+    "bookIndex": 0
+  },
+  "2021/13": {
+    "slug": "romanx-alt-engiadinès-puter",
+    "bookIndex": 0
+  },
+  "2021/130": {
+    "slug": "àrab",
+    "bookIndex": 1
+  },
+  "2021/131": {
+    "slug": "kurd-kurmanji",
+    "bookIndex": 6
+  },
+  "2021/132": {
+    "slug": "espanyol-aljamiat",
+    "bookIndex": 0
+  },
+  "2021/133": {
+    "slug": "espanyol-reformat",
+    "bookIndex": 0
+  },
+  "2021/134": {
+    "slug": "toki-pona",
+    "bookIndex": 1
+  },
+  "2021/135": {
+    "slug": "sicilià-en-vers",
+    "bookIndex": 1
+  },
+  "2021/136": {
+    "slug": "italià-de-cassino",
+    "bookIndex": 0
+  },
+  "2021/137": {
+    "slug": "italià-de-laquila-sabí",
+    "bookIndex": 0
+  },
+  "2021/138": {
+    "slug": "lingua-franca-nova",
+    "bookIndex": 2
+  },
+  "2021/139": {
+    "slug": "còmics",
+    "bookIndex": 8
+  },
+  "2021/14": {
+    "slug": "romanx-alt-engiadinès-puter",
+    "bookIndex": 0
+  },
+  "2021/15": {
+    "slug": "bemba",
+    "bookIndex": 0
+  },
+  "2021/16": {
+    "slug": "asturlleonès-del-rebollar",
+    "bookIndex": 0
+  },
+  "2021/17": {
+    "slug": "alemany-de-colònia",
+    "bookIndex": 0
+  },
+  "2021/18": {
+    "slug": "maia-quitxé",
+    "bookIndex": 0
+  },
+  "2021/19": {
+    "slug": "taiwanès-hokkien-min-nan",
+    "bookIndex": 1
+  },
+  "2021/20": {
+    "slug": "italià",
+    "bookIndex": 41
+  },
+  "2021/21": {
+    "slug": "albanès-tosc",
+    "bookIndex": 10
+  },
+  "2021/22": {
+    "slug": "alemany-sueu",
+    "bookIndex": 2
+  },
+  "2021/23": {
+    "slug": "extremeny",
+    "bookIndex": 1
+  },
+  "2021/24": {
+    "slug": "espanyol",
+    "bookIndex": 90
+  },
+  "2021/25": {
+    "slug": "italià",
+    "bookIndex": 42
+  },
+  "2021/26": {
+    "slug": "llibres-relacionats",
+    "bookIndex": 25
+  },
+  "2021/27": {
+    "slug": "català-valencià",
+    "bookIndex": 2
+  },
+  "2021/28": {
+    "slug": "súrjik",
+    "bookIndex": 0
+  },
+  "2021/29": {
+    "slug": "francès",
+    "bookIndex": 47
+  },
+  "2021/30": {
+    "slug": "croat-txakavià",
+    "bookIndex": 1
+  },
+  "2021/31": {
+    "slug": "italià-altotiberí",
+    "bookIndex": 0
+  },
+  "2021/32": {
+    "slug": "llatí",
+    "bookIndex": 1
+  },
+  "2021/33": {
+    "slug": "francès",
+    "bookIndex": 25
+  },
+  "2021/34": {
+    "slug": "francès",
+    "bookIndex": 21
+  },
+  "2021/35": {
+    "slug": "georgià",
+    "bookIndex": 0
+  },
+  "2021/36": {
+    "slug": "armeni-occidental",
+    "bookIndex": 0
+  },
+  "2021/37": {
+    "slug": "tuvinià",
+    "bookIndex": 0
+  },
+  "2021/38": {
+    "slug": "còmics",
+    "bookIndex": 3
+  },
+  "2021/39": {
+    "slug": "karakalpak",
+    "bookIndex": 1
+  },
+  "2021/40": {
+    "slug": "malai",
+    "bookIndex": 1
+  },
+  "2021/41": {
+    "slug": "llibres-relacionats",
+    "bookIndex": 17
+  },
+  "2021/42": {
+    "slug": "llibres-relacionats",
+    "bookIndex": 13
+  },
+  "2021/43": {
+    "slug": "indonesi-alfabet-ciríllic",
+    "bookIndex": 0
+  },
+  "2021/44": {
+    "slug": "intereslau",
+    "bookIndex": 1
+  },
+  "2021/45": {
+    "slug": "crioll-jamaicà",
+    "bookIndex": 0
+  },
+  "2021/46": {
+    "slug": "occità-llenguadocià",
+    "bookIndex": 1
+  },
+  "2021/47": {
+    "slug": "amhàric",
+    "bookIndex": 2
+  },
+  "2021/48": {
+    "slug": "tàtar",
+    "bookIndex": 1
+  },
+  "2021/49": {
+    "slug": "tàtar-alfabet-llatí",
+    "bookIndex": 0
+  },
+  "2021/50": {
+    "slug": "armeni",
+    "bookIndex": 4
+  },
+  "2021/51": {
+    "slug": "armeni",
+    "bookIndex": 1
+  },
+  "2021/52": {
+    "slug": "croat-txakavià",
+    "bookIndex": 0
+  },
+  "2021/53": {
+    "slug": "grecànic",
+    "bookIndex": 0
+  },
+  "2021/54": {
+    "slug": "italià",
+    "bookIndex": 40
+  },
+  "2021/55": {
+    "slug": "albanès-tosc",
+    "bookIndex": 5
+  },
+  "2021/56": {
+    "slug": "alemany-de-marburg",
+    "bookIndex": 0
+  },
+  "2021/57": {
+    "slug": "rus",
+    "bookIndex": 34
+  },
+  "2021/58": {
+    "slug": "alemany-bavarès",
+    "bookIndex": 2
+  },
+  "2021/59": {
+    "slug": "bolze",
+    "bookIndex": 0
+  },
+  "2021/60": {
+    "slug": "alemany-bavarès",
+    "bookIndex": 2
+  },
+  "2021/61": {
+    "slug": "alemany-bavarès",
+    "bookIndex": 2
+  },
+  "2021/62": {
+    "slug": "alemany-bavarès",
+    "bookIndex": 2
+  },
+  "2021/63": {
+    "slug": "occità-borbonès-de-tol-parlar-de-creixent",
+    "bookIndex": 0
+  },
+  "2021/64": {
+    "slug": "normand",
+    "bookIndex": 1
+  },
+  "2021/65": {
+    "slug": "vietnamita",
+    "bookIndex": 6
+  },
+  "2021/66": {
+    "slug": "vietnamita",
+    "bookIndex": 3
+  },
+  "2021/67": {
+    "slug": "bengalí",
+    "bookIndex": 2
+  },
+  "2021/68": {
+    "slug": "shipibo-conibo",
+    "bookIndex": 0
+  },
+  "2021/69": {
+    "slug": "karakalpak",
+    "bookIndex": 0
+  },
+  "2021/70": {
+    "slug": "tagal-filipí",
+    "bookIndex": 2
+  },
+  "2021/71": {
+    "slug": "occità-borbonès-de-tol-parlar-de-creixent",
+    "bookIndex": 0
+  },
+  "2021/72": {
+    "slug": "occità-borbonès-de-tol-parlar-de-creixent",
+    "bookIndex": 0
+  },
+  "2021/73": {
+    "slug": "frisó-oriental",
+    "bookIndex": 0
+  },
+  "2021/74": {
+    "slug": "occità-marquès-de-la-châtre-parlar-de-creixent",
+    "bookIndex": 0
+  },
+  "2021/75": {
+    "slug": "komi",
+    "bookIndex": 0
+  },
+  "2021/76": {
+    "slug": "occità-marquès-de-genolhac-parlar-de-creixent",
+    "bookIndex": 0
+  },
+  "2021/77": {
+    "slug": "erzya",
+    "bookIndex": 0
+  },
+  "2021/78": {
+    "slug": "alemany-berlinès",
+    "bookIndex": 1
+  },
+  "2021/79": {
+    "slug": "karatxai-balkar",
+    "bookIndex": 0
+  },
+  "2021/80": {
+    "slug": "occità-marquès-déguzon-chantòma-parlar-de-creixent",
+    "bookIndex": 0
+  },
+  "2021/81": {
+    "slug": "alemany-berlinès",
+    "bookIndex": 1
+  },
+  "2021/82": {
+    "slug": "udmurt",
+    "bookIndex": 1
+  },
+  "2021/83": {
+    "slug": "udmurt",
+    "bookIndex": 0
+  },
+  "2021/84": {
+    "slug": "ojibwa",
+    "bookIndex": 1
+  },
+  "2021/85": {
+    "slug": "alemany-lectura-fàcil",
+    "bookIndex": 1
+  },
+  "2021/86": {
+    "slug": "calabrès-de-lamezia-resum",
+    "bookIndex": 0
+  },
+  "2021/87": {
+    "slug": "intereslau",
+    "bookIndex": 0
+  },
+  "2021/88": {
+    "slug": "intereslau",
+    "bookIndex": 2
+  },
+  "2021/89": {
+    "slug": "udmurt",
+    "bookIndex": 2
+  },
+  "2021/90": {
+    "slug": "nheengatu",
+    "bookIndex": 0
+  },
+  "2021/91": {
+    "slug": "franc-comtès",
+    "bookIndex": 0
+  },
+  "2021/92": {
+    "slug": "quítxua-santiagueño",
+    "bookIndex": 0
+  },
+  "2021/93": {
+    "slug": "turc-de-tràcia-oriental",
+    "bookIndex": 0
+  },
+  "2021/94": {
+    "slug": "espanyol-andalús-de-sierra-mágina",
+    "bookIndex": 0
+  },
+  "2021/95": {
+    "slug": "zapoteca",
+    "bookIndex": 0
+  },
+  "2021/96": {
+    "slug": "turc-de-gaziantep",
+    "bookIndex": 0
+  },
+  "2021/97": {
+    "slug": "alemany-del-rhön",
+    "bookIndex": 0
+  },
+  "2021/98": {
+    "slug": "anglès-numerologia-pitagòrica",
+    "bookIndex": 0
+  },
+  "2021/99": {
+    "slug": "espanyol-en-llenguatge-inclusiu",
+    "bookIndex": 0
+  },
+  "2022/01": {
+    "slug": "jeju",
+    "bookIndex": 0
+  },
+  "2022/02": {
+    "slug": "milanès-de-canegrate",
+    "bookIndex": 0
+  },
+  "2022/03": {
+    "slug": "italià-de-sulmona",
+    "bookIndex": 0
+  },
+  "2022/04": {
+    "slug": "italià-de-macerata",
+    "bookIndex": 0
+  },
+  "2022/05": {
+    "slug": "napolità-de-pozzuoli",
+    "bookIndex": 0
+  },
+  "2022/06": {
+    "slug": "aimara-peruà-septentrional",
+    "bookIndex": 0
+  },
+  "2022/07": {
+    "slug": "crioll-de-saint-vincent",
+    "bookIndex": 0
+  },
+  "2022/08": {
+    "slug": "kinyarwanda",
+    "bookIndex": 1
+  },
+  "2022/09": {
+    "slug": "khmer-surin",
+    "bookIndex": 0
+  },
+  "2022/10": {
+    "slug": "khmer-surin",
+    "bookIndex": 1
+  },
+  "2022/11": {
+    "slug": "tailandès-sukhothai",
+    "bookIndex": 0
+  },
+  "2022/12": {
+    "slug": "nàhuatl-pipil",
+    "bookIndex": 0
+  },
+  "2022/13": {
+    "slug": "espanyol-lunfardo",
+    "bookIndex": 0
+  },
+  "2022/14": {
+    "slug": "haketia",
+    "bookIndex": 0
+  },
+  "2022/15": {
+    "slug": "espanyol-gaceria",
+    "bookIndex": 0
+  },
+  "2022/16": {
+    "slug": "espanyol-cheli",
+    "bookIndex": 0
+  },
+  "2022/17": {
+    "slug": "poliglotes",
+    "bookIndex": 0
+  },
+  "2022/18": {
+    "slug": "còmics",
+    "bookIndex": 10
+  },
+  "2022/19": {
+    "slug": "llibres-relacionats",
+    "bookIndex": 21
+  },
+  "2022/20": {
+    "slug": "hiligueino",
+    "bookIndex": 0
+  },
+  "2022/21": {
+    "slug": "llibres-relacionats",
+    "bookIndex": 29
+  },
+  "2022/22": {
+    "slug": "francès",
+    "bookIndex": 51
+  },
+  "2022/23": {
+    "slug": "francès",
+    "bookIndex": 15
+  },
+  "2022/24": {
+    "slug": "bicol",
+    "bookIndex": 1
+  },
+  "2022/25": {
+    "slug": "francès",
+    "bookIndex": 31
+  },
+  "2022/26": {
+    "slug": "francès",
+    "bookIndex": 48
+  },
+  "2022/27": {
+    "slug": "francès",
+    "bookIndex": 49
+  },
+  "2022/28": {
+    "slug": "francès",
+    "bookIndex": 38
+  },
+  "2022/29": {
+    "slug": "francès",
+    "bookIndex": 50
+  },
+  "2022/30": {
+    "slug": "àrab",
+    "bookIndex": 18
+  },
+  "2022/31": {
+    "slug": "alemany-de-marburg",
+    "bookIndex": 0
+  },
+  "2022/32": {
+    "slug": "phuthi",
+    "bookIndex": 0
+  },
+  "2022/33": {
+    "slug": "escocès-de-shetland",
+    "bookIndex": 0
+  },
+  "2022/34": {
+    "slug": "ainu",
+    "bookIndex": 0
+  },
+  "2022/35": {
+    "slug": "alemany-hamburguès",
+    "bookIndex": 0
+  },
+  "2022/36": {
+    "slug": "alemany-fràncic",
+    "bookIndex": 1
+  },
+  "2022/37": {
+    "slug": "alemany-berlinès",
+    "bookIndex": 1
+  },
+  "2022/38": {
+    "slug": "mansi",
+    "bookIndex": 0
+  },
+  "2022/39": {
+    "slug": "ainu",
+    "bookIndex": 0
+  },
+  "2022/40": {
+    "slug": "francès",
+    "bookIndex": 52
+  },
+  "2022/41": {
+    "slug": "occità-borbonès-de-tol-parlar-de-creixent",
+    "bookIndex": 0
+  },
+  "2022/42": {
+    "slug": "occità-marquès-de-lordoir-parlar-de-creixent",
+    "bookIndex": 0
+  },
+  "2022/43": {
+    "slug": "occità-marquès-de-senta-colomba-parlar-de-creixent",
+    "bookIndex": 0
+  },
+  "2022/44": {
+    "slug": "occità-marquès-de-mortròu-parlar-de-creixent",
+    "bookIndex": 0
+  },
+  "2022/45": {
+    "slug": "occità-marquès-de-nosarinas-parlar-de-creixent",
+    "bookIndex": 0
+  },
+  "2022/46": {
+    "slug": "occità-marquès-de-la-cela-de-dun-parlar-de-creixent",
+    "bookIndex": 0
+  },
+  "2022/47": {
+    "slug": "occità-marquès-de-sent-front-parlar-de-creixent",
+    "bookIndex": 0
+  },
+  "2022/48": {
+    "slug": "ucraïnès",
+    "bookIndex": 9
+  },
+  "2022/49": {
+    "slug": "ucraïnès",
+    "bookIndex": 10
+  },
+  "2022/50": {
+    "slug": "ucraïnès",
+    "bookIndex": 8
+  },
+  "2022/51": {
+    "slug": "espanyol",
+    "bookIndex": 134
+  },
+  "2022/52": {
+    "slug": "zazaqui-kirdki",
+    "bookIndex": 0
+  },
+  "2022/53": {
+    "slug": "català-balear",
+    "bookIndex": 0
+  },
+  "2022/54": {
+    "slug": "llibres-relacionats",
+    "bookIndex": 28
+  },
+  "2022/55": {
+    "slug": "àrab",
+    "bookIndex": 16
+  },
+  "2022/56": {
+    "slug": "àrab",
+    "bookIndex": 15
+  },
+  "2022/57": {
+    "slug": "àrab-algerià",
+    "bookIndex": 1
+  },
+  "2022/58": {
+    "slug": "grec",
+    "bookIndex": 11
+  },
+  "2022/59": {
+    "slug": "llibres-relacionats",
+    "bookIndex": 27
+  },
+  "2022/60": {
+    "slug": "italià",
+    "bookIndex": 4
+  },
+  "2022/61": {
+    "slug": "llatí",
+    "bookIndex": 6
+  },
+  "2022/62": {
+    "slug": "àzeri",
+    "bookIndex": 1
+  },
+  "2022/63": {
+    "slug": "albanès-tosc",
+    "bookIndex": 6
+  },
+  "2022/64": {
+    "slug": "maia-yucatec",
+    "bookIndex": 1
+  },
+  "2022/65": {
+    "slug": "alemany-vienès",
+    "bookIndex": 0
+  },
+  "2022/66": {
+    "slug": "xinès-mandarí",
+    "bookIndex": 2
+  },
+  "2022/67": {
+    "slug": "portuguès-brasiler",
+    "bookIndex": 7
+  },
+  "2022/68": {
+    "slug": "portuguès-brasiler",
+    "bookIndex": 1
+  },
+  "2022/69": {
+    "slug": "portuguès",
+    "bookIndex": 1
+  },
+  "2022/70": {
+    "slug": "portuguès",
+    "bookIndex": 0
+  },
+  "2022/71": {
+    "slug": "bosnià",
+    "bookIndex": 1
+  },
+  "2022/72": {
+    "slug": "hindi",
+    "bookIndex": 0
+  },
+  "2022/73": {
+    "slug": "assamès",
+    "bookIndex": 1
+  },
+  "2022/74": {
+    "slug": "crioll-jamaicà",
+    "bookIndex": 0
+  },
+  "2022/75": {
+    "slug": "suahili",
+    "bookIndex": 0
+  },
+  "2022/76": {
+    "slug": "alemany",
+    "bookIndex": 7
+  },
+  "2022/77": {
+    "slug": "romanx-sobreselvà",
+    "bookIndex": 0
+  },
+  "2022/78": {
+    "slug": "portuguès-brasiler",
+    "bookIndex": 8
+  },
+  "2022/79": {
+    "slug": "italià",
+    "bookIndex": 43
+  },
+  "2022/80": {
+    "slug": "italià",
+    "bookIndex": 44
+  },
+  "2022/81": {
+    "slug": "àrab-palestí",
+    "bookIndex": 1
+  },
+  "2022/82": {
+    "slug": "interlingua",
+    "bookIndex": 0
+  },
+  "2022/83": {
+    "slug": "espanyol",
+    "bookIndex": 66
+  },
+  "2022/84": {
+    "slug": "espanyol",
+    "bookIndex": 118
+  },
+  "2022/85": {
+    "slug": "espanyol",
+    "bookIndex": 19
+  },
+  "2022/86": {
+    "slug": "italià-de-leonessa",
+    "bookIndex": 0
+  },
+  "2022/87": {
+    "slug": "italià-de-leonessa",
+    "bookIndex": 1
+  },
+  "2022/88": {
+    "slug": "gallec",
+    "bookIndex": 4
+  },
+  "2022/89": {
+    "slug": "espanyol",
+    "bookIndex": 63
+  },
+  "2022/90": {
+    "slug": "qaixqai",
+    "bookIndex": 1
+  },
+  "2022/91": {
+    "slug": "interlingue-occidental",
+    "bookIndex": 0
+  },
+  "2022/92": {
+    "slug": "tagal-filipí",
+    "bookIndex": 3
+  },
+  "2022/93": {
+    "slug": "espanyol-braille",
+    "bookIndex": 3
+  },
+  "2023/01": {
+    "slug": "llibres-relacionats",
+    "bookIndex": 30
+  },
+  "2023/02": {
+    "slug": "llibres-relacionats",
+    "bookIndex": 31
+  },
+  "2023/03": {
+    "slug": "berber-tamashek",
+    "bookIndex": 1
+  },
+  "2023/04": {
+    "slug": "afrikaans",
+    "bookIndex": 0
+  },
+  "2023/05": {
+    "slug": "portuguès-brasiler",
+    "bookIndex": 0
+  },
+  "2023/06": {
+    "slug": "coreà",
+    "bookIndex": 0
+  },
+  "2023/07": {
+    "slug": "tàmil",
+    "bookIndex": 0
+  },
+  "2023/08": {
+    "slug": "hebreu",
+    "bookIndex": 0
+  },
+  "2023/09": {
+    "slug": "ioruba",
+    "bookIndex": 0
+  },
+  "2023/10": {
+    "slug": "aimara-bolivià-septentrional",
+    "bookIndex": 1
+  },
+  "2023/11": {
+    "slug": "poliglotes",
+    "bookIndex": 3
+  },
+  "2023/12": {
+    "slug": "poliglotes",
+    "bookIndex": 2
+  },
+  "2023/13": {
+    "slug": "poliglotes",
+    "bookIndex": 1
+  },
+  "2023/14": {
+    "slug": "occità-llenguadocià-de-cuc",
+    "bookIndex": 0
+  },
+  "2023/15": {
+    "slug": "occità-marquès-de-pleuvila-parlar-de-creixent",
+    "bookIndex": 0
+  },
+  "2023/16": {
+    "slug": "occità-marquès-de-sent-legèr-de-luçac-parlar-de-creixent",
+    "bookIndex": 0
+  },
+  "2023/17": {
+    "slug": "jeju",
+    "bookIndex": 1
+  },
+  "2023/18": {
+    "slug": "occità-borbonès-de-barberèir-parlar-de-creixent",
+    "bookIndex": 0
+  },
+  "2023/19": {
+    "slug": "occità-borbonès-de-beuna-parlar-de-creixent",
+    "bookIndex": 0
+  },
+  "2023/20": {
+    "slug": "francoprovençal-de-chermignon",
+    "bookIndex": 0
+  },
+  "2023/21": {
+    "slug": "wallisià",
+    "bookIndex": 0
+  },
+  "2023/22": {
+    "slug": "groninguès",
+    "bookIndex": 0
+  },
+  "2023/23": {
+    "slug": "neerlandès-damsterdam",
+    "bookIndex": 0
+  },
+  "2023/24": {
+    "slug": "võro",
+    "bookIndex": 0
+  },
+  "2023/25": {
+    "slug": "turenès",
+    "bookIndex": 0
+  },
+  "2023/26": {
+    "slug": "vepse",
+    "bookIndex": 0
+  },
+  "2023/27": {
+    "slug": "gallès",
+    "bookIndex": 3
+  },
+  "2023/28": {
+    "slug": "àrab-algerià",
+    "bookIndex": 2
+  },
+  "2023/29": {
+    "slug": "berber-cabilenc",
+    "bookIndex": 1
+  },
+  "2023/30": {
+    "slug": "espanyol-afrobolivià",
+    "bookIndex": 0
+  },
+  "2023/31": {
+    "slug": "xinès-mandarí",
+    "bookIndex": 14
+  },
+  "2023/32": {
+    "slug": "japonès",
+    "bookIndex": 24
+  },
+  "2023/33": {
+    "slug": "italià-de-chioggia",
+    "bookIndex": 0
+  },
+  "2023/34": {
+    "slug": "bemba",
+    "bookIndex": 0
+  },
+  "2023/35": {
+    "slug": "cham-oriental",
+    "bookIndex": 0
+  },
+  "2023/36": {
+    "slug": "téenek-huastec-occidental",
+    "bookIndex": 0
+  },
+  "2023/37": {
+    "slug": "polonès-dialecte-de-kurpie",
+    "bookIndex": 0
+  },
+  "2023/38": {
+    "slug": "garifuna",
+    "bookIndex": 0
+  },
+  "2023/39": {
+    "slug": "italià-durbania",
+    "bookIndex": 0
+  },
+  "2023/40": {
+    "slug": "txec-de-krkonoše",
+    "bookIndex": 0
+  },
+  "2023/41": {
+    "slug": "ilocano",
+    "bookIndex": 0
+  },
+  "2023/42": {
+    "slug": "tweants",
+    "bookIndex": 0
+  },
+  "2023/43": {
+    "slug": "sami-de-lule",
+    "bookIndex": 0
+  },
+  "2023/44": {
+    "slug": "bemba",
+    "bookIndex": 0
+  },
+  "2023/45": {
+    "slug": "espanyol-cordobès",
+    "bookIndex": 0
+  },
+  "2023/46": {
+    "slug": "espanyol-xurro",
+    "bookIndex": 0
+  },
+  "2023/47": {
+    "slug": "càntabre",
+    "bookIndex": 0
+  },
+  "2023/48": {
+    "slug": "cebuà",
+    "bookIndex": 2
+  },
+  "2023/49": {
+    "slug": "cebuà",
+    "bookIndex": 0
+  },
+  "2023/50": {
+    "slug": "tàmil",
+    "bookIndex": 2
+  },
+  "2023/51": {
+    "slug": "crioll-forro",
+    "bookIndex": 0
+  },
+  "2023/52": {
+    "slug": "català",
+    "bookIndex": 14
+  },
+  "2023/53": {
+    "slug": "kurd-kurmanji",
+    "bookIndex": 7
+  },
+  "2023/54": {
+    "slug": "poliglotes",
+    "bookIndex": 0
+  },
+  "2023/55": {
+    "slug": "espanyol-lectura-fàcil",
+    "bookIndex": 1
+  },
+  "2023/56": {
+    "slug": "espanyol",
+    "bookIndex": 131
+  },
+  "2023/57": {
+    "slug": "albanès-tosc",
+    "bookIndex": 11
+  },
+  "2023/58": {
+    "slug": "català-valencià",
+    "bookIndex": 3
+  },
+  "2023/59": {
+    "slug": "àzeri-en-llenguatge-inclusiu",
+    "bookIndex": 0
+  },
+  "2023/60": {
+    "slug": "àzeri",
+    "bookIndex": 2
+  },
+  "2023/61": {
+    "slug": "àzeri",
+    "bookIndex": 15
+  },
+  "2023/62": {
+    "slug": "sard-gallurès",
+    "bookIndex": 1
+  },
+  "2023/63": {
+    "slug": "karatxai-balkar",
+    "bookIndex": 1
+  },
+  "2023/64": {
+    "slug": "karatxai-balkar",
+    "bookIndex": 3
+  },
+  "2023/65": {
+    "slug": "occità-niçard",
+    "bookIndex": 0
+  },
+  "2023/66": {
+    "slug": "romanx-alt-engiadinès-puter",
+    "bookIndex": 0
+  },
+  "2023/67": {
+    "slug": "romanx-sotaselvà",
+    "bookIndex": 0
+  },
+  "2023/68": {
+    "slug": "javanès",
+    "bookIndex": 0
+  },
+  "2023/69": {
+    "slug": "espanyol",
+    "bookIndex": 108
+  },
+  "2023/70": {
+    "slug": "espanyol-paraguaià",
+    "bookIndex": 1
+  },
+  "2023/71": {
+    "slug": "guaraní-de-paraguai",
+    "bookIndex": 2
+  },
+  "2023/72": {
+    "slug": "àrab",
+    "bookIndex": 17
+  },
+  "2023/73": {
+    "slug": "xinès-hakka-zhaoan",
+    "bookIndex": 0
+  },
+  "2023/74": {
+    "slug": "vietnamita",
+    "bookIndex": 2
+  },
+  "2023/75": {
+    "slug": "jämtland",
+    "bookIndex": 0
+  },
+  "2023/76": {
+    "slug": "occità-marquès-de-lordoir-parlar-de-creixent",
+    "bookIndex": 0
+  },
+  "2023/77": {
+    "slug": "alt-alemany-de-kleinwalsertal",
+    "bookIndex": 0
+  },
+  "2023/78": {
+    "slug": "bessermia",
+    "bookIndex": 0
+  },
+  "2023/79": {
+    "slug": "italià-de-foligno",
+    "bookIndex": 0
+  },
+  "2023/80": {
+    "slug": "italià-de-monte-compatri",
+    "bookIndex": 0
+  },
+  "2023/81": {
+    "slug": "georgià",
+    "bookIndex": 5
+  },
+  "2023/82": {
+    "slug": "afrikaans",
+    "bookIndex": 1
+  },
+  "2023/83": {
+    "slug": "anglès",
+    "bookIndex": 13
+  },
+  "2023/84": {
+    "slug": "tailandès",
+    "bookIndex": 8
+  },
+  "2023/85": {
+    "slug": "noruec",
+    "bookIndex": 4
+  },
+  "2023/86": {
+    "slug": "lituà",
+    "bookIndex": 2
+  },
+  "2024/01": {
+    "slug": "gallès",
+    "bookIndex": 0
+  },
+  "2024/02": {
+    "slug": "tagal-filipí",
+    "bookIndex": 0
+  },
+  "2024/03": {
+    "slug": "japonès",
+    "bookIndex": 0
+  },
+  "2024/04": {
+    "slug": "japonès",
+    "bookIndex": 27
+  },
+  "2024/05": {
+    "slug": "kunigami",
+    "bookIndex": 0
+  },
+  "2024/06": {
+    "slug": "waray-waray",
+    "bookIndex": 0
+  },
+  "2024/07": {
+    "slug": "vietnamita",
+    "bookIndex": 0
+  },
+  "2024/08": {
+    "slug": "vietnamita",
+    "bookIndex": 1
+  },
+  "2024/09": {
+    "slug": "vietnamita",
+    "bookIndex": 8
+  },
+  "2024/10": {
+    "slug": "vietnamita",
+    "bookIndex": 9
+  },
+  "2024/100": {
+    "slug": "portuguès",
+    "bookIndex": 8
+  },
+  "2024/101": {
+    "slug": "espanyol",
+    "bookIndex": 67
+  },
+  "2024/102": {
+    "slug": "espanyol",
+    "bookIndex": 64
+  },
+  "2024/103": {
+    "slug": "limburguès-de-kerkrade",
+    "bookIndex": 0
+  },
+  "2024/104": {
+    "slug": "tuamotià",
+    "bookIndex": 0
+  },
+  "2024/105": {
+    "slug": "ingúix",
+    "bookIndex": 0
+  },
+  "2024/106": {
+    "slug": "berber-amazic-taixelhit",
+    "bookIndex": 1
+  },
+  "2024/107": {
+    "slug": "italià-de-la-vall-de-tassobio",
+    "bookIndex": 0
+  },
+  "2024/108": {
+    "slug": "alemany-fràncic-lorenès",
+    "bookIndex": 1
+  },
+  "2024/109": {
+    "slug": "occità-marquès-de-champanha-de-moton-parlar-de-creixent",
+    "bookIndex": 0
+  },
+  "2024/11": {
+    "slug": "lituà-de-lalta-lituània-oriental",
+    "bookIndex": 0
+  },
+  "2024/110": {
+    "slug": "lorenès-dels-vosges-meridionals",
+    "bookIndex": 0
+  },
+  "2024/111": {
+    "slug": "tuvalià",
+    "bookIndex": 1
+  },
+  "2024/112": {
+    "slug": "tuvalià",
+    "bookIndex": 0
+  },
+  "2024/113": {
+    "slug": "tailandès",
+    "bookIndex": 19
+  },
+  "2024/114": {
+    "slug": "espanyol",
+    "bookIndex": 17
+  },
+  "2024/115": {
+    "slug": "italià",
+    "bookIndex": 45
+  },
+  "2024/116": {
+    "slug": "jerseiès",
+    "bookIndex": 0
+  },
+  "2024/117": {
+    "slug": "italià-de-crema",
+    "bookIndex": 0
+  },
+  "2024/118": {
+    "slug": "italià-dascoli-piceno-ascolano",
+    "bookIndex": 0
+  },
+  "2024/119": {
+    "slug": "italià-de-mirabello",
+    "bookIndex": 0
+  },
+  "2024/12": {
+    "slug": "lituà-dzūkià",
+    "bookIndex": 0
+  },
+  "2024/120": {
+    "slug": "chamorro",
+    "bookIndex": 0
+  },
+  "2024/121": {
+    "slug": "samogitià",
+    "bookIndex": 0
+  },
+  "2024/122": {
+    "slug": "comorià-shindzuani-de-ndzwani",
+    "bookIndex": 0
+  },
+  "2024/123": {
+    "slug": "caixubi",
+    "bookIndex": 1
+  },
+  "2024/124": {
+    "slug": "silesià-de-cieszyn",
+    "bookIndex": 0
+  },
+  "2024/125": {
+    "slug": "madurès",
+    "bookIndex": 0
+  },
+  "2024/126": {
+    "slug": "poliglotes",
+    "bookIndex": 4
+  },
+  "2024/127": {
+    "slug": "cebuà",
+    "bookIndex": 1
+  },
+  "2024/128": {
+    "slug": "neerlandès",
+    "bookIndex": 5
+  },
+  "2024/129": {
+    "slug": "àrab",
+    "bookIndex": 2
+  },
+  "2024/13": {
+    "slug": "llibres-relacionats",
+    "bookIndex": 32
+  },
+  "2024/130": {
+    "slug": "àrab",
+    "bookIndex": 19
+  },
+  "2024/131": {
+    "slug": "alemany",
+    "bookIndex": 6
+  },
+  "2024/132": {
+    "slug": "català-valencià",
+    "bookIndex": 4
+  },
+  "2024/133": {
+    "slug": "català",
+    "bookIndex": 23
+  },
+  "2024/134": {
+    "slug": "francès",
+    "bookIndex": 53
+  },
+  "2024/135": {
+    "slug": "albanès-tosc",
+    "bookIndex": 2
+  },
+  "2024/136": {
+    "slug": "oriya",
+    "bookIndex": 1
+  },
+  "2024/137": {
+    "slug": "malaiàlam",
+    "bookIndex": 2
+  },
+  "2024/138": {
+    "slug": "espanyol",
+    "bookIndex": 126
+  },
+  "2024/139": {
+    "slug": "coreà-de-gangwon-do",
+    "bookIndex": 0
+  },
+  "2024/14": {
+    "slug": "limburguès-de-venlo",
+    "bookIndex": 0
+  },
+  "2024/140": {
+    "slug": "occità-llemosí-de-lesterp",
+    "bookIndex": 0
+  },
+  "2024/141": {
+    "slug": "neerlandès",
+    "bookIndex": 6
+  },
+  "2024/142": {
+    "slug": "espanyol-aljamiat",
+    "bookIndex": 1
+  },
+  "2024/143": {
+    "slug": "nogai",
+    "bookIndex": 0
+  },
+  "2024/15": {
+    "slug": "alemany-degerland",
+    "bookIndex": 0
+  },
+  "2024/16": {
+    "slug": "baix-saxó-stellingwarfs",
+    "bookIndex": 0
+  },
+  "2024/17": {
+    "slug": "babanki",
+    "bookIndex": 0
+  },
+  "2024/18": {
+    "slug": "espanyol-aljamiat",
+    "bookIndex": 1
+  },
+  "2024/19": {
+    "slug": "paixtu",
+    "bookIndex": 1
+  },
+  "2024/20": {
+    "slug": "kurd-sorani",
+    "bookIndex": 2
+  },
+  "2024/21": {
+    "slug": "persa-darí",
+    "bookIndex": 2
+  },
+  "2024/22": {
+    "slug": "armeni-clàssic-grabar",
+    "bookIndex": 0
+  },
+  "2024/23": {
+    "slug": "txec-de-haná",
+    "bookIndex": 0
+  },
+  "2024/24": {
+    "slug": "ladí-judeocastellà",
+    "bookIndex": 1
+  },
+  "2024/25": {
+    "slug": "panjabi",
+    "bookIndex": 4
+  },
+  "2024/26": {
+    "slug": "panjabi",
+    "bookIndex": 5
+  },
+  "2024/27": {
+    "slug": "persa-hazaragí",
+    "bookIndex": 0
+  },
+  "2024/28": {
+    "slug": "balutxi",
+    "bookIndex": 0
+  },
+  "2024/29": {
+    "slug": "pashayi",
+    "bookIndex": 0
+  },
+  "2024/30": {
+    "slug": "nuristaní-kalasha",
+    "bookIndex": 0
+  },
+  "2024/31": {
+    "slug": "espanyol-llengua-de-signes",
+    "bookIndex": 1
+  },
+  "2024/32": {
+    "slug": "anglès",
+    "bookIndex": 29
+  },
+  "2024/33": {
+    "slug": "urdú",
+    "bookIndex": 1
+  },
+  "2024/34": {
+    "slug": "urdú",
+    "bookIndex": 2
+  },
+  "2024/35": {
+    "slug": "urdú",
+    "bookIndex": 3
+  },
+  "2024/36": {
+    "slug": "tadjik",
+    "bookIndex": 3
+  },
+  "2024/37": {
+    "slug": "francès-binari",
+    "bookIndex": 0
+  },
+  "2024/38": {
+    "slug": "poliglotes",
+    "bookIndex": 5
+  },
+  "2024/39": {
+    "slug": "tadjik",
+    "bookIndex": 2
+  },
+  "2024/40": {
+    "slug": "sango",
+    "bookIndex": 0
+  },
+  "2024/41": {
+    "slug": "italià-en-vers",
+    "bookIndex": 0
+  },
+  "2024/42": {
+    "slug": "anglès",
+    "bookIndex": 28
+  },
+  "2024/43": {
+    "slug": "italià-de-san-donato-di-ninea",
+    "bookIndex": 0
+  },
+  "2024/44": {
+    "slug": "italià-de-calàbria",
+    "bookIndex": 0
+  },
+  "2024/45": {
+    "slug": "italià-de-senigallia",
+    "bookIndex": 0
+  },
+  "2024/46": {
+    "slug": "italià-de-basilicata",
+    "bookIndex": 0
+  },
+  "2024/47": {
+    "slug": "romanesque",
+    "bookIndex": 1
+  },
+  "2024/48": {
+    "slug": "florentí",
+    "bookIndex": 2
+  },
+  "2024/49": {
+    "slug": "kuna",
+    "bookIndex": 0
+  },
+  "2024/50": {
+    "slug": "nepal-bhasa",
+    "bookIndex": 0
+  },
+  "2024/51": {
+    "slug": "menorquí",
+    "bookIndex": 0
+  },
+  "2024/52": {
+    "slug": "alemany-berlinès",
+    "bookIndex": 0
+  },
+  "2024/53": {
+    "slug": "bislama",
+    "bookIndex": 0
+  },
+  "2024/54": {
+    "slug": "eslovac",
+    "bookIndex": 2
+  },
+  "2024/55": {
+    "slug": "emberà-xamí",
+    "bookIndex": 0
+  },
+  "2024/56": {
+    "slug": "chaná",
+    "bookIndex": 0
+  },
+  "2024/57": {
+    "slug": "chaná",
+    "bookIndex": 1
+  },
+  "2024/58": {
+    "slug": "gallec",
+    "bookIndex": 3
+  },
+  "2024/59": {
+    "slug": "espanyol",
+    "bookIndex": 26
+  },
+  "2024/60": {
+    "slug": "limburguès-de-maastricht",
+    "bookIndex": 0
+  },
+  "2024/61": {
+    "slug": "txetxè",
+    "bookIndex": 3
+  },
+  "2024/62": {
+    "slug": "quítxua-bolivià",
+    "bookIndex": 0
+  },
+  "2024/63": {
+    "slug": "guaraní-oriental-bolivià",
+    "bookIndex": 0
+  },
+  "2024/64": {
+    "slug": "aimara-bolivià-septentrional",
+    "bookIndex": 1
+  },
+  "2024/65": {
+    "slug": "serbi",
+    "bookIndex": 11
+  },
+  "2024/66": {
+    "slug": "tetum-de-fatumea",
+    "bookIndex": 0
+  },
+  "2024/67": {
+    "slug": "turc",
+    "bookIndex": 0
+  },
+  "2024/68": {
+    "slug": "turc",
+    "bookIndex": 3
+  },
+  "2024/69": {
+    "slug": "occità-marquès-de-sent-barbant-parlar-de-creixent",
+    "bookIndex": 0
+  },
+  "2024/70": {
+    "slug": "coreà-de-chungcheongnam-do",
+    "bookIndex": 0
+  },
+  "2024/71": {
+    "slug": "furlà-occidental",
+    "bookIndex": 0
+  },
+  "2024/72": {
+    "slug": "gujarati",
+    "bookIndex": 1
+  },
+  "2024/73": {
+    "slug": "japonès",
+    "bookIndex": 26
+  },
+  "2024/74": {
+    "slug": "japonès",
+    "bookIndex": 23
+  },
+  "2024/75": {
+    "slug": "japonès",
+    "bookIndex": 25
+  },
+  "2024/76": {
+    "slug": "japonès",
+    "bookIndex": 21
+  },
+  "2024/77": {
+    "slug": "japonès",
+    "bookIndex": 12
+  },
+  "2024/78": {
+    "slug": "japonès",
+    "bookIndex": 19
+  },
+  "2024/79": {
+    "slug": "japonès",
+    "bookIndex": 8
+  },
+  "2024/80": {
+    "slug": "japonès",
+    "bookIndex": 16
+  },
+  "2024/81": {
+    "slug": "japonès",
+    "bookIndex": 6
+  },
+  "2024/82": {
+    "slug": "japonès",
+    "bookIndex": 17
+  },
+  "2024/83": {
+    "slug": "japonès",
+    "bookIndex": 3
+  },
+  "2024/84": {
+    "slug": "japonès",
+    "bookIndex": 20
+  },
+  "2024/85": {
+    "slug": "japonès",
+    "bookIndex": 11
+  },
+  "2024/86": {
+    "slug": "japonès",
+    "bookIndex": 22
+  },
+  "2024/87": {
+    "slug": "japonès",
+    "bookIndex": 14
+  },
+  "2024/88": {
+    "slug": "japonès",
+    "bookIndex": 5
+  },
+  "2024/89": {
+    "slug": "eslovac-moravià",
+    "bookIndex": 0
+  },
+  "2024/90": {
+    "slug": "florentí",
+    "bookIndex": 1
+  },
+  "2024/91": {
+    "slug": "intereslau",
+    "bookIndex": 1
+  },
+  "2024/92": {
+    "slug": "portuguès-minderico",
+    "bookIndex": 0
+  },
+  "2024/93": {
+    "slug": "benasquès",
+    "bookIndex": 0
+  },
+  "2024/94": {
+    "slug": "finès-simplificat",
+    "bookIndex": 0
+  },
+  "2024/95": {
+    "slug": "suec",
+    "bookIndex": 2
+  },
+  "2024/96": {
+    "slug": "turc-de-gaziantep",
+    "bookIndex": 1
+  },
+  "2024/97": {
+    "slug": "coreà",
+    "bookIndex": 3
+  },
+  "2024/98": {
+    "slug": "coreà",
+    "bookIndex": 6
+  },
+  "2024/99": {
+    "slug": "portuguès-adaptat",
+    "bookIndex": 0
+  },
+  "2025/01": {
+    "slug": "àrab",
+    "bookIndex": 0
+  },
+  "2025/02": {
+    "slug": "frisó-occidental",
+    "bookIndex": 0
+  },
+  "2025/03": {
+    "slug": "peitoví-de-vendée",
+    "bookIndex": 0
+  },
+  "2025/04": {
+    "slug": "tetum-de-welaluhu",
+    "bookIndex": 1
+  },
+  "2025/05": {
+    "slug": "vènet",
+    "bookIndex": 4
+  },
+  "2025/06": {
+    "slug": "turc-de-gaziantep",
+    "bookIndex": 2
+  },
+  "2025/07": {
+    "slug": "italià-farfallino",
+    "bookIndex": 0
+  },
+  "2025/08": {
+    "slug": "peitoví-saintongès",
+    "bookIndex": 1
+  },
+  "2025/09": {
+    "slug": "alemany-suís-de-solothurn",
+    "bookIndex": 0
+  },
+  "2025/10": {
+    "slug": "alemany",
+    "bookIndex": 25
+  },
+  "2025/11": {
+    "slug": "occità-marquès-de-moet-parlar-de-creixent",
+    "bookIndex": 0
+  },
+  "2025/12": {
+    "slug": "antic-eslau-eclesiàstic",
+    "bookIndex": 0
+  },
+  "2025/13": {
+    "slug": "kubatxi",
+    "bookIndex": 0
+  },
+  "2025/14": {
+    "slug": "pampanga",
+    "bookIndex": 0
+  },
+  "2025/15": {
+    "slug": "grec",
+    "bookIndex": 4
+  },
+  "2025/16": {
+    "slug": "italià-de-san-marino",
+    "bookIndex": 0
+  },
+  "2025/17": {
+    "slug": "còmics",
+    "bookIndex": 12
+  },
+  "2025/18": {
+    "slug": "alemany-bernès",
+    "bookIndex": 0
+  },
+  "2025/19": {
+    "slug": "llibres-relacionats",
+    "bookIndex": 33
+  },
+  "2025/20": {
+    "slug": "xinès-mandarí",
+    "bookIndex": 15
+  },
+  "2025/21": {
+    "slug": "portuguès",
+    "bookIndex": 6
+  },
+  "2025/22": {
+    "slug": "asturlleonès-daliste",
+    "bookIndex": 0
+  },
+  "2025/23": {
+    "slug": "espanyol",
+    "bookIndex": 50
+  },
+  "2025/24": {
+    "slug": "benasquès",
+    "bookIndex": 0
+  },
+  "2025/25": {
+    "slug": "català",
+    "bookIndex": 24
+  },
+  "2025/26": {
+    "slug": "swati",
+    "bookIndex": 0
+  },
+  "2025/27": {
+    "slug": "txec",
+    "bookIndex": 3
+  },
+  "2025/28": {
+    "slug": "xinès-hakka-hailu",
+    "bookIndex": 0
+  },
+  "2025/29": {
+    "slug": "xinès-hakka-hailu",
+    "bookIndex": 0
+  },
+  "2025/30": {
+    "slug": "espanyol",
+    "bookIndex": 69
+  },
+  "2025/31": {
+    "slug": "anglès",
+    "bookIndex": 27
+  },
+  "2025/32": {
+    "slug": "macedònic",
+    "bookIndex": 0
+  },
+  "2025/33": {
+    "slug": "macedònic",
+    "bookIndex": 1
+  },
+  "2025/34": {
+    "slug": "islandès",
+    "bookIndex": 0
+  },
+  "2025/35": {
+    "slug": "alemany-suís-de-glarus",
+    "bookIndex": 0
+  },
+  "2025/36": {
+    "slug": "alemany-suís-dels-grisons",
+    "bookIndex": 0
+  },
+  "2025/37": {
+    "slug": "alemany-suís-de-zug",
+    "bookIndex": 0
+  },
+  "2025/38": {
+    "slug": "txec-de-lašsko",
+    "bookIndex": 0
+  },
+  "2025/39": {
+    "slug": "asturlleonès-sanabrès",
+    "bookIndex": 0
+  },
+  "2025/40": {
+    "slug": "català-valencià",
+    "bookIndex": 5
+  },
+  "2025/41": {
+    "slug": "alemany-sueu-del-banat",
+    "bookIndex": 0
+  },
+  "2025/42": {
+    "slug": "alemany-paurisch",
+    "bookIndex": 0
+  },
+  "2025/43": {
+    "slug": "poliglotes",
+    "bookIndex": 6
+  },
+  "2025/44": {
+    "slug": "romanès-moldau",
+    "bookIndex": 2
+  },
+  "2025/45": {
+    "slug": "tailandès",
+    "bookIndex": 2
+  },
+  "2025/46": {
+    "slug": "tailandès",
+    "bookIndex": 4
+  },
+  "2025/47": {
+    "slug": "tailandès",
+    "bookIndex": 3
+  },
+  "2025/48": {
+    "slug": "tailandès",
+    "bookIndex": 7
+  },
+  "2025/49": {
+    "slug": "tailandès",
+    "bookIndex": 6
+  },
+  "2025/50": {
+    "slug": "tailandès",
+    "bookIndex": 16
+  },
+  "2025/51": {
+    "slug": "tailandès",
+    "bookIndex": 23
+  },
+  "2025/52": {
+    "slug": "tailandès",
+    "bookIndex": 22
+  },
+  "2025/53": {
+    "slug": "tailandès",
+    "bookIndex": 18
+  },
+  "2025/54": {
+    "slug": "tailandès",
+    "bookIndex": 10
+  },
+  "2025/55": {
+    "slug": "tailandès",
+    "bookIndex": 17
+  },
+  "2025/56": {
+    "slug": "tailandès",
+    "bookIndex": 15
+  },
+  "2025/57": {
+    "slug": "tailandès",
+    "bookIndex": 21
+  },
+  "2025/58": {
+    "slug": "tailandès",
+    "bookIndex": 20
+  },
+  "2025/59": {
+    "slug": "espanyol",
+    "bookIndex": 68
+  },
+  "2025/60": {
+    "slug": "grec",
+    "bookIndex": 12
+  },
+  "2025/61": {
+    "slug": "còmics",
+    "bookIndex": 11
+  },
+  "2025/62": {
+    "slug": "txec-dostrava",
+    "bookIndex": 0
+  },
+  "2025/63": {
+    "slug": "nivaclé",
+    "bookIndex": 0
+  },
+  "2025/64": {
+    "slug": "mossi-mòoré",
+    "bookIndex": 0
+  },
+  "2025/65": {
+    "slug": "ladí-judeocastellà",
+    "bookIndex": 2
+  },
+  "2025/66": {
+    "slug": "miskito",
+    "bookIndex": 0
+  },
+  "2025/67": {
+    "slug": "occità-provençal",
+    "bookIndex": 2
+  },
+  "2025/68": {
+    "slug": "napolità-picentino",
+    "bookIndex": 0
+  },
+  "2025/69": {
+    "slug": "turc-de-bayburt",
+    "bookIndex": 0
+  },
+  "2025/70": {
+    "slug": "lleidatà",
+    "bookIndex": 0
+  },
+  "2025/71": {
+    "slug": "aragonès",
+    "bookIndex": 3
+  },
+  "2025/72": {
+    "slug": "moken",
+    "bookIndex": 0
+  },
+  "2025/73": {
+    "slug": "crioll-capverdià-de-lilla-de-são-nicolau",
+    "bookIndex": 0
+  },
+  "2025/74": {
+    "slug": "occità-de-genouillé",
+    "bookIndex": 0
+  },
+  "2025/75": {
+    "slug": "paicî",
+    "bookIndex": 0
+  },
+  "2025/76": {
+    "slug": "portuguès-dolivença",
+    "bookIndex": 0
+  },
+  "2025/77": {
+    "slug": "occità-gascó",
+    "bookIndex": 2
+  },
+  "2025/78": {
+    "slug": "iaai",
+    "bookIndex": 0
+  },
+  "2025/79": {
+    "slug": "xampanyès",
+    "bookIndex": 0
+  },
+  "2026/01": {
+    "slug": "rus-especular",
+    "bookIndex": 0
+  },
+  "2026/02": {
+    "slug": "ingúix",
+    "bookIndex": 1
+  },
+  "2026/03": {
+    "slug": "espanyol-caló",
+    "bookIndex": 0
+  },
+  "2026/04": {
+    "slug": "angloromaní",
+    "bookIndex": 0
+  },
+  "2026/05": {
+    "slug": "asturià",
+    "bookIndex": 4
+  },
+  "2026/06": {
+    "slug": "espanyol-chiquistaní",
+    "bookIndex": 0
+  },
+  "2026/07": {
+    "slug": "llibres-relacionats",
+    "bookIndex": 36
+  },
+  "2026/08": {
+    "slug": "crioll-de-guinea-bissau",
+    "bookIndex": 0
+  },
+  "2026/09": {
+    "slug": "italià-de-fermo",
+    "bookIndex": 0
+  },
+  "2026/10": {
+    "slug": "wichí",
+    "bookIndex": 0
+  },
+  "2026/11": {
+    "slug": "guaraní-mbyá",
+    "bookIndex": 0
+  },
+  "2026/12": {
+    "slug": "guaraní-argentí-de-corrientes",
+    "bookIndex": 1
+  },
+  "2026/13": {
+    "slug": "escocès",
+    "bookIndex": 2
+  },
+  "2026/14": {
+    "slug": "gallès",
+    "bookIndex": 4
+  },
+  "2026/15": {
+    "slug": "purépetxa",
+    "bookIndex": 0
+  },
+  "2026/16": {
+    "slug": "espanyol",
+    "bookIndex": 70
+  },
+  "2026/17": {
+    "slug": "espanyol",
+    "bookIndex": 35
+  },
+  "2026/18": {
+    "slug": "espanyol",
+    "bookIndex": 61
+  },
+  "2026/19": {
+    "slug": "llibres-relacionats",
+    "bookIndex": 35
+  },
+  "2026/20": {
+    "slug": "alemany",
+    "bookIndex": 12
+  },
+  "2026/21": {
+    "slug": "sindi",
+    "bookIndex": 0
+  },
+  "2026/22": {
+    "slug": "uzbek",
+    "bookIndex": 5
+  },
+  "2026/23": {
+    "slug": "àzeri",
+    "bookIndex": 3
+  },
+  "2026/24": {
+    "slug": "pali",
+    "bookIndex": 0
+  },
+  "2026/25": {
+    "slug": "pali",
+    "bookIndex": 1
+  },
+  "2026/26": {
+    "slug": "xinès-hakka-sixià",
+    "bookIndex": 2
+  },
+  "2026/27": {
+    "slug": "kabardí",
+    "bookIndex": 1
+  },
+  "2026/28": {
+    "slug": "karatxai-balkar",
+    "bookIndex": 2
+  },
+  "2026/29": {
+    "slug": "francès",
+    "bookIndex": 7
+  },
+  "2026/30": {
+    "slug": "gondi",
+    "bookIndex": 0
+  },
+  "2026/31": {
+    "slug": "bielorús-de-podlàquia",
+    "bookIndex": 0
+  },
+  "2026/32": {
+    "slug": "uigur",
+    "bookIndex": 1
+  },
+  "2026/33": {
+    "slug": "àrab",
+    "bookIndex": 20
+  },
+  "2026/34": {
+    "slug": "àrab-llevantí",
+    "bookIndex": 0
+  },
+  "2026/35": {
+    "slug": "changana",
+    "bookIndex": 0
+  },
+  "2026/36": {
+    "slug": "alemany-de-schwyz",
+    "bookIndex": 0
+  },
+  "2026/37": {
+    "slug": "txec-de-pilsen",
+    "bookIndex": 0
+  },
+  "2026/38": {
+    "slug": "italià-de-pecetto-di-valenza",
+    "bookIndex": 0
+  },
+  "2026/39": {
+    "slug": "italià-de-moia",
+    "bookIndex": 0
+  },
+  "2026/40": {
+    "slug": "llatí",
+    "bookIndex": 8
+  },
+  "2026/41": {
+    "slug": "romanès-moldau",
+    "bookIndex": 1
+  },
+  "2026/42": {
+    "slug": "groninguès",
+    "bookIndex": 1
+  },
+  "2026/43": {
+    "slug": "anglès",
+    "bookIndex": 30
+  },
+  "2026/44": {
+    "slug": "italià-de-san-benedetto",
+    "bookIndex": 0
+  },
+  "2026/45": {
+    "slug": "italià-de-san-secondo-parmense",
+    "bookIndex": 0
+  },
+  "2026/46": {
+    "slug": "italià-de-la-vall-de-non",
+    "bookIndex": 0
+  },
+  "2026/47": {
+    "slug": "poliglotes",
+    "bookIndex": 7
+  },
+  "2026/48": {
+    "slug": "malgaix",
+    "bookIndex": 0
+  },
+  "2026/49": {
+    "slug": "espanyol-argentí",
+    "bookIndex": 1
+  },
+  "2026/50": {
+    "slug": "italià",
+    "bookIndex": 2
+  },
+  "2026/51": {
+    "slug": "italià",
+    "bookIndex": 46
+  },
+  "2026/52": {
+    "slug": "italià",
+    "bookIndex": 47
+  },
+  "2026/53": {
+    "slug": "italià",
+    "bookIndex": 38
+  },
+  "2026/54": {
+    "slug": "ladí-de-la-vall-de-fassa",
+    "bookIndex": 0
+  },
+  "2026/55": {
+    "slug": "espanyol",
+    "bookIndex": 28
+  },
+  "2026/56": {
+    "slug": "espanyol",
+    "bookIndex": 41
+  },
+  "2026/57": {
+    "slug": "espanyol",
+    "bookIndex": 71
+  },
+  "2026/58": {
+    "slug": "espanyol",
+    "bookIndex": 72
+  },
+  "2026/59": {
+    "slug": "espanyol",
+    "bookIndex": 21
+  },
+  "2026/60": {
+    "slug": "portuguès-brasiler",
+    "bookIndex": 9
+  },
+  "2026/61": {
+    "slug": "coreà-de-yanbian",
+    "bookIndex": 0
+  },
+  "2026/62": {
+    "slug": "manglish",
+    "bookIndex": 0
+  },
+  "2026/63": {
+    "slug": "peitoví-de-clairin-i-la-barre",
+    "bookIndex": 0
+  },
+  "2026/64": {
+    "slug": "àrab-algerià-de-tlemcen",
+    "bookIndex": 0
+  },
+  "2026/65": {
+    "slug": "occità-marquès-davalha-lemosina-parlar-de-creixent",
+    "bookIndex": 0
+  },
+  "2026/66": {
+    "slug": "francoprovençal-del-cantó-de-jura",
+    "bookIndex": 0
+  },
+  "2026/67": {
+    "slug": "jeju",
+    "bookIndex": 1
+  },
+  "2026/68": {
+    "slug": "occità-provençal-alpí",
+    "bookIndex": 0
+  },
+  "2026/69": {
+    "slug": "buriat",
+    "bookIndex": 0
+  },
+  "2026/70": {
+    "slug": "llibres-relacionats",
+    "bookIndex": 23
+  },
+  "2026/71": {
+    "slug": "asturià",
+    "bookIndex": 3
+  },
+  "2026/72": {
+    "slug": "llibres-relacionats",
+    "bookIndex": 34
+  },
+  "2026/73": {
+    "slug": "suahili",
+    "bookIndex": 2
+  },
+  "2026/74": {
+    "slug": "karakalpak",
+    "bookIndex": 2
+  },
+  "2026/75": {
+    "slug": "uzbek",
+    "bookIndex": 2
+  },
+  "2026/76": {
+    "slug": "italià-de-carrara",
+    "bookIndex": 0
+  },
+  "2026/77": {
+    "slug": "tetum-de-welaluhu",
+    "bookIndex": 0
+  },
+  "2026/78": {
+    "slug": "flamenc-de-baasrode",
+    "bookIndex": 0
+  }
+}
