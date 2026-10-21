@@ -204,12 +204,13 @@ export function SearchPage() {
   return <>
     <section className="starry relative isolate overflow-hidden text-white">
       <StarField />
-      <SectionHeroIllustration className="absolute top-2 right-4 z-0 h-20 w-auto sm:right-[6%] sm:h-28 md:h-36" />
-      <div className="relative z-10 mx-auto max-w-[1360px] px-5 pt-5 pb-10 sm:px-8 lg:px-12">
+      <SectionHeroIllustration className="absolute top-1/2 right-2 z-0 h-20 w-auto -translate-y-1/2 sm:right-[6%] sm:h-32 md:h-44 lg:h-56" />
+      <div className="relative z-10 mx-auto max-w-[1360px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
         <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />Cercar / Search</p>
-        <h1 className="font-display mt-3 text-5xl leading-none font-semibold sm:text-6xl">Cercar</h1>
-        <p className="font-hand text-yellow mt-2 text-3xl">Search</p>
+        <h1 className="font-display mt-4 text-5xl leading-[0.98] font-semibold tracking-[-0.02em] sm:text-7xl">Cercar</h1>
+        <p className="font-hand text-yellow mt-4 text-3xl">Search</p>
       </div>
+      <svg aria-hidden="true" viewBox="0 0 1440 40" preserveAspectRatio="none" className="text-paper absolute bottom-0 left-0 h-6 w-full sm:h-10"><path d="M0 40 C240 10 480 0 720 14 C960 28 1200 30 1440 8 L1440 40Z" fill="currentColor" /></svg>
     </section>
     <section className="bg-paper min-h-[10rem] px-5 py-10 sm:px-8 lg:px-12">
       <div className="mx-auto max-w-[1120px]">
@@ -231,7 +232,7 @@ export function SearchPage() {
               return <Link className="border-line grid grid-cols-[4rem_minmax(0,1fr)] items-center gap-4 rounded-xl border bg-white/80 p-4 shadow-[0_4px_16px_rgba(27,42,74,0.06)] transition-colors hover:border-yellow hover:bg-white sm:grid-cols-[5rem_minmax(0,1fr)] sm:gap-5 sm:p-5" key={`${page.slug}-${book.image}-${bookIndex}`} to={`/collection/${encodeURIComponent(page.slug)}#book-${bookIndex}`}>
                 <img alt="" loading="lazy" className="h-24 w-16 rounded-md border border-line bg-white object-contain p-0.5 sm:h-28 sm:w-20" src={book.image} />
                 <span className="min-w-0">
-                  <span className="font-hand text-gold block text-sm sm:text-base">{page.catalanTitle}{page.englishTitle ? ` / ${page.englishTitle}` : ""}</span>
+                  <span className="font-hand text-gold block text-base sm:text-lg">{page.catalanTitle}{page.englishTitle ? ` / ${page.englishTitle}` : ""}</span>
                   <span className="font-display text-ink mt-1 block text-lg leading-tight sm:text-xl"><SearchMatch text={`${title}${book.transcription && book.transcription !== title ? ` | ${book.transcription}` : ""}`} query={query} /></span>
                   {metadata && <span className="text-ink-soft mt-1 block text-sm leading-5"><SearchMatch text={metadata} query={query} /></span>}
                 </span>
