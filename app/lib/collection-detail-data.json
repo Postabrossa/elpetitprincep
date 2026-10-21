@@ -45258,6 +45258,43 @@
       "descriptionEn": "Eastern variety of the German Jewish spoken by the Jewish communities of central Europe (the Ashkenazi).",
       "moreInfoCa": "https://ca.wikipedia.org/wiki/%C3%8Ddix",
       "moreInfoEn": "https://en.wikipedia.org/wiki/Yiddish_dialects"
+    },
+    {
+      "slug": "rus-especular",
+      "labels": [
+        "Rus especular",
+        "Russian - Mirror"
+      ],
+      "title": "Rus especular",
+      "type": "a",
+      "countries": [
+        "Rússia / Russia"
+      ],
+      "scriptSections": [],
+      "books": [
+        {
+          "image": "https://cdn.builder.io/api/v1/image/assets%2F645fb30e9e9b40d4%2Fbd21a75af3454f48b037e58b996e3e42?format=webp&width=800&height=1200",
+          "imageAlt": "Portada de Маленький принц",
+          "title": "Маленький принц",
+          "section": "Russian Mirror",
+          "metadata": {
+            "Any / Year": "2026",
+            "Editorial / Publisher": "Zerakalnoe izdatelstvo",
+            "País / Country": "Rússia / Russia",
+            "ISBN": "978-5-6053434-6-2"
+          },
+          "scriptGroup": "Russian Mirror",
+          "editionDetails": [],
+          "transcription": ""
+        }
+      ],
+      "catalanTitle": "Rus especular",
+      "englishTitle": "Russian - Mirror",
+      "countryHeadings": [],
+      "descriptionCa": "",
+      "descriptionEn": "",
+      "moreInfoCa": "",
+      "moreInfoEn": ""
     }
   ],
   "aliases": {
