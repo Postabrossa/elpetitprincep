@@ -64,7 +64,7 @@ export default function SiteLayout() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-paper font-sans text-ink antialiased">
-      {location.pathname !== "/search" && <header className="starry sticky top-0 z-40 border-b border-white/10 text-white shadow-[0_8px_30px_rgba(11,21,51,0.25)]">
+      <header className="starry sticky top-0 z-40 border-b border-white/10 text-white shadow-[0_8px_30px_rgba(11,21,51,0.25)]">
         <div className="mx-auto flex max-w-[1360px] items-center justify-between gap-6 px-5 py-3.5 sm:px-8 lg:px-12">
           <Link className="group flex shrink-0 items-center gap-3" to="/">
             <span className="ring-yellow/60 relative flex h-11 w-11 items-center justify-center rounded-full bg-white/95 ring-2"><img alt="El Petit Príncep" loading="lazy" width="42" height="42" className="h-9 w-9 object-contain transition-transform group-hover:-rotate-12" src="/collection-assets/home/little-prince-mark_-V0I.png" /></span>
@@ -87,7 +87,7 @@ export default function SiteLayout() {
             </details>
           </div>
         </div>
-      </header>}
+      </header>
       <main><Outlet /></main>
       <footer className="starry relative isolate overflow-hidden text-white">
         <StarField footer />
