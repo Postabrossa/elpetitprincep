@@ -20289,6 +20289,22 @@
           "scriptGroup": "Ingush",
           "editionDetails": [],
           "transcription": "[ ZIamiga a'la]"
+        },
+        {
+          "image": "/collection-assets/languages/ingúix/002.webp",
+          "imageAlt": "Зламига принц",
+          "title": "Зламига принц",
+          "transcription": "[ Zlamiga princ]",
+          "section": "Ingush",
+          "metadata": {
+            "Any / Year": "2025",
+            "Editorial / Publisher": "Hyadi Daurbekova",
+            "País / Country": "Rússia / Russia",
+            "Traductor / Translator": "Hyadi Daurbekova",
+            "ISBN": "978-5-600-04757-0"
+          },
+          "scriptGroup": "Ingush",
+          "editionDetails": []
         }
       ],
       "catalanTitle": "Ingúix",

@@ -1154,7 +1154,7 @@ export const collectionSections = {
         },
         {
           "name": "Ingúix",
-          "count": 1
+          "count": 2
         },
         {
           "name": "Ioruba",
@@ -4078,7 +4078,7 @@ export const collectionSections = {
         },
         {
           "name": "Ingush",
-          "count": 1
+          "count": 2
         },
         {
           "name": "Istriot",

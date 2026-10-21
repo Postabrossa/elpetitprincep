@@ -5,8 +5,8 @@ import { createAgentNativeQueryClient } from "@agent-native/core/client/hooks";
 import { getThemeInitScript } from "@agent-native/core/client/ui";
 import { AppProviders } from "@agent-native/toolkit/app/providers";
 import { useQueryClient } from "@tanstack/react-query";
-import { useState } from "react";
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
+import { useEffect, useRef, useState } from "react";
+import { Links, Meta, Outlet, Scripts, useLocation, useNavigationType } from "react-router";
 import type { LinksFunction } from "react-router";
 
 import { Layout as AppLayout } from "@/components/layout/Layout";
@@ -29,6 +29,57 @@ export const links: LinksFunction = () => [
 ];
 
 const THEME_INIT_SCRIPT = getThemeInitScript();
+
+function ScrollManager() {
+  const location = useLocation();
+  const navigationType = useNavigationType();
+  const previousKey = useRef<string | null>(null);
+
+  useEffect(() => {
+    window.history.scrollRestoration = "manual";
+  }, []);
+
+  useEffect(() => {
+    const key = location.key;
+    const savePosition = () => sessionStorage.setItem(`scroll-position:${key}`, String(window.scrollY));
+    window.addEventListener("scroll", savePosition, { passive: true });
+    return () => {
+      savePosition();
+      window.removeEventListener("scroll", savePosition);
+    };
+  }, [location.key]);
+
+  useEffect(() => {
+    if (previousKey.current === location.key) return;
+    const isInitialLocation = previousKey.current === null;
+    previousKey.current = location.key;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const behavior: ScrollBehavior = reduceMotion ? "auto" : "smooth";
+    const frame = requestAnimationFrame(() => {
+      if (isInitialLocation) {
+        if (location.hash) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView({ behavior, block: "start" });
+        return;
+      }
+      if (navigationType === "POP") {
+        const saved = sessionStorage.getItem(`scroll-position:${location.key}`);
+        if (saved !== null) {
+          window.scrollTo({ top: 0, behavior: "auto" });
+          requestAnimationFrame(() => window.scrollTo({ top: Number(saved), behavior }));
+          return;
+        }
+      }
+      if (location.hash) {
+        document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView({ behavior, block: "start" });
+        return;
+      }
+      window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "auto" });
+      requestAnimationFrame(() => window.scrollTo({ top: 0, behavior }));
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [location.hash, location.key, navigationType]);
+
+  return null;
+}
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -58,7 +109,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {children}
-        <ScrollRestoration />
         <Scripts />
       </body>
     </html>
@@ -81,6 +131,7 @@ export default function Root() {
     <AppToolkitProvider>
       <AppProviders queryClient={queryClient}>
         <DbSyncSetup />
+        <ScrollManager />
         <AppLayout>
           <Outlet />
         </AppLayout>

@@ -35,7 +35,7 @@ export default function SiteLayout() {
           </Link>
           <nav aria-label="Navegació principal" className="hidden xl:block">
             <ul className="flex items-center gap-1 text-[13px] font-semibold">
-              {navigation.slice(0, 7).map((item) => <li key={item.to}><NavLink end={item.to === "/"} reloadDocument={item.to.startsWith("/recents/")} className="hover:text-yellow focus-visible:outline-yellow rounded-full px-2.5 py-2 text-white/85 transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2" to={item.to}>{item.label}</NavLink></li>)}
+              {navigation.slice(0, 7).map((item) => <li key={item.to}><NavLink end={item.to === "/"} className="hover:text-yellow focus-visible:outline-yellow rounded-full px-2.5 py-2 text-white/85 transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2" to={item.to}>{item.label}</NavLink></li>)}
               <li>{searchLink}</li>
               <li><NavLink className="bg-yellow text-night ml-2 inline-flex items-center gap-1.5 rounded-full px-4 py-2 font-bold transition hover:bg-white" to="/contact"><StarIcon className="h-3 w-3" />Contacte</NavLink></li>
             </ul>
@@ -45,7 +45,7 @@ export default function SiteLayout() {
             <details className="relative">
               <summary className="cursor-pointer list-none rounded-full border border-white/30 px-4 py-2 text-xs font-bold tracking-[0.12em] uppercase">Menú</summary>
               <div className="starry absolute top-12 right-0 w-[min(19rem,calc(100vw-2.5rem))] rounded-2xl border border-white/15 p-5 shadow-2xl">
-                <ul className="grid gap-4 text-sm">{navigation.map((item) => <li key={item.to}><NavLink end={item.to === "/"} reloadDocument={item.to.startsWith("/recents/")} className="hover:text-yellow flex items-center gap-2 font-medium text-white" to={item.to}><StarIcon className="text-yellow h-2.5 w-2.5" />{item.mobile}</NavLink></li>)}</ul>
+                <ul className="grid gap-4 text-sm">{navigation.map((item) => <li key={item.to}><NavLink end={item.to === "/"} className="hover:text-yellow flex items-center gap-2 font-medium text-white" to={item.to}><StarIcon className="text-yellow h-2.5 w-2.5" />{item.mobile}</NavLink></li>)}</ul>
               </div>
             </details>
           </div>

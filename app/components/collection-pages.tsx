@@ -80,7 +80,7 @@ export function HomePage() {
           <p className="mt-8 max-w-md text-lg leading-8 text-white/85">Col·lecció en diferents idiomes<span className="font-display mt-1 block text-xl text-white/65 italic">Collection in different languages</span></p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link className="bg-yellow text-night inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-bold shadow-[0_0_30px_rgba(242,193,78,0.35)] transition hover:bg-white" to="/collection"><StarIcon className="h-4 w-4" />La meva col·lecció</Link>
-            <a className="hover:text-yellow hover:border-yellow inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3.5 text-sm font-bold text-white transition" href="#archive">Explora / Explore<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg></a>
+            <Link className="hover:text-yellow hover:border-yellow inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3.5 text-sm font-bold text-white transition" to="#archive">Explora / Explore<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg></Link>
           </div>
         </div>
         <div className="relative z-0 mx-auto w-full max-w-[32rem] lg:ml-auto">
@@ -92,7 +92,7 @@ export function HomePage() {
       </div>
       <svg aria-hidden="true" viewBox="0 0 1440 60" preserveAspectRatio="none" className="text-paper absolute bottom-0 left-0 h-10 w-full sm:h-16"><path d="M0 60 C240 20 480 0 720 18 C960 36 1200 40 1440 10 L1440 60Z" fill="currentColor" /></svg>
     </section>
-    <section id="archive" className="px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+    <section id="archive" className="scroll-mt-24 px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
       <div className="mx-auto max-w-[1360px]">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div>
@@ -105,7 +105,7 @@ export function HomePage() {
             </div>
           </div>
           <div className="grid gap-5 sm:grid-cols-2">
-            {homepageSections.map((section) => <Link className="group border-line relative overflow-hidden rounded-3xl border bg-white/80 p-7 shadow-[0_6px_20px_rgba(27,42,74,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(27,42,74,0.14)]" key={section.code} reloadDocument={section.href.startsWith("/recents/")} to={section.href}>
+            {homepageSections.map((section) => <Link className="group border-line relative overflow-hidden rounded-3xl border bg-white/80 p-7 shadow-[0_6px_20px_rgba(27,42,74,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(27,42,74,0.14)]" key={section.code} to={section.href}>
               <PlanetIllustration />
               <div className="relative z-10">
                 <div className="flex items-start justify-between gap-4"><span className="bg-night text-yellow inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-bold tracking-[0.12em]"><StarIcon className="h-2.5 w-2.5" />{section.code}</span><svg className="text-blue transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></div>
@@ -119,8 +119,8 @@ export function HomePage() {
     </section>
     <section className="px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
       <div className="mx-auto max-w-[1360px]">
-        <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"><div><p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />Recents / Latest</p><h2 className="font-display mt-4 text-4xl font-semibold sm:text-6xl">Llibres recents</h2></div><Link className="group text-blue decoration-blue/30 hover:decoration-blue inline-flex items-center gap-2 text-sm font-bold underline underline-offset-4" reloadDocument to="/recents/2026">Darreres incorporacions / My latest books<IconArrowRight size={16} /></Link></div>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">{recentCovers.map((image) => <Link className="group border-line block overflow-hidden rounded-xl border bg-white p-2 shadow-[0_6px_18px_rgba(27,42,74,0.08)] transition duration-300 hover:-translate-y-1 hover:rotate-[-0.6deg] hover:shadow-[0_14px_30px_rgba(27,42,74,0.16)]" key={image} reloadDocument to="/recents/2026"><img alt="El Petit Príncep" loading="lazy" width="640" height="860" className="h-full min-h-48 w-full rounded-lg object-cover" src={image} /></Link>)}</div>
+        <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"><div><p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />Recents / Latest</p><h2 className="font-display mt-4 text-4xl font-semibold sm:text-6xl">Llibres recents</h2></div><Link className="group text-blue decoration-blue/30 hover:decoration-blue inline-flex items-center gap-2 text-sm font-bold underline underline-offset-4" to="/recents/2026">Darreres incorporacions / My latest books<IconArrowRight size={16} /></Link></div>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">{recentCovers.map((image) => <Link className="group border-line block overflow-hidden rounded-xl border bg-white p-2 shadow-[0_6px_18px_rgba(27,42,74,0.08)] transition duration-300 hover:-translate-y-1 hover:rotate-[-0.6deg] hover:shadow-[0_14px_30px_rgba(27,42,74,0.16)]" key={image} to="/recents/2026"><img alt="El Petit Príncep" loading="lazy" width="640" height="860" className="h-full min-h-48 w-full rounded-lg object-cover" src={image} /></Link>)}</div>
       </div>
     </section>
   </>;
@@ -145,7 +145,7 @@ export function CollectionPage() {
         <p className="font-hand text-yellow mt-4 max-w-2xl text-3xl">My collection</p>
         <p className="mt-6 text-lg text-white/90">1779 Llibres / Books - Actualitzat / Updated: 8/10/2026</p>
         <div className="mt-3 grid gap-1 text-sm text-white/75"><p>688 Idiomes (reals i artificials)</p><p>688 Languages (real &amp; constructed)</p><p>22 transcripcions, 8 adaptacions i més...</p><p>22 Transcripts, 8 adaptations and more...</p></div>
-        <div className="mt-8 flex flex-wrap gap-3 [&_a]:no-underline"><a className="bg-yellow !text-night rounded-full px-5 py-2.5 text-sm font-bold" href="#catala">Idiomes (en català)</a><a className="rounded-full border border-white/40 px-5 py-2.5 text-sm font-bold !text-white" href="#english">Languages (in English)</a></div>
+        <div className="mt-8 flex flex-wrap gap-3 [&_a]:no-underline"><Link className="bg-yellow !text-night rounded-full px-5 py-2.5 text-sm font-bold" to="#catala">Idiomes (en català)</Link><Link className="rounded-full border border-white/40 px-5 py-2.5 text-sm font-bold !text-white" to="#english">Languages (in English)</Link></div>
       </div>
       <svg aria-hidden="true" viewBox="0 0 1440 40" preserveAspectRatio="none" className="text-paper absolute bottom-0 left-0 h-6 w-full sm:h-10"><path d="M0 40 C240 15 480 0 720 12 C960 24 1200 25 1440 5 L1440 40Z" fill="currentColor" /></svg>
     </section>
@@ -154,7 +154,7 @@ export function CollectionPage() {
         const items = query ? section.items.filter((item) => item.name.toLocaleLowerCase("ca").includes(query)) : section.items;
         if (!items.length) return null;
         return <div className="mt-12 first:mt-0" key={section.title}>
-          <h3 className="font-display text-ink flex items-center gap-3 text-3xl font-semibold"><StarIcon className="text-gold h-4 w-4" />{section.title}<span className="text-ink-soft font-sans text-sm font-normal">({query ? items.length : section.count})</span></h3><ul className="mt-5 gap-x-8 sm:columns-2 lg:columns-3 xl:columns-4">{items.map((item) => <li className="break-inside-avoid" key={item.name}><Link className="hover:bg-paper-deep hover:text-blue flex items-start gap-3 rounded-lg px-2 py-1.5 text-sm leading-5 transition-colors" reloadDocument to={collectionHref(item.name)}><span>{item.name}</span><span className="bg-sky text-blue ml-auto shrink-0 rounded-full px-2 py-0.5 text-[11px] font-bold">{item.count}</span></Link></li>)}</ul>
+          <h3 className="font-display text-ink flex items-center gap-3 text-3xl font-semibold"><StarIcon className="text-gold h-4 w-4" />{section.title}<span className="text-ink-soft font-sans text-sm font-normal">({query ? items.length : section.count})</span></h3><ul className="mt-5 gap-x-8 sm:columns-2 lg:columns-3 xl:columns-4">{items.map((item) => <li className="break-inside-avoid" key={item.name}><Link className="hover:bg-paper-deep hover:text-blue flex items-start gap-3 rounded-lg px-2 py-1.5 text-sm leading-5 transition-colors" to={collectionHref(item.name)}><span>{item.name}</span><span className="bg-sky text-blue ml-auto shrink-0 rounded-full px-2 py-0.5 text-[11px] font-bold">{item.count}</span></Link></li>)}</ul>
         </div>;
       })}</div>
     </section>
@@ -163,7 +163,7 @@ export function CollectionPage() {
         const items = query ? section.items.filter((item) => item.name.toLocaleLowerCase("ca").includes(query)) : section.items;
         if (!items.length) return null;
         return <div className="mt-12 first:mt-0" key={section.title}>
-          <h3 className="font-display text-ink flex items-center gap-3 text-3xl font-semibold"><StarIcon className="text-gold h-4 w-4" />{section.title}<span className="text-ink-soft font-sans text-sm font-normal">({query ? items.length : section.count})</span></h3><ul className="mt-5 gap-x-8 sm:columns-2 lg:columns-3 xl:columns-4">{items.map((item) => <li className="break-inside-avoid" key={item.name}><Link className="hover:bg-paper-deep hover:text-blue flex items-start gap-3 rounded-lg px-2 py-1.5 text-sm leading-5 transition-colors" reloadDocument to={collectionHref(item.name)}><span>{item.name}</span><span className="bg-sky text-blue ml-auto shrink-0 rounded-full px-2 py-0.5 text-[11px] font-bold">{item.count}</span></Link></li>)}</ul>
+          <h3 className="font-display text-ink flex items-center gap-3 text-3xl font-semibold"><StarIcon className="text-gold h-4 w-4" />{section.title}<span className="text-ink-soft font-sans text-sm font-normal">({query ? items.length : section.count})</span></h3><ul className="mt-5 gap-x-8 sm:columns-2 lg:columns-3 xl:columns-4">{items.map((item) => <li className="break-inside-avoid" key={item.name}><Link className="hover:bg-paper-deep hover:text-blue flex items-start gap-3 rounded-lg px-2 py-1.5 text-sm leading-5 transition-colors" to={collectionHref(item.name)}><span>{item.name}</span><span className="bg-sky text-blue ml-auto shrink-0 rounded-full px-2 py-0.5 text-[11px] font-bold">{item.count}</span></Link></li>)}</ul>
         </div>;
       })}</div>
     </section>
@@ -255,13 +255,14 @@ export function CollectionDetailPage() {
       <div className="mx-auto max-w-[1360px]">
         {page.type === "b" && <p className="text-ink-soft mb-8 text-sm">Llibres agrupats per cal·ligrafia o escriptura / Books grouped by script</p>}
         {page.type === "c" && <nav aria-label="Índex de països / Countries index" className="border-line mb-12 rounded-2xl border bg-white/70 px-5 py-7 sm:px-8">
-          <h2 className="font-display text-ink text-center text-2xl font-normal tracking-[0.1em] sm:text-3xl">EL PRINCIPITO / EL PEQUEÑO PRÍNCIPE</h2>
+          <div aria-hidden="true" className="text-gold mb-4 flex justify-center"><StarIcon className="h-4 w-4" /></div>
+          <h2 className="font-display text-ink text-center text-2xl font-bold tracking-[0.1em] sm:text-3xl">EL PRINCIPITO / EL PEQUEÑO PRÍNCIPE</h2>
           <ul className="mt-6 grid grid-cols-2 gap-x-5 gap-y-3 sm:grid-cols-3 lg:grid-cols-6">
-            {bookGroups.map(([country], index) => <li key={country}><a className="text-ink hover:text-blue text-sm font-semibold transition-colors" href={`#country-${index}`}>{country === "República Dominicana" ? "R. Dominicana" : country}</a></li>)}
+            {bookGroups.map(([country], index) => <li key={country}><Link className="text-ink hover:text-blue text-sm font-semibold transition-colors" to={`#country-${index}`}>{country === "República Dominicana" ? "R. Dominicana" : country}</Link></li>)}
           </ul>
         </nav>}
         {bookGroups.map(([group, books], index) => <div className="mt-12 scroll-mt-28 first:mt-0" id={page.type === "c" ? `country-${index}` : undefined} key={group || "books"}>
-          {group && <h2 className="font-display text-ink mb-6 flex items-center gap-3 text-2xl font-semibold sm:text-3xl"><StarIcon className="text-gold h-4 w-4" />{group}</h2>}
+          {group && (page.type === "c" ? <div className="mb-6 grid justify-items-center gap-3 text-center"><StarIcon className="text-gold h-4 w-4" /><h2 className="font-display text-ink text-4xl font-bold sm:text-5xl">{group}</h2></div> : <h2 className="font-display text-ink mb-6 flex items-center gap-3 text-2xl font-semibold sm:text-3xl"><StarIcon className="text-gold h-4 w-4" />{group}</h2>)}
           <div className="grid gap-4 lg:grid-cols-2">{books.map((book, bookIndex) => <CollectionBookCard book={book} key={`${book.image}-${bookIndex}`} />)}</div>
         </div>)}
       </div>
@@ -295,7 +296,7 @@ export function RecentPage() {
         <p className="text-gold flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase"><StarIcon className="h-3 w-3 shrink-0" />Recents / Latest</p>
         <h1 className="font-display mt-4 max-w-4xl text-5xl leading-[0.98] font-semibold tracking-[-0.02em] sm:text-7xl">{year === 2026 ? "Llibres recents" : validYear ? `Llibres del ${year}` : "Any no disponible"}</h1>
         <p className="font-hand text-yellow mt-4 max-w-2xl text-3xl">Latest books</p>
-        <div className="mt-8 flex flex-wrap gap-2 [&_a]:no-underline">{[2026, 2025, 2024, 2023, 2022, 2021, 2020].map((item) => <Link className={`rounded-full px-4 py-2 text-sm font-bold ${item === year ? "bg-yellow !text-night" : "border border-white/30 !text-white"}`} key={item} reloadDocument to={`/recents/${item}`}>{item}</Link>)}</div>
+        <div className="mt-8 flex flex-wrap gap-2 [&_a]:no-underline">{[2026, 2025, 2024, 2023, 2022, 2021, 2020].map((item) => <Link className={`rounded-full px-4 py-2 text-sm font-bold ${item === year ? "bg-yellow !text-night" : "border border-white/30 !text-white"}`} key={item} to={`/recents/${item}`}>{item}</Link>)}</div>
       </div>
       <svg aria-hidden="true" viewBox="0 0 1440 40" preserveAspectRatio="none" className="text-paper absolute bottom-0 left-0 h-6 w-full sm:h-10"><path d="M0 40 C240 10 480 0 720 14 C960 28 1200 30 1440 8 L1440 40Z" fill="currentColor" /></svg>
     </section>
