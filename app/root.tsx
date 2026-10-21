@@ -30,6 +30,10 @@ export const links: LinksFunction = () => [
 
 const THEME_INIT_SCRIPT = getThemeInitScript();
 
+function getScrollContainer() {
+  return document.querySelector<HTMLElement>(".agent-native-app-main") ?? document.documentElement;
+}
+
 function ScrollManager() {
   const location = useLocation();
   const navigationType = useNavigationType();
@@ -41,11 +45,12 @@ function ScrollManager() {
 
   useEffect(() => {
     const key = location.key;
-    const savePosition = () => sessionStorage.setItem(`scroll-position:${key}`, String(window.scrollY));
-    window.addEventListener("scroll", savePosition, { passive: true });
+    const scrollContainer = getScrollContainer();
+    const savePosition = () => sessionStorage.setItem(`scroll-position:${key}`, String(scrollContainer.scrollTop));
+    scrollContainer.addEventListener("scroll", savePosition, { passive: true });
     return () => {
       savePosition();
-      window.removeEventListener("scroll", savePosition);
+      scrollContainer.removeEventListener("scroll", savePosition);
     };
   }, [location.key]);
 
@@ -55,12 +60,13 @@ function ScrollManager() {
     previousKey.current = location.key;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const behavior: ScrollBehavior = reduceMotion ? "auto" : "smooth";
+    const scrollContainer = getScrollContainer();
     const frame = requestAnimationFrame(() => {
       if (!isInitialLocation && navigationType === "POP") {
         const saved = sessionStorage.getItem(`scroll-position:${location.key}`);
         if (saved !== null) {
-          window.scrollTo({ top: 0, behavior: "auto" });
-          requestAnimationFrame(() => window.scrollTo({ top: Number(saved), behavior }));
+          scrollContainer.scrollTo({ top: 0, behavior: "auto" });
+          requestAnimationFrame(() => scrollContainer.scrollTo({ top: Number(saved), behavior }));
           return;
         }
       }
@@ -68,7 +74,7 @@ function ScrollManager() {
         document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView({ behavior, block: "start" });
         return;
       }
-      window.scrollTo({ top: 0, behavior: isInitialLocation ? "auto" : behavior });
+      scrollContainer.scrollTo({ top: 0, behavior: isInitialLocation ? "auto" : behavior });
     });
     return () => cancelAnimationFrame(frame);
   }, [location.hash, location.key, navigationType]);
