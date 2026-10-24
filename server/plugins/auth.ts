@@ -1,3 +1,4 @@
+import "../database-connection.js";
 import { createAuthPlugin } from "@agent-native/core/server";
 
 // Email/password auth with optional Google OAuth (enabled automatically when

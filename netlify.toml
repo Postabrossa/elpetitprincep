@@ -1,7 +1,13 @@
 [build]
-command = "export DATABASE_URL=\"${NETLIFY_DATABASE_URL:-${DATABASE_URL:-${NETLIFY_DATABASE_URL_UNPOOLED:-$DATABASE_URL_UNPOOLED}}}\" && NITRO_PRESET=netlify pnpm build && if [ \"${CONTEXT:-}\" = \"production\" ]; then pnpm migrate:production; fi"
+command = "NITRO_PRESET=netlify pnpm build && pnpm migrate:production"
 publish = "dist"
 functions = ".netlify/functions-internal"
+
+[dev]
+command = "pnpm dev"
+targetPort = 8080
+port = 8889
+framework = "#custom"
 
 [build.environment]
 GA_MEASUREMENT_ID = "G-ESF7FYXGN9"
