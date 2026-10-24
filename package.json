@@ -120,6 +120,7 @@
       "templateSource": "bundled",
       "coreVersion": "0.209.2",
       "shape": "standalone"
+      "audience": "public"
     }
   }
 }
