@@ -8,9 +8,20 @@ import {
   runFrameworkReleaseMigrations,
 } from "@agent-native/core/server";
 
+import { configureDatabaseConnection } from "../server/database-connection.js";
+
 loadEnv();
+configureDatabaseConnection();
 
 async function main(): Promise<void> {
+  // config-ok: release jobs must never migrate a disposable local database.
+  const connection = process.env.DATABASE_URL;
+  if (!connection || !/^postgres(?:ql)?:\/\//i.test(connection)) {
+    throw new Error(
+      "Release migrations require a persistent PostgreSQL connection. " +
+        "Configure Netlify Database before publishing this deploy.",
+    );
+  }
   await withMigrationRuntime(async () => {
     await runFrameworkReleaseMigrations(null);
     await runAppReleaseMigrations();

@@ -1,4 +1,7 @@
 import "dotenv/config";
+// Drizzle loads TypeScript directly through its CommonJS loader, which does
+// not remap a .js import to the corresponding .ts source file.
+import "./server/database-connection.ts";
 import { createDrizzleConfig } from "@agent-native/core/db/drizzle-config";
 
 export default createDrizzleConfig({

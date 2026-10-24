@@ -27,8 +27,15 @@ Framework docs: [agent-native.com/docs](https://agent-native.com/docs?utm_source
 
 ## Netlify deployment
 
-The build resolves the database connection from `NETLIFY_DATABASE_URL`, then
-`DATABASE_URL`, then the direct connection settings `NETLIFY_DATABASE_URL_UNPOOLED`
-and `DATABASE_URL_UNPOOLED`. This also supports deployments where only a direct
-PostgreSQL connection is configured. Production release migrations still run
-after compilation and must succeed before publishing.
+The app uses `@netlify/database` to resolve the database for the current deploy.
+The connection is passed to the framework's existing SQL and authentication
+clients at runtime and in release migrations. This keeps previews on their own
+database branch. Existing PostgreSQL connection settings remain supported when
+Netlify Database is unavailable; local development can still use PGlite.
+The framework's SQL client disables prepared statements and query pipelining
+for the native connection to work with Netlify's transaction proxy.
+
+Framework release migrations run after compilation for every deploy, including
+previews, and must succeed before publishing. A missing PostgreSQL connection
+fails the release instead of migrating a disposable local database and leaving
+the deployed session endpoint without its tables.
