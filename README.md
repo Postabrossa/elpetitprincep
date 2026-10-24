@@ -24,3 +24,11 @@ to skip sign-in while developing.
 - `drizzle/`: schema and migrations; start with `drizzle/START_HERE.md`
 
 Framework docs: [agent-native.com/docs](https://agent-native.com/docs?utm_source=github&utm_medium=referral&utm_content=fusion-starter-readme).
+
+## Netlify deployment
+
+The build resolves the database connection from `NETLIFY_DATABASE_URL`, then
+`DATABASE_URL`, then the direct connection settings `NETLIFY_DATABASE_URL_UNPOOLED`
+and `DATABASE_URL_UNPOOLED`. This also supports deployments where only a direct
+PostgreSQL connection is configured. Production release migrations still run
+after compilation and must succeed before publishing.
